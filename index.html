@@ -2,13 +2,39 @@
 <html>
 
 <head>
-  <title>kadir</title>
+  <title>Kadir Aksoy - Home</title>
+  <link rel="stylesheet" type="text/css" href="homepage.css">
+  <script src="homepage.js"></script>
 </head>
 
 <body>
-  <h1>My projects</h1>
-  <a href="heat2d/index.html">Heat2D Game Engine</a> <br>
-  <a href="gui_project/index.html">GUI Project</a>
+  <div id="bar">
+      <p id="bar-logo-text" class="unselectable">kadir014.github.io</p>
+
+      <div id="github-redirect">
+        <a href="https://github.com/kadir014/kadir014.github.io" target="_blank">
+         <img src="assets/github-icon.jpg" alt="Github Icon">
+        </a>
+        <p> See Source</p>
+      </div>
+  </div>
+
+  <div id="sidebar">
+    <button id="opener" onclick="open_sidebar()">&gt;</button>
+    <button id="closer" onclick="close_sidebar()">&lt;</button>
+
+    <a href="index.html" id="menu-item">Home Page</a>
+    <a href="" id="menu-item">About Me</a>
+    <button id="menu-item-btn" onclick="show_themedialog()">Change Theme</button>
+
+    <div id="theme-dialog">
+      <button class="theme-btn" id="#e34a42" onclick="change_theme('#e34a42', '#ff6e66')"></button>
+      <button class="theme-btn" id="#62c451" onclick="change_theme('#62c451', '#82e371')"></button>
+      <button class="theme-btn" id="#4fbfdb" onclick="change_theme('#4fbfdb', '#74d5ed')"></button>
+      <button class="theme-btn" id="#5b56f5" onclick="change_theme('#5b56f5', '#7681f5')"></button>
+      <script>set_themes();</script>
+    </div>
+  </div>
 <body>
 
 </html>

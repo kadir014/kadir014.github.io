@@ -4,28 +4,17 @@
 <head>
   <title>GUI Project</title>
 
-  <link rel="stylesheet" href="../highlightjs/styles/atom-one-light.css">
-  <script src="../highlightjs/highlight.pack.js"></script>
+  <link rel="stylesheet" href="../packages/highlightjs/styles/atom-one-light.css">
+  <script src="../packages/highlightjs/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
   <style>
   #snippet {
     border: 1px solid black;
-
-    height: ;
-
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
   }
 
-  pre {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
+  pre { font-size: 0; }
+  code { font-size: 14px; }
   </style>
 </head>
 
@@ -35,11 +24,12 @@
 
   <p>Basic usage</p>
   <div id="snippet">
-  <pre><code class="python">from gui import * #Import GUI Project to your project
+  <pre><code class="python">
+from gui import * #Import GUI Project to your project
 
-    mw = MainWindow((800, 600), title="My project!") #Create your top level window
+mw = MainWindow((800, 600), title="My project!") #Create your top level window
 
-    mw.start() #Start the main loop</code></pre>
+mw.start() #Start the main loop</code></pre>
   </div>
 
   <h2>API Reference</h2>
