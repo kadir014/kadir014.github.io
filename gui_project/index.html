@@ -3,49 +3,84 @@
 
 <head>
   <title>GUI Project</title>
-
-  <link rel="stylesheet" href="../packages/highlightjs/styles/atom-one-light.css">
+  <link rel="stylesheet" type="text/css" href="../homepage.css">
+  <link rel="stylesheet" href="../packages/highlightjs/styles/atom-one-dark.css">
+  <script src="../homepage.js"></script>
   <script src="../packages/highlightjs/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
-  <style>
-  #snippet {
-    border: 1px solid black;
-  }
-
-  pre { font-size: 0; }
-  code { font-size: 14px; }
-  </style>
 </head>
 
 <body>
-  <h1>GUI Project</h1>
-  <p><b>GUI Project is</b> a graphical user interface toolkit powered by <a href="https://www.pygame.org/">Pygame</a></p>
+  <div id="bar">
+      <p id="bar-logo-text" class="unselectable">kadir014.github.io</p>
 
-  <p>Basic usage</p>
-  <div id="snippet">
-  <pre><code class="python">
-from gui import * #Import GUI Project to your project
+      <div id="github-redirect">
+        <a href="https://github.com/kadir014/kadir014.github.io" target="_blank">
+         <img src="../assets/github-icon.jpg" alt="Github Icon">
+        </a>
+        <p> See Source</p>
+      </div>
+  </div>
+
+  <div id="sidebar">
+    <button id="opener" onclick="open_sidebar()">&gt;</button>
+    <button id="closer" onclick="close_sidebar()">&lt;</button>
+
+    <a href="../index.html" id="menu-item">Home Page</a>
+    <a href="" id="menu-item">About Me</a>
+    <button id="menu-item-btn" onclick="show_themedialog()">Change Theme</button>
+
+    <div id="theme-dialog">
+      <button class="theme-btn" id="#e34a42" onclick="change_theme('#e34a42', '#ff6e66')"></button>
+      <button class="theme-btn" id="#62c451" onclick="change_theme('#62c451', '#82e371')"></button>
+      <button class="theme-btn" id="#4fbfdb" onclick="change_theme('#4fbfdb', '#74d5ed')"></button>
+      <button class="theme-btn" id="#5b56f5" onclick="change_theme('#5b56f5', '#7681f5')"></button>
+      <script>set_themes();</script>
+    </div>
+  </div>
+
+  <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center; height:500px;">
+    <h1 style="font-size: 50px;">GUI Project</h1>
+    <p>
+    <img src="https://img.shields.io/badge/python-3%2B-green.svg">
+    <img src="https://img.shields.io/badge/pygame-2%2B-green">
+    <img src="https://img.shields.io/badge/license-LGPL%203.0-blue.svg">
+    <img src="https://img.shields.io/badge/version-0.0.0alpha-red">
+    </p><br>
+    <p><b>GUI Project</b> is a graphical user interface toolkit powered by <a href="https://www.pygame.org/">Pygame</a></p>
+    <p>Altough GUI Project uses Pygame, the main purpose of it is not being a library to used while making games.<br> It provides various themeable widgets and a simple interface to let users achieve their goals easier.<br><br></p>
+    <p style="text-align: left; width:60%;"><br><br>You can see a cool little example in the right ;)<br>
+      You can also find more examples in the <b>Examples</b> section.<br>
+      <i>GUI Project</i> is open-source, licensed under GNU LGPL v3. You can contribute if you will, the source is hosted on <b>github link here</b>
+    </p>
+    <img src="../assets/showcase1.gif" alt="Showcase 1" style="position:relative; right:-40%; bottom:140px;">
+  </div>
+
+  <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center;">
+    <p>You can use this page as a usage manual or documentation, for more deep technical information see <i>API Reference</i></p>
+    <ul>
+      <li> <a href="#introduction">Introduction</a> </li>
+      <li> <a href="#basics-of-widgets">Basics of Widgets</a> </li>
+      <ul>
+        <li> <a href="#label">Label</a> </li>
+      </ul>
+    </ul>
+    <br>
+    <hr>
+
+    <h1>Introduction</h1>
+    <p>A simple GUI Project project's work flow should be like this:<br> importing GUI Project <span style="color: gray;">&gt;</span> creating the top level window <span style="color: gray;">&gt;</span> adding widgets <span style="color: gray;">&gt;</span> starting the main loop</p>
+
+    <pre><code class="python" style="text-align: left;">from gui import * #Import GUI Project to your project
 
 mw = MainWindow((800, 600), title="My project!") #Create your top level window
 
 mw.start() #Start the main loop</code></pre>
+
+    <h1>Basics of Widgets</h1>
+    <p>A widget is simply an interactable component to control various events.<br> They may not be inceractable always, there are different types of widgets to fulfil any task.</p>
+    <h2>Label</h2>
   </div>
-
-  <h2>API Reference</h2>
-  <ul>
-    <li> <a href="#examples">Examples</a> </li>
-    <li> <a href="#errors">Errors</a> </li>
-    <li> <a href="#main-window">Main Window</a> </li>
-    <li> <b>Widgets</b> </li>
-    <ul>
-      <li> <a href="#label">Label</a> </li>
-      <li> <a href="#button">Button</a> </li>
-      <li> <a href="#textbox">Textbox</a> </li>
-    </ul>
-  </ul>
-
-  <a href="../index.html">Home Page</a>
 <body>
 
 </html>
