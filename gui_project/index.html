@@ -4,7 +4,7 @@
 <head>
   <title>GUI Project</title>
   <link rel="stylesheet" type="text/css" href="../homepage.css">
-  <link rel="stylesheet" href="../packages/highlightjs/styles/atom-one-dark.css">
+  <link rel="stylesheet" href="../packages/highlightjs/styles/atom-one-light.css">
   <script src="../homepage.js"></script>
   <script src="../packages/highlightjs/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
@@ -31,6 +31,10 @@
 
     #field-table td {
       text-align: left;
+    }
+
+    pre {
+      border: 1px solid black;
     }
   </style>
 </head>
@@ -64,19 +68,19 @@
     </div>
   </div>
 
-  <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center; height:500px;">
-    <h1 style="font-size: 50px;">GUI Project</h1>
+  <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center; height:610px;">
+    <h1 style="font-size: 50px;"><img src="../assets/coldgui_logo.png" alt="coldUI Logo", style="width:30%; height:30%; bottom:-35px; position:relative;"></h1>
     <p>
     <img src="https://img.shields.io/badge/python-3%2B-green.svg">
     <img src="https://img.shields.io/badge/pygame-2%2B-green">
     <img src="https://img.shields.io/badge/license-LGPL%203.0-blue.svg">
     <img src="https://img.shields.io/badge/version-0.0.0alpha-red">
     </p><br>
-    <p><b>GUI Project</b> is a graphical user interface toolkit powered by <a href="https://www.pygame.org/">Pygame</a></p>
-    <p>Altough GUI Project uses Pygame, the main purpose of it is not being a library to used while making games.<br> It provides various themeable widgets and a simple interface to let users achieve their goals easier.<br><br></p>
+    <p><b>coldGUI</b> is a graphical user interface toolkit powered by <a href="https://www.pygame.org/">Pygame</a></p>
+    <p>Altough <i>coldGUI</i> uses <i>Pygame</i>, the main purpose of it is not being a library to used while making games.<br> It provides various themeable widgets and a simple interface to let users achieve their goals easier.<br><br></p>
     <p style="text-align: left; width:60%;"><br><br>You can see a cool little example in the right ;)<br>
       You can also find more examples in the <b>Examples</b> section.<br>
-      <i>GUI Project</i> is open-source, licensed under GNU LGPL v3. You can contribute if you will, the source is hosted on <b>github link here</b>
+      <i>coldGUI</i> is open-source, licensed under GNU LGPL v3. You can contribute if you will, the source is hosted on <b>github link here</b>
     </p>
     <img src="../assets/showcase1.gif" alt="Showcase 1" style="position:relative; right:-40%; bottom:140px;">
   </div>
@@ -84,32 +88,32 @@
   <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center;">
     <p><b><i><span style="color:red; font-size:20px;">Important: </span>You can use this page as a simple usage manual for beginning, for deep technical details and serious documentation see API Reference</i></b></p>
     <ul style="text-align: left; display: inline-block;">
-      <li> <a href="#introduction">Introduction</a> </li>
-      <li> <a href="#basics-of-widgets">Basics of Widgets</a> </li>
+      <li> <a href="#introduction">a) Introduction</a> </li>
+      <li> <a href="#basics-of-widgets">b) Basics of Widgets</a> </li>
       <ul>
-        <li> <a href="#label">Label</a> </li>
-        <li> <a href="#button">Button</a> </li>
+        <li> <a href="#label">1) Label</a> </li>
+        <li> <a href="#button">2) Button</a> </li>
       </ul>
     </ul>
     <br>
     <hr>
 
-    <h1 id="introduction">Introduction</h1>
-    <p>A simple GUI Project project's work flow should be like this:<br> importing GUI Project <span style="color: gray;">&gt;</span> creating the top level window <span style="color: gray;">&gt;</span> adding widgets <span style="color: gray;">&gt;</span> starting the main loop</p>
+    <h1 id="introduction">a) Introduction</h1>
+    <p>A simple coldGUI project's work flow should be like this:<br> importing coldGUI <span style="color: gray;">&gt;</span> creating the top level window <span style="color: gray;">&gt;</span> adding widgets <span style="color: gray;">&gt;</span> starting the main loop</p>
 
-    <pre><code class="python" style="text-align: left;">from gui import * #Import GUI Project to your project
+    <pre><code class="python" style="text-align: left;">from coldgui import * #Import coldGUI to your project
 
 mainwindow = MainWindow((800, 600), title="My project!") #Create your top level window
 
 mainwindow.start() #Start the main loop</code></pre><br>
 
-    <h1 id="basics-of-widgets">Basics of Widgets</h1>
-    <p>A widget is simply an interactable component to control various events.<br> They may not be inceractable always, there are different types of widgets to fulfil any task.<br>Also there are few themes for the widgets, <i>win95</i> style being the default one.</p><br>
-    <br><br><h2 id="label">Label</h2>
-    <p>Label is simply a one-line text drawn on screen.</p>
+    <h1 id="basics-of-widgets">b) Basics of Widgets</h1>
+    <p>A widget is simply an interactable component to control various events.<br> They may not be inceractable always, there are different types of widgets to fulfil any task.<br>Also there are a few themes for the widgets, <i>win95</i> style being the default one.</p><br>
+    <br><br><h2 id="label">1) Label</h2>
+    <p>Label is simply a one-line text piece drawn on screen.</p>
     <p><i style="position:relative; bottom:30px; right:15px;">A generic win95 styled label</i><img src="../assets/label_generic.png" alt="Generic Label Showcase"></p>
-    <br><p>You can create the example label above like this.</p>
-    <br><pre style="position:relative; top:-25px;"><code class="python" style="text-align: left;">label = Label(mainwindow, position=(30, 30), text="Label", font-size=18)</code></pre><br>
+    <br><p>You can create the example label above like this:</p>
+    <br><pre style="position:relative; top:-25px;"><code class="python" style="text-align: left;">my_label = Label(mainwindow, position=(30, 30), text="Label", font-size=18)</code></pre><br>
     <p style="position:relative; top:-50px;">As you can see, there are some arguments passed in while creating a Label, every widget needs these parameters to customize itself. The first argument <b>must</b> be entered because it's our widget's parent (the main window in this case).<br><br> Here are <i>some important ones</i> of these arguments.</p>
     <table id="field-table" style="display:inline-block; position:relative; top:-20px;">
       <tr>
@@ -140,9 +144,56 @@ mainwindow.start() #Start the main loop</code></pre><br>
   </div>
 
   <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center;">
-    <br><br><br><h2 id="button">Button</h2>
+    <br><br><br><h2 id="button">2) Button</h2>
     <p>Sometimes you need to click something to de-stress, don't you? This widget is created for you.</p>
     <p><i style="position:relative; bottom:45px; right:15px;">A generic win95 styled button</i><img src="../assets/button_generic.png" alt="Generic Button Showcase"></p>
+    <br><p>You can create the example button above like this:</p>
+    <br><pre style="position:relative; top:-25px;"><code class="python" style="text-align: left;">my_button = Button(mainwindow, position=(30, 30), text="Button", font-size=18)</code></pre><br>
+    <p style="position:relative; top:-50px;">There are similar arguments as Label's. And here are <i>some important ones</i></p>
+    <table id="field-table" style="display:inline-block; position:relative; top:-20px;">
+      <tr>
+        <th scope="col">Argument</th>
+        <th scope="col">Description</th>
+      </tr>
+      <tr>
+        <th scope="row">parent</th>
+        <td>Widget's parent. Mostly the main window but it could also be a frame</td>
+      </tr>
+      <tr>
+        <th scope="row">position</th>
+        <td>Widget's position relative to it's parent</td>
+      </tr>
+      <tr>
+        <th scope="row">text</th>
+        <td>Widget's text content</td>
+      </tr>
+      <tr>
+        <th scope="row">font_size</th>
+        <td>Size of the font used in drawing the text</td>
+      </tr>
+      <tr>
+        <th scope="row">width</th>
+        <td>Forces button to size itself to specific width</td>
+      </tr>
+      <tr>
+        <th scope="row">height</th>
+        <td>Forces button to size itself to specific height</td>
+      </tr>
+      <tr>
+        <th scope="row">padding</th>
+        <td>Space between widget's border and widget's content</td>
+      </tr>
+      <tr>
+        <th scope="row">...</th>
+        <td>For other fields and more detailed explanation, see <i>API Reference</i></td>
+      </tr>
+    </table>
+
+    <p>Now, you see three new arguments named <i>width</i>, <i>height</i> and <i>padding</i>. As their descriptions tells, they used to customize the button.<br> let's start with padding. </p>
+    <p><i style="position:relative; bottom:53px; right:15px;">Four buttons with different padding sizes</i><img src="../assets/padding_4btns.png" alt="4 Padding Buttons"></p>
+    <p>Widget's padding size determines the space between it's border and it's content.</p>
+    <img src="../assets/padding_showcase.png" alt="Padding Showcase">
+
   </div>
 <body>
 
