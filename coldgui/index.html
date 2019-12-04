@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>GUI Project</title>
+  <title>coldGUI - Introduction</title>
   <link rel="stylesheet" type="text/css" href="../homepage.css">
   <link rel="stylesheet" href="../packages/highlightjs/styles/atom-one-light.css">
   <script src="../homepage.js"></script>
@@ -110,7 +110,7 @@
   </div>
 
   <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center;">
-    <p><b><i><span style="color:red; font-size:20px;">Important: </span>You can use this page as a simple usage manual for beginning, for further technical details and serious documentation see API Reference</i></b></p>
+    <p><b><i><span style="color:red; font-size:20px;">Important: </span>You can use this page as a simple usage manual for beginning, for further technical details and serious documentation see <a target="__blank" href="./api_reference.html">API Reference</a></i></b></p>
     <ul style="text-align: left; display: inline-block;">
       <li> <a href="#introduction">a) Introduction</a> </li>
       <li> <a href="#basics-of-widgets">b) Basics of Widgets</a> </li>
@@ -163,7 +163,7 @@ mainwindow.start() #Start the main loop</code></pre><br>
       </tr>
       <tr>
         <th scope="row">...</th>
-        <td>For other fields and more detailed explanation, see <i>API Reference</i></td>
+        <td>For other fields and more detailed explanation, see <i><a target="__blank" href="./api_reference.html#label">API Reference</a></i></td>
       </tr>
     </table>
   </div>
@@ -210,14 +210,14 @@ mainwindow.start() #Start the main loop</code></pre><br>
       </tr>
       <tr>
         <th scope="row">...</th>
-        <td>For other fields and more detailed explanation, see <i>API Reference</i></td>
+        <td>For other fields and more detailed explanation, see <i><a target="__blank" href="./api_reference.html#button">API Reference</a></i></td>
       </tr>
     </table>
 
     <p>Now, you see three new arguments named <i>width</i>, <i>height</i> and <i>padding</i>. As their descriptions tells, they used to customize the button.<br> let's start with padding. </p>
     <p><i style="position:relative; bottom:53px; right:15px;">Four buttons with different padding sizes</i><img src="../assets/padding_4btns.png" alt="4 Padding Buttons"></p>
     <p><span style="position:relative; bottom:60px; right:15px;">Widget's padding size determines the space between it's border and it's content.</span> <img src="../assets/padding_showcase.png" alt="Padding Showcase"></p>
-    <p>By default, widget's size is calculated relative to it's font size, border size and padding size (see <i>API Reference</i> for further details.) but user can force the widget to a specific size.</p>
+    <p>By default, widget's size is calculated relative to it's font size, border size and padding size (see <i><a target="__blank" href="./api_reference.html">API Reference</a></i> for further details.) but user can force the widget to a specific size.</p>
     <div>
       <p style="text-align: left; width:60%; position:relative; top:110px;">Here you can see we have four buttons with different padding sizes, but they have fixed width; because of this, the padding size only affects their height.
       </p>
@@ -253,13 +253,13 @@ mainwindow.start() #Start the main loop</code></pre><br>
       </tr>
       <tr>
         <th scope="row">...</th>
-        <td>For other fields and more detailed explanation, see <i>API Reference</i></td>
+        <td>For other fields and more detailed explanation, see <i><a target="__blank" href="./api_reference.html#textbox">API Reference</a></i></td>
       </tr>
     </table>
 
     <p>Textboxes doesn't have an argument specificly for the text content of the widget unlike the others, because the user is expected to register that.<br>
     Instead, there is a <i>placeholder</i> argument which is shown when the widget is not in use, you can think it as a hint text.<br>
-    <b><u style="font-size:19px;">Notice: </u></b> Textboxes also have width, height and padding arguments like buttons. To see all arguments and further detail, <i>see API Referece</i></p>
+    <b><u style="font-size:19px;">Notice: </u></b> Textboxes also have width, height and padding arguments like buttons. To see all arguments and further detail, <i>see <a target="__blank" href="./api_reference.html#textbox">API Reference</a></i></p>
 
     <div class="row">
       <div class="column">
