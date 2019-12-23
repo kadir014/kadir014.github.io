@@ -171,3 +171,10 @@ html, body {margin: 0;}
   clear: both;
   display: table;
 }
+
+@media all and (max-width: 600px) and (orientation:landscape){
+  #project-link {
+    width:150px;
+    height:150px;
+  }
+}
