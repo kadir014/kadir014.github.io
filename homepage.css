@@ -172,9 +172,16 @@ html, body {margin: 0;}
   display: table;
 }
 
+#project-link {
+  width:250px;
+  height:250px;
+  font-size:60px;
+}
+
 @media all and (max-width: 600px) and (orientation:landscape){
   #project-link {
     width:150px;
     height:150px;
+    font-size:30px;
   }
 }
