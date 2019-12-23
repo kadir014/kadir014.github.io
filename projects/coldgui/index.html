@@ -3,10 +3,10 @@
 
 <head>
   <title>coldGUI - Introduction</title>
-  <link rel="stylesheet" type="text/css" href="../homepage.css">
-  <link rel="stylesheet" href="../packages/highlightjs/styles/atom-one-light.css">
-  <script src="../homepage.js"></script>
-  <script src="../packages/highlightjs/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../homepage.css">
+  <link rel="stylesheet" href="../../packages/highlightjs/styles/atom-one-light.css">
+  <script src="../../homepage.js"></script>
+  <script src="../../packages/highlightjs/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
   <style>
@@ -69,7 +69,7 @@
 
       <div id="github-redirect">
         <a href="https://github.com/kadir014/kadir014.github.io" target="_blank">
-         <img src="../assets/github-icon.jpg" alt="Github Icon">
+         <img src="../../assets/github-icon.jpg" alt="Github Icon">
         </a>
         <p> See Source</p>
       </div>
@@ -79,7 +79,7 @@
     <button id="opener" onclick="open_sidebar()">&gt;</button>
     <button id="closer" onclick="close_sidebar()">&lt;</button>
 
-    <a href="../index.html" id="menu-item">Home Page</a>
+    <a href="../../index.html" id="menu-item">Home Page</a>
     <a href="" id="menu-item">About Me</a>
     <button id="menu-item-btn" onclick="show_themedialog()">Change Theme</button>
 
@@ -93,12 +93,13 @@
   </div>
 
   <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center; height:610px;">
-    <h1 style="font-size: 50px;"><img src="../assets/coldgui_logo.png" alt="coldUI Logo", style="width:30%; height:30%; bottom:-35px; position:relative;"></h1>
+    <h1 style="font-size: 50px;"><img src="../../assets/coldgui_logo.png" alt="coldGUI Logo", style="width:30%; height:30%; bottom:-35px; position:relative;"></h1>
     <p>
     <img src="https://img.shields.io/badge/python-3%2B-green.svg">
     <img src="https://img.shields.io/badge/pygame-2%2B-green">
     <img src="https://img.shields.io/badge/license-GPL%203.0-blue.svg">
     <img src="https://img.shields.io/badge/version-0.0.0alpha-red">
+    <a href="https://lgtm.com/projects/g/kadir014/coldgui"><img src="https://img.shields.io/lgtm/grade/python/github/kadir014/coldgui"></a>
     </p><br>
     <p><b>coldGUI</b> is a graphical user interface toolkit powered by <a href="https://www.pygame.org/">Pygame</a></p>
     <p>Altough <i>coldGUI</i> uses <i>Pygame</i>, the main purpose of it is not being a library to used while making games.<br> It provides various themeable widgets and a simple interface to let users achieve their goals easier.<br><br></p>
@@ -106,7 +107,7 @@
       You can also find more examples in the <b>Examples</b> section.<br>
       <i>coldGUI</i> is open-source, licensed under GNU GPL v3. You can contribute if you will, the source is hosted on <b>github link here</b>
     </p>
-    <img src="../assets/showcase1.gif" alt="Showcase 1" style="position:relative; right:-40%; bottom:140px;">
+    <img src="../../assets/showcase1.gif" alt="Showcase 1" style="position:relative; right:-40%; bottom:140px;">
   </div>
 
   <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center;">
@@ -136,7 +137,7 @@ mainwindow.start() #Start the main loop</code></pre><br>
     <p>A widget is simply an interactable component to control various events.<br> They may not be inceractable always, there are different types of widgets to fulfil any task.<br>Also there are a few themes for the widgets, <i>win95</i> style being the default one.</p><br>
     <br><br><h2 id="label">1) Label</h2>
     <p>Label is simply a one-line text piece drawn on screen.</p>
-    <p><i style="position:relative; bottom:30px; right:15px;">A generic win95 styled label</i><img src="../assets/label_generic.png" alt="Generic Label Showcase"></p>
+    <p><i style="position:relative; bottom:30px; right:15px;">A generic win95 styled label</i><img src="../../assets/label_generic.png" alt="Generic Label Showcase"></p>
     <br><p>You can create the example label above like this:</p>
     <br><pre style="position:relative; top:-25px;"><code class="python" style="text-align: left;">my_label = Label(mainwindow, position=(30, 30), text="Label", font-size=18)</code></pre><br>
     <p style="position:relative; top:-50px;">As you can see, there are some arguments passed in while creating a Label, every widget needs these parameters to customize itself. The first argument <b>must</b> be entered because it's our widget's parent (the main window in this case).<br><br> Here are <i>some important ones</i> of these arguments.</p>
@@ -171,7 +172,7 @@ mainwindow.start() #Start the main loop</code></pre><br>
   <div style="margin: 5px 150px; font-family: 'Segoe UI', 'Arial', 'sans-serif'; text-align: center;">
     <br><br><br><h2 id="button">2) Button</h2>
     <p>Sometimes you need to click something to de-stress, don't you? This widget is created for you.</p>
-    <p><i style="position:relative; bottom:45px; right:15px;">A generic win95 styled button</i><img src="../assets/button_generic.png" alt="Generic Button Showcase"></p>
+    <p><i style="position:relative; bottom:45px; right:15px;">A generic win95 styled button</i><img src="../../assets/button_generic.png" alt="Generic Button Showcase"></p>
     <br><p>You can create the example button above like this:</p>
     <br><pre style="position:relative; top:-25px;"><code class="python" style="text-align: left;">my_button = Button(mainwindow, position=(30, 30), text="Button", font-size=18)</code></pre><br>
     <p style="position:relative; top:-50px;">There are similar arguments as Label's. And here are <i>some important ones</i></p>
@@ -215,18 +216,13 @@ mainwindow.start() #Start the main loop</code></pre><br>
     </table>
 
     <p>Now, you see three new arguments named <i>width</i>, <i>height</i> and <i>padding</i>. As their descriptions tells, they used to customize the button.<br> let's start with padding. </p>
-    <p><i style="position:relative; bottom:53px; right:15px;">Four buttons with different padding sizes</i><img src="../assets/padding_4btns.png" alt="4 Padding Buttons"></p>
-    <p><span style="position:relative; bottom:60px; right:15px;">Widget's padding size determines the space between it's border and it's content.</span> <img src="../assets/padding_showcase.png" alt="Padding Showcase"></p>
-    <p>By default, widget's size is calculated relative to it's font size, border size and padding size (see <i><a target="__blank" href="./api_reference.html">API Reference</a></i> for further details.) but user can force the widget to a specific size.</p>
-    <div>
-      <p style="text-align: left; width:60%; position:relative; top:110px;">Here you can see we have four buttons with different padding sizes, but they have fixed width; because of this, the padding size only affects their height.
-      </p>
-      <img src="../assets/buttons_fixed_width.png" alt="Buttons Fixed Width" style="position:relative; right:-30%; bottom:50px;">
-    </div>
+    <p><i style="position:relative; bottom:53px; right:15px;">Four buttons with different padding sizes</i><img src="../../assets/padding_4btns.png" alt="4 Padding Buttons"></p>
+    <p><span style="position:relative; bottom:60px; right:15px;">Widget's padding size determines the space between it's border and it's content.</span> <img src="../../assets/padding_showcase.png" alt="Padding Showcase"></p>
 
-    <br><br><h2 id="textbox">3) TextBox</h2>
+
+    <br><br><br><br><h2 id="textbox">3) TextBox</h2>
     <p>Textbox is a widget to let the user input text.</p>
-    <p><i style="position:relative; bottom:40px; right:15px;">A generic win95 styled textbox</i><img src="../assets/textbox_generic.png" alt="Generic TextBox Showcase"></p>
+    <p><i style="position:relative; bottom:40px; right:15px;">A generic win95 styled textbox</i><img src="../../assets/textbox_generic.png" alt="Generic TextBox Showcase"></p>
     <br><p>You can create the example textbox above like this:</p>
     <br><pre style="position:relative; top:-25px;"><code class="python" style="text-align: left;">my_textbox = TextBox(mainwindow, position=(30, 30), placeholder="TextBox", font-size=18)</code></pre><br>
     <p style="position:relative; top:-50px;"><i>Some of the important</i> arguments listed below</p>
@@ -264,13 +260,13 @@ mainwindow.start() #Start the main loop</code></pre><br>
     <div class="row">
       <div class="column">
         <figure>
-          <img src="../assets/textbox_typing.gif" alt="TextBox Typing">
+          <img src="../../assets/textbox_typing.gif" alt="TextBox Typing">
           <figcaption>User typing in textbox.</figcaption>
         </figure>
       </div>
       <div class="column">
         <figure>
-          <img src="../assets/textbox_selecting.gif" alt="TextBox Selecting">
+          <img src="../../assets/textbox_selecting.gif" alt="TextBox Selecting">
           <figcaption>User selecting in textbox.</figcaption>
         </figure>
       </div>

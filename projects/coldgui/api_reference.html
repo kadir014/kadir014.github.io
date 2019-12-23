@@ -51,6 +51,10 @@
       clear: both;
       display: table;
     }
+
+    pre {
+      border: 1px solid gray;
+    }
   </style>
 </head>
 
@@ -111,6 +115,7 @@
     <h2 id="label">Label</h2><hr style="border: 0.5px solid silver;">
     <p style="font-family:'Courier', 'monospace'; background-color:#ededed;"><span style="font-family:'Times', 'serif'; font-size:18px; letter-spacing: 1.2px;"><i><b>class</b></i></span> coldgui.<b>Label(</b>parent, **fields<b>)</b></p>
     <p style="left:30px; position:relative;">A single-line text surface. <i>parent</i> positional argument must be entered.</p>
+    <h3 style="display:inline-block; position:relative; left:30px;">Fields</h3><br>
     <table id="field-table" style="display:inline-block; position:relative; left:30px;">
       <tr>
         <th scope="col">Argument</th>
@@ -171,6 +176,35 @@
         <th scope="row">tag</th>
         <td>None</td>
         <td>Special tag for the widget. <b>Can be removed in further versions!</b></td>
+      </tr>
+    </table>
+
+    <br><h3 style="display:inline-block; position:relative; left:30px;">Events</h3><br>
+    <p style="display:inline-block; position:relative; left:30px;">Label widget's events can be pulled with the event decorator:</p>
+    <pre style="display:inline-block; position:relative; left:30px; width:100%;"><code class="python" style="text-align: left;">@Label.event
+def event_name():
+    ...</code></pre>
+    <br><h3 style="display:inline-block; position:relative; left:30px;">Event names</h3><br>
+    <table id="field-table" style="display:inline-block; position:relative; left:30px;">
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Description</th>
+      </tr>
+      <tr>
+        <th scope="row">text_changed</th>
+        <td>Gets posted if widget's text content has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">position_changed</th>
+        <td>Gets posted if widget's position has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">state_changed</th>
+        <td>Gets posted if widget's state has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">visibility_changed</th>
+        <td>Gets posted if widget's visiblity has changed</td>
       </tr>
     </table>
 
@@ -268,6 +302,55 @@
       <tr>
         <th scope="row">body_color</th>
         <td>Widget's body (background) color</td>
+      </tr>
+    </table>
+
+    <br><h3 style="display:inline-block; position:relative; left:30px;">Events</h3><br>
+    <p style="display:inline-block; position:relative; left:30px;">Button widget's events can be pulled with the event decorator:</p>
+    <pre style="display:inline-block; position:relative; left:30px; width:100%;"><code class="python" style="text-align: left;">@Button.event
+def event_name():
+    ...</code></pre>
+    <br><h3 style="display:inline-block; position:relative; left:30px;">Event names</h3><br>
+    <table id="field-table" style="display:inline-block; position:relative; left:30px;">
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Description</th>
+      </tr>
+      <tr>
+        <th scope="row">text_changed</th>
+        <td>Gets posted if widget's text content has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">text_align_changed</th>
+        <td>Gets posted if widget's text content aligning preference has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">padding_changed</th>
+        <td>Gets posted if widget's padding value has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">position_changed</th>
+        <td>Gets posted if widget's position has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">width_changed</th>
+        <td>Gets posted if widget's width has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">height_changed</th>
+        <td>Gets posted if widget's height has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">size_changed</th>
+        <td>Gets posted if widget's size has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">state_changed</th>
+        <td>Gets posted if widget's state has changed</td>
+      </tr>
+      <tr>
+        <th scope="row">visibility_changed</th>
+        <td>Gets posted if widget's visiblity has changed</td>
       </tr>
     </table>
 
