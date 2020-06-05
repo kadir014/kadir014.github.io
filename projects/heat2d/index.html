@@ -7,6 +7,13 @@
 </head>
 
 <body>
+  <div id="github-redirect" class="unselectable">
+    <a href="https://github.com/kadir014/heat2d" target="_blank">
+     <img src="../../assets/github-icon.jpg" alt="Github Icon">
+    </a>
+    <p> See Source</p>
+  </div>
+
   <div id="headbar">
     <img src="../../assets/heat_logo_white.png" style="width:29px; height:41px; padding:7px; margin-left:10px; position: absolute;" alt="Heat2D Logo" class="unselectable">
     <p style="position: absolute; top:-10px; left:60px; font-family: 'Track', 'Arial', 'sans-serif'; font-size: 24px; color:#ffffff;" class="unselectable">
@@ -20,51 +27,97 @@
     </p>
   </div>
 
-  <div style="float:left; margin:0.5%; position:fixed; height: 89%; width:20%; overflow: auto;">
-    <h2 style="color: #303030;">Table of Contents</h2>
-    <ul id="table-of-contents">
-      <li><a href="#getting-started">Getting Started</a></li>
-      <li><a href="#core">Core</a></li>
-      <ul>
-        <li><a href="#engine">Engine</a></li>
-        <li><a href="#window">Window</a></li>
-        <li><a href="#stage">Stage</a></li>
-        <li><a href="#exceptions">Exceptions</a></li>
-      </ul>
-      <li><a href="#graphics">Graphics</a></li>
-      <ul>
-        <li><a href="#sprite">Sprite</a></li>
-        <li><a href="#visuals">Visuals</a></li>
-        <ul>
-          <li><a href="#rectangle">Rectangle</a></li>
-        </ul>
-        <li><a href="#renderer">Renderer</a></li>
-        <li><a href="#postprocess">Post-Process</a></li>
-      </ul>
-      <li><a href="#mechanics">Mechanics</a></li>
-      <ul>
-        <li><a href="#timer">Timer</a></li>
-        <li><a href="#grid">Grid</a></li>
-      </ul>
-      <li><a href="#ui">User interfaces</a></li>
-      <ul>
-        <li><a href="#context">Context</a></li>
-      </ul>
-      <li><a href="#networking">Networking</a></li>
-      <ul>
-        <li><a href="#server">Server</a></li>
-        <li><a href="#client">Client</a></li>
-        <li><a href="#connected-client">ConnectedClient</a></li>
-        <li><a href="#extra">extra</a></li>
-        <li><a href="#extra">extra</a></li>
-        <li><a href="#extra">extra</a></li>
-        <li><a href="#extra">extra</a></li>
-        <li><a href="#extra">extra</a></li>
-        <li><a href="#extra">extra</a></li>
-        <li><a href="#extra">extraaaa</a></li>
-      </ul>
-    </ul>
+  <div id="sidebar" style="float:left; margin:0.5%; margin-left:0;position:fixed; height: 89%; width:350px; overflow: auto;">
+    <p style="padding-left:14px; font-weight: 500; font-family: 'Segoe UI', 'Arial', 'sans-serif'; font-size:30px; color:black; margin:0; color:#2d2e30;">Manual</p>
+    <hr style="width:92%; height:1px; border-width:0; color:gray; background-color:#ccc">
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="margin-top:6px; display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="margin-top:6px; display:inline-block;">Getting started</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#engine">Introduction</a></div>
+      <div><img src="../../assets/dot.png"><a href="#window">Installing</a></div>
+      <div><img src="../../assets/dot.png"><a href="#stage">Tutorials</a></div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">Core</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#engine">Engine</a></div>
+      <div><img src="../../assets/dot.png"><a href="#window">Window</a></div>
+      <div><img src="../../assets/dot.png"><a href="#stage">Stage</a></div>
+      <div><img src="../../assets/dot.png"><a href="#exceptions">Exceptions</a></div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">Graphics</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#sprite">Sprite</a></div>
+
+      <div style="margin-left:-10px;">
+      <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+      <button class="dropdown-btn" style="display:inline-block;">Visuals</button>
+      <div class="dropdown-container">
+        <div><img src="../../assets/dot.png"><a href="#sprite">Rectangle</a></div>
+      </div>
+      </div>
+
+      <div><img src="../../assets/dot.png"><a href="#renderer">Renderer</a></div>
+      <div><img src="../../assets/dot.png"><a href="#postprocess">Post-process</a></div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">Mechanics</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#stage">GameObject</a></div>
+
+      <div style="margin-left:-10px;">
+      <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+      <button class="dropdown-btn" style="display:inline-block;">Timers</button>
+      <div class="dropdown-container">
+        <div><img src="../../assets/dot.png"><a href="#engine">Timer</a></div>
+        <div><img src="../../assets/dot.png"><a href="#window">TickTimer</a></div>
+      </div>
+      </div>
+
+      <div style="margin-left:-10px;">
+      <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+      <button class="dropdown-btn" style="display:inline-block;">Grids & Tiles</button>
+      <div class="dropdown-container">
+        <div><img src="../../assets/dot.png"><a href="#engine">Grid</a></div>
+        <div><img src="../../assets/dot.png"><a href="#window">TileGrid</a></div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">User interfaces</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#engine">Context</a></div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">Networking</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#engine">Server</a></div>
+      <div><img src="../../assets/dot.png"><a href="#window">Connection</a></div>
+      <div><img src="../../assets/dot.png"><a href="#stage">ConnectedClient</a></div>
+    </div>
+    </div>
+
   </div>
 <body>
+
+<script src="base.js"></script>
 
 </html>
