@@ -16,6 +16,9 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
+dropdown[0].previousElementSibling.getElementsByTagName("img")[0].src = "../../assets/icon-open.png";
+dropdown[0].nextElementSibling.style.display = "block";
+
 var dropdown = document.querySelectorAll('.dropdown-btn-icon');
 var i;
 
@@ -33,3 +36,28 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
+
+function load_hash(){
+  var hash = window.location.hash;
+  if (hash==="") {
+    hash = "#introduction"
+  }
+  if (hash.includes("-")) {
+    var h = hash.split("-");
+    var hash = h[0];
+    var elem = document.getElementById(h[1]);
+    elem.scrollIntoView();
+  }
+  var content = document.querySelector("#content");
+
+  var dropdown = document.querySelectorAll('.dropdown-btn');
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    cont = dropdown[i].nextElementSibling;
+  }
+
+  content.innerHTML = document.querySelector(hash).innerHTML;
+};
+
+load_hash();

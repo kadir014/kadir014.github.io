@@ -3,10 +3,13 @@
 
 <head>
   <title>Heat2D Documentation</title>
+  <link rel="stylesheet" href="../../packages/highlightjs/styles/atom-one-light.css">
   <link rel="stylesheet" type="text/css" href="base.css">
+  <script src="../../packages/highlightjs/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-<body>
+<body onhashchange="load_hash();">
   <div id="headbar">
     <div id="github-redirect" class="unselectable">
       <a href="https://github.com/kadir014/heat2d" target="_blank">
@@ -14,7 +17,7 @@
       </a>
       <p> See Source</p>
     </div>
-    
+
     <img src="../../assets/heat_logo_white.png" style="width:29px; height:41px; padding:7px; margin-left:10px; position: absolute;" alt="Heat2D Logo" class="unselectable">
     <p style="position: absolute; top:-10px; left:60px; font-family: 'Track', 'Arial', 'sans-serif'; font-size: 24px; color:#ffffff;" class="unselectable">
     HEAT2D
@@ -27,7 +30,7 @@
     </p>
   </div>
 
-  <div id="sidebar" style="float:left; margin:0.5%; margin-left:0;position:fixed; height: 89%; width:350px; overflow: auto;">
+  <div id="sidebar" style="float:left; margin:0.5%; margin-left:0; position:fixed; height: 89%; width:350px; overflow: auto;">
     <p style="padding-left:14px; font-weight: 500; font-family: 'Segoe UI', 'Arial', 'sans-serif'; font-size:30px; color:black; margin:0; color:#2d2e30;">Manual</p>
     <hr style="width:92%; height:1px; border-width:0; color:gray; background-color:#ccc">
 
@@ -35,9 +38,9 @@
     <button class="dropdown-btn-icon" style="margin-top:6px; display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
     <button class="dropdown-btn" style="margin-top:6px; display:inline-block;">Getting started</button>
     <div class="dropdown-container">
-      <div><img src="../../assets/dot.png"><a href="#engine">Introduction</a></div>
-      <div><img src="../../assets/dot.png"><a href="#window">Installing</a></div>
-      <div><img src="../../assets/dot.png"><a href="#stage">Tutorials</a></div>
+      <div><img src="../../assets/dot.png"><a href="#introduction">Introduction</a></div>
+      <div><img src="../../assets/dot.png"><a href="#installing">Installing</a></div>
+      <div><img src="../../assets/dot.png"><a href="#tutorials">Tutorials</a></div>
     </div>
     </div>
 
@@ -48,7 +51,7 @@
       <div><img src="../../assets/dot.png"><a href="#engine">Engine</a></div>
       <div><img src="../../assets/dot.png"><a href="#window">Window</a></div>
       <div><img src="../../assets/dot.png"><a href="#stage">Stage</a></div>
-      <div><img src="../../assets/dot.png"><a href="#exceptions">Exceptions</a></div>
+      <div><img src="../../assets/dot.png"><a href="#errors">Errors</a></div>
     </div>
     </div>
 
@@ -62,7 +65,7 @@
       <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
       <button class="dropdown-btn" style="display:inline-block;">Visuals</button>
       <div class="dropdown-container">
-        <div><img src="../../assets/dot.png"><a href="#sprite">Rectangle</a></div>
+        <div><img src="../../assets/dot.png"><a href="#rectangle">Rectangle</a></div>
       </div>
       </div>
 
@@ -75,14 +78,14 @@
     <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
     <button class="dropdown-btn" style="display:inline-block;">Mechanics</button>
     <div class="dropdown-container">
-      <div><img src="../../assets/dot.png"><a href="#stage">GameObject</a></div>
+      <div><img src="../../assets/dot.png"><a href="#gameobject">GameObject</a></div>
 
       <div style="margin-left:-10px;">
       <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
       <button class="dropdown-btn" style="display:inline-block;">Timers</button>
       <div class="dropdown-container">
-        <div><img src="../../assets/dot.png"><a href="#engine">Timer</a></div>
-        <div><img src="../../assets/dot.png"><a href="#window">TickTimer</a></div>
+        <div><img src="../../assets/dot.png"><a href="#timer">Timer</a></div>
+        <div><img src="../../assets/dot.png"><a href="#ticktimer">TickTimer</a></div>
       </div>
       </div>
 
@@ -90,8 +93,8 @@
       <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
       <button class="dropdown-btn" style="display:inline-block;">Grids & Tiles</button>
       <div class="dropdown-container">
-        <div><img src="../../assets/dot.png"><a href="#engine">Grid</a></div>
-        <div><img src="../../assets/dot.png"><a href="#window">TileGrid</a></div>
+        <div><img src="../../assets/dot.png"><a href="#grid">Grid</a></div>
+        <div><img src="../../assets/dot.png"><a href="#tilegrid">TileGrid</a></div>
       </div>
       </div>
     </div>
@@ -101,7 +104,7 @@
     <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
     <button class="dropdown-btn" style="display:inline-block;">User interfaces</button>
     <div class="dropdown-container">
-      <div><img src="../../assets/dot.png"><a href="#engine">Context</a></div>
+      <div><img src="../../assets/dot.png"><a href="#context">Context</a></div>
     </div>
     </div>
 
@@ -109,13 +112,115 @@
     <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
     <button class="dropdown-btn" style="display:inline-block;">Networking</button>
     <div class="dropdown-container">
-      <div><img src="../../assets/dot.png"><a href="#engine">Server</a></div>
-      <div><img src="../../assets/dot.png"><a href="#window">Connection</a></div>
-      <div><img src="../../assets/dot.png"><a href="#stage">ConnectedClient</a></div>
+      <div><img src="../../assets/dot.png"><a href="#server">Server</a></div>
+      <div><img src="../../assets/dot.png"><a href="#connection">Connection</a></div>
+      <div><img src="../../assets/dot.png"><a href="#connectedclient">ConnectedClient</a></div>
     </div>
     </div>
-
   </div>
+
+  <div id="content-top" style="float:left; width:75%; height:89%; position:relative; left:350px;">
+    <div id="content" style="margin: 15px; margin-bottom:0; margin-top:86px;">
+      .
+    </div>
+  </div>
+
+  <div id="introduction" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <img src="../../assets/Heat2D Logo.png" width=679, height=300 class="center">
+    <p class="indocs">
+      Heat2D is an open-source, simple and concise 2D game engine project. <a href="https://github.com/kadir014/heat2d">You can contribute and see the source here.</a>
+      <br><br>
+      This manual helps you learn how to use Heat2D. If you are a beginner, you should read the pages under <b>Getting started</b> category. If not, you can use here as a reference.
+    </p>
+    <h2 class="indocsh">Features</h2>
+    <p class="indocs" style="margin-top:-7px;">
+      Here are the main features provided by the engine
+      <ul>
+        <li class="indocs">Stage management</li>
+        <li class="indocs">Sprites & Animations</li>
+        <li class="indocs">Easy input handling</li>
+        <li class="indocs">User interface tools</li>
+        <li class="indocs">Extra handy libraries and much more</li>
+      </ul>
+    </p>
+    <h2 class="indocsh">Issues & Contribution</h2>
+    <p class="indocs">
+      Heat2D is an open-source project and you are totally free to contribute.
+      Just follow up some basic rules and we all would be fine.
+      <ul>
+        <li class="indocs">Each feature change/addition update should be made in its own PR.</li>
+        <li class="indocs">Your code should follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> standards.</li>
+      </ul>
+    </p>
+    <p class="indocs">
+      If you don't will to contribute but having an issue, you can open a new Issue <a href="https://github.com/kadir014/heat2d/issues">here.</a>
+      <br>Or if your issue keeps staying unfixed, you can get help by contacting us from social platforms.
+    </p>
+    <h2 class="indocsh" id="contact">Contact</h2>
+    <p class="indocs">
+      Here are the platforms you can reach me and the community:
+      <ul>
+        <li class="indocs"><a href="https://github.com/kadir014">My Github profile</a></li>
+        <li class="indocs"><a href="https://twitter.com/kadir0140">My Twitter profile</a></li>
+        <li class="indocs"><a href="https://discordapp.com/users/311542309252497409">My Discord profile</a></li>
+        <li class="indocs"><a href="https://discord.gg/WYaEcGW">My Discord server (Main language used is turkish but you are free to ask questions about Heat2D)</a></li>
+      </ul>
+    </p>
+  </div>
+  </div>
+
+  <div id="installing" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Installing</h2>
+    <p class="indocs">
+      Installing Heat2D with PIP is as easy as this
+    </p>
+      <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">pip install heat2d</code></pre>
+    <p class="indocs" style="margin-top:25px;">
+      If you run into problems while installing version 0.0.2 try
+    </p>
+      <pre class="precode"><code class="plaintext" style="text-align: left; padding-left:13px;">pip install heat2d==0.0.2a2</code></pre>
+    <h3 class="indocsh" style="color:#555; margin-top:35px;">Install from source</h3>
+    <p class="indocs">
+      If you can't install Heat2D with PIP, you can download the source <a href="https://github.com/kadir014/heat2d">from here</a> and build it manually
+    </p>
+    <pre class="precode"><code class="plaintext" style="text-align: left; padding-left:13px;">python setup.py install</code></pre>
+    <p class="indocs" style="margin-top:20px;">
+      After installation, you can import Heat2D and check if it's version up-to-date.
+    </p>
+  </div>
+  </div>
+
+  <div id="tutorials" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <p class="indocs">
+      Here is a simple snippet showing the base syntax of Heat2D
+    </p>
+    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
+from random import randint
+
+engine = Engine()
+
+@engine.add
+class Main(Stage):
+
+    def __init__(self):
+        super().__init__()
+        print("Main stage is initialized!")
+
+    def update(self):
+        if engine.key_pressed("space"):
+            random_color = ( randint(0, 255), randint(0, 255), randint(0, 255) )
+            engine.window.clear_color = random_color
+
+engine.run()</code></pre>
+    <p class="indocs">
+      You can continue reading tutorials from <a href="">tutorial index.</a>
+    </p>
+  </div>
+  </div>
+
 <body>
 
 <script src="base.js"></script>
