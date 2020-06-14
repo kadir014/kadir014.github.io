@@ -3,7 +3,7 @@
 
 <head>
   <title>Heat2D Documentation</title>
-  <link rel="stylesheet" href="../../packages/highlightjs/styles/atom-one-light.css">
+  <link rel="stylesheet" href="../../packages/highlightjs/styles/atelier-forest-light.css">
   <link rel="stylesheet" type="text/css" href="base.css">
   <script src="../../packages/highlightjs/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
@@ -125,6 +125,14 @@
     </div>
   </div>
 
+
+  <!-- ============================================================== -->
+
+  <!--                       GETTING STARTED                          -->
+
+  <!-- ============================================================== -->
+
+
   <div id="introduction" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <img src="../../assets/Heat2D Logo.png" width=679, height=300 class="center">
@@ -170,6 +178,10 @@
   </div>
   </div>
 
+
+
+
+
   <div id="installing" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Installing</h2>
@@ -191,6 +203,10 @@
     </p>
   </div>
   </div>
+
+
+
+
 
   <div id="tutorials" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
@@ -215,11 +231,186 @@ class Main(Stage):
             engine.window.clear_color = random_color
 
 engine.run()</code></pre>
+    <h2 class="indocsh">Tutorials</h2>
     <p class="indocs">
       You can continue reading tutorials from <a href="">tutorial index.</a>
     </p>
   </div>
   </div>
+
+
+  <!-- ============================================================== -->
+
+  <!--                            CORE                                -->
+
+  <!-- ============================================================== -->
+
+
+  <div id="engine" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Engine</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Engine</b>()</code></pre>
+    <p class="indocs">Core class of the whole engine. Manages events, stages and window</p>
+    <div style="margin-left:30px; margin-top:30px;">
+      <pre class="precode2"><code class="plaintext" id="coda"><b>window</b></code></pre>
+      <p class="attr">Main <a href="#window">Window</a> object</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>renderer</b></code></pre>
+      <p class="attr">Main <a href="#window">Renderer</a> object</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>mouse_x</b></code></pre>
+      <p class="attr">Mouse position's X coordinate on window</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>mouse_y</b></code></pre>
+      <p class="attr">Mouse position's Y coordinate on window</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>run</b>()</code></pre>
+      <p class="attr">Starts the engine</p>
+
+      <pre class="precode" style="border-left-color: #ffaa33;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>add</b>(component)</code></pre>
+      <p class="attr">This is a decorator function<br id="brr">Adds component to the engine</p>
+
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">component</span> - The component to add (<a href="uicontext">UI Context</a>, <a href="stage">Stage</a>, <a href="gameobject">GameObject</a>)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>change_stage</b>(stage)</code></pre>
+      <p class="attr">Changes the current stage</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">stage</span> - <a href="stage">Stage</a></li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_pressed</b>(key)</code></pre>
+      <p class="attr">Returns True at the moment the key gets pressed</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">key</span> - key to check (string)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_released</b>(key)</code></pre>
+      <p class="attr">Returns True at the moment the key gets released</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">key</span> - key to check (string)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_held</b>(key)</code></pre>
+      <p class="attr">Returns True if key is pressed</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">key</span> - key to check (string)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_pressed</b>(button)</code></pre>
+      <p class="attr">Returns True at the moment the mouse button gets pressed</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">key</span> - mouse button to check (string)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_released</b>(button)</code></pre>
+      <p class="attr">Returns True at the moment the mouse button gets released</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">key</span> - mouse button to check (string)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_held</b>(button)</code></pre>
+      <p class="attr">Returns True if mouse button is pressed</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">key</span> - mouse button to check (string)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_wheel_up</b>()</code></pre>
+      <p class="attr">Returns True if mouse wheel gets turned upwards</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_wheel_down</b>()</code></pre>
+      <p class="attr">Returns True if mouse wheel gets turned downwards</p>
+
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  <div id="window" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Window</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Window</b>(size, title="...", icon=None, clear_color=(0, 0, 0))</code></pre>
+    <p class="indocs">Main display window</p>
+    <p class="indocs" id="sh">Parameters</p>
+    <ul>
+      <li class="indocs"><span id="semibold">size</span> - display size (tuple of ints)</li>
+      <li class="indocs"><span id="semibold">title (opt)</span> - window title (string)</li>
+      <li class="indocs"><span id="semibold">icon (opt)</span> - window icon (string path to file)</li>
+      <li class="indocs"><span id="semibold">clear_color (opt)</span> - display clear color (tuple of ints)</li>
+    </ul>
+
+    <div style="margin-left:30px; margin-top:40px;">
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>size</b></code></pre>
+      <p class="attr">This is a property<br id="brr">Size of the window display in <i>(width, height)</i></p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>width</b></code></pre>
+      <p class="attr">This is a property<br id="brr">Width of the window display (int)</p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>height</b></code></pre>
+      <p class="attr">This is a property<br id="brr">Height of the window display (int)</p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>title</b></code></pre>
+      <p class="attr">This is a property<br id="brr">Title of the window (string)</p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>icon</b></code></pre>
+      <p class="attr">This is a property<br id="brr">Icon of the window (string path to file)</p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>clear_color</b></code></pre>
+      <p class="attr">This is a property<br id="brr">Window's display clear color (tuple of ints)</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>center</b></code></pre>
+      <p class="attr">Center point coordinates of window</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>center_x</b></code></pre>
+      <p class="attr">X coordinate of window's center point</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>center_y</b></code></pre>
+      <p class="attr">Y coordinate of window's center point</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>fps</b></code></pre>
+      <p class="attr">Current FPS of your game</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>max_fps</b></code></pre>
+      <p class="attr">FPS limit</p>
+
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  <div id="stage" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+
+  </div>
+  </div>
+
+
+
+
+
+  <div id="errors" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+
+  </div>
+  </div>
+
 
 <body>
 
