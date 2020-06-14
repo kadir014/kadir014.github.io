@@ -203,6 +203,11 @@ li.indocs {
   font-size:13px;
 }
 
+#prope {
+  font-family: 'Georgia', 'Yu Gothic', 'Noto Sans CJK JP Regular', serif;
+  font-size:15px;
+}
+
 #cod {
   text-align: left; padding-left:13px;
   font-size: 14px;

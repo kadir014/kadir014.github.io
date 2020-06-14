@@ -268,19 +268,22 @@ engine.run()</code></pre>
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>run</b>()</code></pre>
       <p class="attr">Starts the engine</p>
 
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>stop</b>()</code></pre>
+      <p class="attr">Stops the engine</p>
+
       <pre class="precode" style="border-left-color: #ffaa33;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>add</b>(component)</code></pre>
       <p class="attr">This is a decorator function<br id="brr">Adds component to the engine</p>
 
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">component</span> - The component to add (<a href="uicontext">UI Context</a>, <a href="stage">Stage</a>, <a href="gameobject">GameObject</a>)</li>
+        <li class="attr"><span id="semibold">component</span> - The component to add (<a href="#uicontext">UI Context</a>, <a href="#stage">Stage</a>, <a href="#gameobject">GameObject</a>)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>change_stage</b>(stage)</code></pre>
       <p class="attr">Changes the current stage</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">stage</span> - <a href="stage">Stage</a></li>
+        <li class="attr"><span id="semibold">stage</span> - <a href="#stage">Stage</a></li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_pressed</b>(key)</code></pre>
@@ -369,8 +372,8 @@ engine.run()</code></pre>
       <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>icon</b></code></pre>
       <p class="attr">This is a property<br id="brr">Icon of the window (string path to file)</p>
 
-      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>clear_color</b></code></pre>
-      <p class="attr">This is a property<br id="brr">Window's display clear color (tuple of ints)</p>
+      <pre class="precode2"><code class="plaintext" id="coda"> <b>clear_color</b></code></pre>
+      <p class="attr">Window's display clear color</p>
 
       <pre class="precode2"><code class="plaintext" id="coda"><b>center</b></code></pre>
       <p class="attr">Center point coordinates of window</p>
@@ -397,7 +400,25 @@ engine.run()</code></pre>
 
   <div id="stage" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Stage</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Stage</b>()</code></pre>
+    <p class="indocs">Stages are one of the most important concepts in Heat2D. You can think them like individual parts of your game that does their individual jobs. Such as main menus, game levels etc..</p>
 
+    <div style="margin-left:30px; margin-top:40px;">
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>add</b>(gameobject)</code></pre>
+      <p class="attr">This is not a decorator function, not to be confused with <span id="semibold">engine.add</span>() which is a decorator
+      <br id="brr">When you add a game object using this function, you can call the game object as if it was one of Stage's attributes </p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">gameobject</span> - <a href="#gameobject">GameObject</a> to add</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>update</b>()</code></pre>
+      <p class="attr">This function is meant to be overrode<br id="brr">This function is called every tick by the engine so you can check for inputs such as <span id="semibold">engine.key_pressed("space")</span>() in this function</p>
+
+    </div>
   </div>
   </div>
 
@@ -407,6 +428,15 @@ engine.run()</code></pre>
 
   <div id="errors" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Errors</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <p class="indocs">The following errors are thrown by the engine</p>
+
+    <pre class="precode" style="border-left-color: #f7442d;"><code class="plaintext" id="coda"><span id="prope"><i>exception</i></span> heat2d.errors.<b>NoStageDeclared</b></code></pre>
+    <p class="attr">This is raised when user has not added any stage to engine</p>
+
+    <pre class="precode" style="border-left-color: #f7442d;"><code class="plaintext" id="coda"><span id="prope"><i>exception</i></span> heat2d.errors.<b>NetworkingError</b></code></pre>
+    <p class="attr">This is raised when a networking-wise issue happened</p>
 
   </div>
   </div>
