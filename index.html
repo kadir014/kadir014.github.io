@@ -23,9 +23,9 @@
     <button id="opener" onclick="open_sidebar()">&gt;</button>
     <button id="closer" onclick="close_sidebar()">&lt;</button>
 
-    <a href="index.html" id="menu-item">Home Page</a>
-    <a href="" id="menu-item">About Me</a>
-    <button id="menu-item-btn" onclick="show_themedialog()">Change Theme</button>
+    <a href="index.html" class="menu-item">Home Page</a>
+    <a href="" class="menu-item">About Me</a>
+    <button class="menu-item" onclick="show_themedialog()">Change Theme</button>
 
     <div id="theme-dialog">
       <button class="theme-btn" id="#e34a42" onclick="change_theme('#e34a42', '#ff6e66')"></button>
@@ -40,33 +40,27 @@
     <h1 style='font-family: "Segoe UI", "Arial", "sans-serif"; text-align:center; font-size:50px;'>My Projects</h1>
     <hr><br><br>
 
-    <div class="row" style="margin-left:75px;">
+    <div class="row">
       <div class="column">
-        <div id="project-link" style="background-color:var(--theme); float:left; border-radius:20px; margin-left:6%;">
-          <a href="projects/coldgui/index.html" style="text-decoration: none;">
-            <p style="text-align:center; color:#ffffff; margin-top:35px; font-family: 'Segoe UI', 'Arial', 'sans-serif'">
-              cold<br>GUI
-            </p>
-          </a>
-        </div>
+        <a class="project-link" href="projects/coldgui/index.html" style="text-decoration: none;">
+          <p style="text-align:center; color:#ffffff; margin-top:35px; font-family: 'Segoe UI', 'Arial', 'sans-serif'">
+            cold<br>GUI
+          </p>
+        </a>
       </div>
       <div class="column">
-        <div id="project-link" style="background-color:var(--theme); float:left; border-radius:20px; margin-left:10%;">
-          <a href="projects/denemesinav/index.html" style="text-decoration: none;">
-            <p style="text-align:center; font-size:45px; color:#ffffff; margin-top:35px; font-family: 'Segoe UI', 'Arial', 'sans-serif'">
-              Deneme<br>Sınavı<br>Kontrol
-            </p>
-          </a>
-        </div>
+        <a class="project-link" href="projects/denemesinav/index.html" style="text-decoration: none;">
+          <p style="text-align:center; font-size:45px; color:#ffffff; margin-top:35px; font-family: 'Segoe UI', 'Arial', 'sans-serif'">
+            Deneme<br>Sınavı<br>Kontrol
+          </p>
+        </a>
       </div>
       <div class="column">
-        <div id="project-link" style="background-color:var(--theme); float:left; border-radius:20px; margin-left:10%;">
-          <a href="projects/heat2d/index.html" style="text-decoration: none;">
-            <p style="text-align:center; color:#ffffff; margin-top:35px; font-family: 'Segoe UI', 'Arial', 'sans-serif'">
-              Heat2D<br><span style="font-size:40px;">Game Engine</span>
-            </p>
-          </a>
-        </div>
+        <a class="project-link" href="projects/heat2d/index.html" style="text-decoration: none;">
+          <p style="text-align:center; color:#ffffff; margin-top:35px; font-family: 'Segoe UI', 'Arial', 'sans-serif'">
+            Heat2D<br><span style="font-size:40px;">Game Engine</span>
+          </p>
+        </a>
       </div>
     </div>
   <div>

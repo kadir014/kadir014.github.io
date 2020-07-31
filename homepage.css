@@ -71,6 +71,8 @@ html, body {margin: 0;}
   left:-177px;
   top: 20%;
   transition: 0.3s;
+  box-shadow: 7px 7px 8px rgba(20, 20, 20, 0.2);
+  z-index: 100;
 }
 
 #opener, #closer {
@@ -83,57 +85,53 @@ html, body {margin: 0;}
   font-size: 30px;
   color: #ffffff;
   position: absolute;
-  right:-32px;
-  top: 40%;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 3px 3px 5px rgba(20, 20, 20, 0.2);
   transition: 0.3s;
+  cursor: pointer;
+  z-index: 90;
 }
 
 #closer {
   display: none;
 }
 
-#sidebar #menu-item:link {
-  text-decoration: none;
-}
-
-#sidebar #menu-item:hover {
-  background-color: var(--theme-light);
-  border: 3px solid #ffffff;
-  border-top: 0; border-left: 0; border-right: 0;
-}
-
-#sidebar #menu-item {
-  background-color: var(--theme);
-  padding: 5px;
-  border: none;
-  border: 0px solid #ffffff;
-  font-size: 16px;
-  font-family: "Segoe UI", "Arial", "sans-serif";
-  display: block;
-  color: #ffffff;
-  transition: 0.3s;
-}
-
-#sidebar #menu-item-btn {
+#sidebar .menu-item {
+  position: relative;
   outline: none;
   background-color: var(--theme);
-  padding: 5px;
+  padding: 5px 8px;
   width: 100%;
   text-align: left;
   border: none;
-  border: 0px solid #ffffff;
   font-size: 16px;
   cursor: pointer;
   font-family: "Segoe UI", "Arial", "sans-serif";
   display: block;
   color: #ffffff;
-  transition: 0.3s;
+  transition: .3s;
 }
-
-#sidebar #menu-item-btn:hover {
+#sidebar .menu-item:hover {
   background-color: var(--theme-light);
-  border: 3px solid #ffffff;
-  border-top: 0; border-left: 0; border-right: 0;
+}
+#sidebar .menu-item::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #ffffff;
+  transition: height .3s;
+}
+#sidebar .menu-item:hover::after {
+  height: 3px;
+}
+#sidebar a.menu-item {
+  width: unset;
+  text-decoration: none;
 }
 
 #sidebar #theme-dialog {
@@ -162,7 +160,7 @@ html, body {margin: 0;}
 
 .column {
   float: left;
-  width: 30%;
+  width: calc(calc(100% / 3) - 10px);
   padding: 5px;
 }
 
@@ -172,10 +170,16 @@ html, body {margin: 0;}
   display: table;
 }
 
-#project-link {
+.project-link {
+  display: block;
   width:250px;
   height:250px;
   font-size:60px;
+  background-color:var(--theme);
+  float:left;
+  border-radius:20px;
+  margin-left:50%;
+  transform: translateX(-50%);
 }
 
 @media (orientation: portrait){
