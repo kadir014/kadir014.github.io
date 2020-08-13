@@ -90,10 +90,22 @@ html, body {
 }
 
 .gdoc {
-  font-size:20px;
+  font-size:17px;
   margin-left:10%;
   margin-right:10%;
   margin-top: 0;
   margin-bottom: 0;
   font-family: 'Bebas', 'Arial', 'sans-serif';
+}
+
+.grid {
+  display: grid; /* grid şeklinde göstermeyi sağlar / bölük bölük */
+  width: 100%; /* 100% genişlik */
+  grid-template-columns: auto auto auto; /* üçlü üçlü yan yana listelenecek şekilde ayarlıyoruz */
+}
+
+.grid-item {
+  padding: 0.5rem;
+  margin-left: auto; /* ortala */
+  margin-right: auto; /* ortala */
 }
