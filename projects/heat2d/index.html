@@ -45,6 +45,10 @@
     </div>
 
     <div style="margin-left:10px;">
+      <div class="dropdown-single"><img src="../../assets/dot.png"><a href="#latest">What's new</a></div>
+    </div>
+
+    <div style="margin-left:10px;">
     <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
     <button class="dropdown-btn" style="display:inline-block;">Core</button>
     <div class="dropdown-container">
@@ -239,6 +243,35 @@ engine.run()</code></pre>
   </div>
 
 
+
+
+
+  <div id="latest" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">What's new in <b>0.0.3</b></h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <p class="indocs">This alpha version is released on 15.06.2020</p>
+
+    <h4 class="indocsh">New features</h4>
+    <ul style="margin-top:-8px;">
+      <li class="indocs"><b>Engine.stop</b>() method</li>
+      <li class="indocs">GameObject cloning concept (read more on <a href="#gameobject-cloning">cloning</a>)</li>
+      <li class="indocs">Attribute to toggle <a href="#timer">Timer</a> looping</li>
+    </ul>
+
+    <h4 class="indocsh">Fixed bugs & issues</h4>
+    <ul style="margin-top:-8px;">
+      <li class="indocs">Now you can use float type factor on <b>Sprite.scale</b>(factor)</li>
+      <li class="indocs">Removed some unused methods from engine that may cause issues</li>
+      <li class="indocs">Minor polishment on __init__.py file</li>
+    </ul>
+
+    <p class="indocs"></p>
+
+  </div>
+  </div>
+
+
   <!-- ============================================================== -->
 
   <!--                            CORE                                -->
@@ -408,7 +441,7 @@ engine.run()</code></pre>
     <div style="margin-left:30px; margin-top:40px;">
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>add</b>(gameobject)</code></pre>
-      <p class="attr">This is not a decorator function, not to be confused with <span id="semibold">engine.add</span>() which is a decorator
+      <p class="attr">This is not a decorator function, not to be confused with <span id="semibold">Engine.add</span>() which is a decorator
       <br id="brr">When you add a game object using this function, you can call the game object as if it was one of Stage's attributes </p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
@@ -416,7 +449,7 @@ engine.run()</code></pre>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>update</b>()</code></pre>
-      <p class="attr">This function is meant to be overrode<br id="brr">This function is called every tick by the engine so you can check for inputs such as <span id="semibold">engine.key_pressed("space")</span>() in this function</p>
+      <p class="attr">This function is meant to be overrode<br id="brr">This function is called every tick by the engine so you can check for inputs such as <span id="semibold">Engine.key_pressed("space")</span>() in this function</p>
 
     </div>
   </div>

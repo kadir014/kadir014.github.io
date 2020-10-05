@@ -126,6 +126,28 @@ html, body {
   padding-left: 30px;
 }
 
+.dropdown-single {
+  padding-left: 10px;
+}
+
+.dropdown-single a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Segoe UI', 'Arial', 'sans-serif';
+    font-size: 17px;
+    font-weight: 400;
+    color: #555;
+    margin-left: 15px;
+}
+
+.dropdown-single img {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  width: 6px;
+  height: 6px;
+}
+
 .dropdown-container button, .dropdown-container a {
   border: none;
   background: none;

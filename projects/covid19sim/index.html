@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>COVID19 Simulation</title>
+
+</head>
+
+<body style="margin:0; padding:0;">
+
+  <div style="margin-top:50px; margin-left: auto; margin-right: auto; width:1300px; height:600px; padding:0">
+    <table style="width:100%;">
+      <tr>
+
+        <th>
+          <div style="margin:0; padding:0;">
+            <canvas id="graphCanvas" width=400 height=200 style="position:relative; margin:0; border:1px solid #000000;"></canvas>
+
+            <div>
+              <table style="margin: auto;">
+                <tr>
+                  <td>Slider 1</td>
+                  <td><input type="range" min="1" max="100" value="50" class="slider" id="slider1"></td>
+                  <td id="slider1val">30</td>
+                </tr>
+
+                <tr>
+                  <td>Slider 2</td>
+                  <td><input type="range" min="1" max="100" value="50" class="slider" id="slider2"></td>
+                  <td id="slider2val">30</td>
+                </tr>
+
+                <tr>
+                  <td>Slider 3</td>
+                  <td><input type="range" min="1" max="100" value="50" class="slider" id="slider3"></td>
+                  <td id="slider3val">30</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+        </th>
+
+        <th>
+          <canvas id="displayCanvas" width=800 height=600 style="float:right; margin:0; border:1px solid #000000;"></canvas>
+        </th>
+
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:150px; margin-left: auto; margin-right: auto; width:1300px; height:600px; padding:0;">
+    <h1>COVID19 Simulation</h1>
+    <p>Coronavirus simulation made with HTML5 Canvas and Javascript</p>
+  </div>
+
+  <div style="background-color:#afb3bd; width:100%; height:70px;">
+  </div>
+
+</body>
+
+</html>
