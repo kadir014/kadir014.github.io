@@ -1,3 +1,14 @@
+function openVersionDiv(id) {
+  var div = document.querySelector(`#${id}`);
+
+  if (div.style.display === "inline-grid"){
+    div.style.display = "none";
+  }
+  else {
+    div.style.display = "inline-grid";
+  }
+}
+
 var dropdown = document.querySelectorAll('.dropdown-btn');
 var i;
 
@@ -38,6 +49,9 @@ for (i = 0; i < dropdown.length; i++) {
 }
 
 function load_hash(){
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  
   var hash = window.location.hash;
   if (hash==="") {
     hash = "#introduction"

@@ -238,7 +238,7 @@ li.indocs {
 #coda {
   text-align: left; padding-left:13px;
   font-size: 14px;
-  margin-top:25px;
+  margin-top:45px;
   color: #4f4c4d;
 }
 
@@ -263,4 +263,67 @@ li.indocs {
   color: #333;
   margin-top: -2px;
   margin-left: 20px;
+}
+
+.type {
+  font-family: 'Arial', 'sans-serif';
+  font-size: 15px;
+  color: #333;
+  margin-top: 3px;
+  margin-left: 30px;
+}
+
+.codedocs {
+  background-color:rgb(227, 226, 222);
+  color:rgb(59, 58, 57);
+  padding-left:4px;
+  padding-right:4px;
+}
+
+.blua {
+  color:rgb(92, 138, 189);
+  text-decoration:none;
+  font-weight:700
+}
+
+.blua:hover {
+  text-decoration: underline;
+}
+
+.gout {
+  display: inline-grid;
+}
+
+.renkgrid {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.renkkutu {
+  font-family: 'Arial', 'sans-serif';
+  font-size: 15px;
+  color: #333;
+  background-color: #f7f7f7;
+  border: 1px solid #d6d6d6;
+  width:145px;
+  height:65px;
+}
+
+.renkisim {
+  margin: 0;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.renkk {
+  border: 1px solid #868686;
+  margin: 7px;
+  margin-top: 3px;
+  width: 90%;
+  height: 54%;
+}
+
+.verbox {
+  height:100px;
+  transition: 0.3s;
 }

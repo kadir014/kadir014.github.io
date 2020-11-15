@@ -73,6 +73,8 @@
       </div>
       </div>
 
+      <div><img src="../../assets/dot.png"><a href="#color">Color</a></div>
+      <div><img src="../../assets/dot.png"><a href="#palette">Palette</a></div>
       <div><img src="../../assets/dot.png"><a href="#renderer">Renderer</a></div>
       <div><img src="../../assets/dot.png"><a href="#postprocess">Post-process</a></div>
     </div>
@@ -83,15 +85,7 @@
     <button class="dropdown-btn" style="display:inline-block;">Mechanics</button>
     <div class="dropdown-container">
       <div><img src="../../assets/dot.png"><a href="#gameobject">GameObject</a></div>
-
-      <div style="margin-left:-10px;">
-      <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
-      <button class="dropdown-btn" style="display:inline-block;">Timers</button>
-      <div class="dropdown-container">
-        <div><img src="../../assets/dot.png"><a href="#timer">Timer</a></div>
-        <div><img src="../../assets/dot.png"><a href="#ticktimer">TickTimer</a></div>
-      </div>
-      </div>
+      <div><img src="../../assets/dot.png"><a href="#timer">Timer</a></div>
 
       <div style="margin-left:-10px;">
       <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
@@ -116,6 +110,7 @@
     <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
     <button class="dropdown-btn" style="display:inline-block;">Networking</button>
     <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#networkingintro">Introduction</a></div>
       <div><img src="../../assets/dot.png"><a href="#server">Server</a></div>
       <div><img src="../../assets/dot.png"><a href="#connection">Connection</a></div>
       <div><img src="../../assets/dot.png"><a href="#connectedclient">ConnectedClient</a></div>
@@ -127,6 +122,13 @@
     <div id="content" style="margin: 15px; margin-bottom:0; margin-top:86px;">
       .
     </div>
+
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:70px; margin-left:30px; margin-bottom:35px;">
+
+    <div style="margin:30px; margin-top:0; margin-bottom:0; padding-bottom:0; width:100%; height:55px;">
+      <p class="indocs" style="margin-top:0;text-align:center;font-size:14px;margin-right:70px;"><b>GPL 3.0</b> © Kadir Aksoy<span style="margin-left:40px;"></span><a style="margin-right:10px;" class="blua" href="#introduction">Introduction</a> • <a style="margin-left:10px;margin-right:10px;" class="blua" href="#tutorials">Tutorial Index</a> • <a style="margin-left:10px;" class="blua" href="https://github.com/kadir014/heat2d">Github Repository</a></p>
+    </div>
+
   </div>
 
 
@@ -141,7 +143,7 @@
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <img src="../../assets/Heat2D Logo.png" width=679, height=300 class="center">
     <p class="indocs">
-      Heat2D is an open-source, simple and concise 2D game engine project. <a href="https://github.com/kadir014/heat2d">You can contribute and see the source here.</a>
+      Heat2D is an open-source, simple and concise 2D game engine project. <a class="blua" href="https://github.com/kadir014/heat2d">You can contribute and see the source here.</a>
       <br><br>
       This manual helps you learn how to use Heat2D. If you are a beginner, you should read the pages under <b>Getting started</b> category. If not, you can use here as a reference.
     </p>
@@ -162,21 +164,21 @@
       Just follow up some basic rules and we all would be fine.
       <ul>
         <li class="indocs">Each feature change/addition update should be made in its own PR.</li>
-        <li class="indocs">Your code should follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> standards.</li>
+        <li class="indocs">Your code should follow <a class="blua" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> standards.</li>
       </ul>
     </p>
     <p class="indocs">
-      If you don't will to contribute but having an issue, you can open a new Issue <a href="https://github.com/kadir014/heat2d/issues">here.</a>
+      If you don't will to contribute but having an issue, you can open a new Issue <a class="blua" href="https://github.com/kadir014/heat2d/issues">here.</a>
       <br>Or if your issue keeps staying unfixed, you can get help by contacting us from social platforms.
     </p>
     <h2 class="indocsh" id="contact">Contact</h2>
     <p class="indocs">
       Here are the platforms you can reach me and the community:
       <ul>
-        <li class="indocs"><a href="https://github.com/kadir014">My Github profile</a></li>
-        <li class="indocs"><a href="https://twitter.com/kadir0140">My Twitter profile</a></li>
-        <li class="indocs"><a href="https://discordapp.com/users/311542309252497409">My Discord profile</a></li>
-        <li class="indocs"><a href="https://discord.gg/WYaEcGW">My Discord server (Main language used is turkish but you are free to ask questions about Heat2D)</a></li>
+        <li class="indocs"><a class="blua" href="https://discord.gg/ctbn4Jbbr8">Heat2D Discord server</a></li>
+        <li class="indocs"><a class="blua" href="https://github.com/kadir014">My Github profile</a></li>
+        <li class="indocs"><a class="blua" href="https://twitter.com/kadir0140">My Twitter profile</a></li>
+        <li class="indocs"><a class="blua" href="https://discordapp.com/users/311542309252497409">My Discord profile</a></li>
       </ul>
     </p>
   </div>
@@ -225,13 +227,12 @@ engine = Engine()
 @engine.add
 class Main(Stage):
 
-    def __init__(self):
-        super().__init__()
+    def created(self):
         print("Main stage is initialized!")
 
     def update(self):
         if engine.key_pressed("space"):
-            random_color = ( randint(0, 255), randint(0, 255), randint(0, 255) )
+            random_color = Palette("rainbow").get_random()
             engine.window.clear_color = random_color
 
 engine.run()</code></pre>
@@ -243,30 +244,69 @@ engine.run()</code></pre>
   </div>
 
 
+  <!-- ============================================================== -->
 
+  <!--                          WHAT'S NEW                            -->
+
+  <!-- ============================================================== -->
 
 
   <div id="latest" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-    <h2 class="indocsh">What's new in <b>0.0.3</b></h2>
+    <h2 class="indocsh">What's new in <b>0.0.4</b></h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
-    <p class="indocs">This alpha version is released on 15.06.2020</p>
+    <p class="indocs">This alpha version is released on X/11/2020</p>
 
     <h4 class="indocsh">New features</h4>
     <ul style="margin-top:-8px;">
-      <li class="indocs"><b>Engine.stop</b>() method</li>
-      <li class="indocs">GameObject cloning concept (read more on <a href="#gameobject-cloning">cloning</a>)</li>
-      <li class="indocs">Attribute to toggle <a href="#timer">Timer</a> looping</li>
+      <li class="indocs">Engine now supports hardware accelerated sprite drawing operations such as scaling, rotating.. (Read more about this topic on <a href="#renderer" class="blua">Renderer</a>)</a>
+      <li class="indocs"><a href="#version" class="blua">version</a> module</li>
+      <li class="indocs"><span class="codedocs">take_screenshot()</span> function for <a href="#engine" class="blua">Engine</a></li>
+      <li class="indocs">Easier & simpler to use <a href="#timer" class="blua">Timer</a> methods</li>
+      <li class="indocs"><span class="codedocs">created()</span> method will be used to initialize objects. (Read more about this concept on <a href="#projectflow" class="blua">Project Flow</a>)</li>
+      <li class="indocs"><span class="codedocs">color</span> library for handling color conversions, storing pallettes, etc.. (Read more on <a href="#color" class="blua">Color</a> and <a href="#palette" class="blua">Palette</a>)</li>
     </ul>
 
     <h4 class="indocsh">Fixed bugs & issues</h4>
     <ul style="margin-top:-8px;">
-      <li class="indocs">Now you can use float type factor on <b>Sprite.scale</b>(factor)</li>
-      <li class="indocs">Removed some unused methods from engine that may cause issues</li>
-      <li class="indocs">Minor polishment on __init__.py file</li>
+      <li class="indocs"><span class="codedocs">size</span> property of <a class="blua" href="#window">Window</a> now can be used</li>
+      <li class="indocs">Cloning system is deprecated and currently onhold.</li>
+      <li class="indocs">Minor polishment on modules</li>
+      <li class="indocs">Fixed typos on documentation</li>
     </ul>
 
-    <p class="indocs"></p>
+    <h3 class="indocsh" style="margin-top:70px;">Older versions</h3>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-bottom:15px;">
+
+
+
+    <div stlye="display:block;"><img style="width:6px;height:6px;margin-bottom:3px;" src="../../assets/dot.png"><button onclick="openVersionDiv('ver003alpha');" style="font-family: 'Segoe UI', 'Arial', 'sans-serif';font-size:17px;font-weight:400;color:#555;background:none;border:none;outline:none;cursor:pointer;margin-left:5px;">0.0.3 Alpha - 15/06/2020</button></div>
+    <div id="ver003alpha" class="verbox" style="display:none; margin-bottom:0px;overflow:visible;grid-template-columns: auto auto;">
+
+      <svg height="267" width="15" style="position:relative;left:-7px;top:-12px;">
+        <line x1="10" y1="0" x2="10" y2="260" style="stroke:rgb(255, 71, 15); stroke-width:5.7;">
+      </svg>
+
+      <div style="margin-top:10px;margin-left:20px;">
+        <h4 class="indocsh">New features</h4>
+        <ul style="margin-top:-8px;">
+          <li class="indocs"><span class="codedocs">Engine.stop()</span> method</li>
+          <li class="indocs">GameObject cloning concept (read more on <a class="blua" href="#gameobject-cloning">cloning</a>)</li>
+          <li class="indocs">Attribute to toggle <a class="blua" href="#timer">Timer</a> looping</li>
+        </ul>
+
+        <h4 class="indocsh">Fixed bugs & issues</h4>
+        <ul style="margin-top:-8px;">
+          <li class="indocs">Now you can use float type factor on <span class="codedocs">Sprite.scale(factor)</span></li>
+          <li class="indocs">Removed some unused methods from engine that may cause issues</li>
+          <li class="indocs">Minor polishment on <span class="codedocs">__init__.py</span> file</li>
+        </ul>
+      </div>
+
+      <svg height="15" width="15" style="position:relative;left:-7px;top:-29px;">
+        <circle cx="10" cy="10" r="3" fill="rgb(255, 71, 15)">
+      </svg>
+    </div>
 
   </div>
   </div>
@@ -283,20 +323,49 @@ engine.run()</code></pre>
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Engine</h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <table style="margin-left:0%; margin-right:15%;">
+      <tr>
+        <td>
+          <p class="indocs" style="width:50%;"> Core class of the whole library. Manages stages, events, handles inputs and such. Can be also accessed from dispatcher object: <span class="codedocs">heat2d.DISPATCHER.engine</span></p>
+        </td>
+        <td>
+          <img src=../../assets/heat2d_engine_chart.png>
+        </td>
+      </tr>
+    </table>
+
+    <p class="indocs">Basic usage:</p>
+    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
+
+engine = Engine() #Create the Engine instance
+
+#Add a new component (Stage in this case) to the engine
+@engine.add
+class Main(Stage):
+    def created(self):
+        print("Main stage is created!")
+
+engine.run() #Start the engine</code></pre>
+
+    <p class="indocs">You can find more information on <a class="blua" href="#projectflow">Project Flow</a> or Tutorial index.</p>
+
+    <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Engine</b>()</code></pre>
-    <p class="indocs">Core class of the whole engine. Manages events, stages and window</p>
     <div style="margin-left:30px; margin-top:30px;">
       <pre class="precode2"><code class="plaintext" id="coda"><b>window</b></code></pre>
-      <p class="attr">Main <a href="#window">Window</a> object</p>
+      <p class="attr">Main window object</p>
+      <p class="type"><span id="semibold">Type</span>: <a class="blua" href="#window">Window</a></p>
 
       <pre class="precode2"><code class="plaintext" id="coda"><b>renderer</b></code></pre>
-      <p class="attr">Main <a href="#window">Renderer</a> object</p>
+      <p class="attr">Main renderer object</p>
+      <p class="type"><span id="semibold">Type</span>: <a class="blua" href="#renderer">Renderer</a></p>
 
-      <pre class="precode2"><code class="plaintext" id="coda"><b>mouse_x</b></code></pre>
-      <p class="attr">Mouse position's X coordinate on window</p>
-
-      <pre class="precode2"><code class="plaintext" id="coda"><b>mouse_y</b></code></pre>
-      <p class="attr">Mouse position's Y coordinate on window</p>
+      <pre class="precode2"><code class="plaintext" id="coda"><b>mouse</b></code></pre>
+      <p class="attr">Mouse position</p>
+      <p class="type"><span id="semibold">Type</span>: <a class="blua" href="#vector2">Vector2</a></p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>run</b>()</code></pre>
       <p class="attr">Starts the engine</p>
@@ -305,60 +374,72 @@ engine.run()</code></pre>
       <p class="attr">Stops the engine</p>
 
       <pre class="precode" style="border-left-color: #ffaa33;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>add</b>(component)</code></pre>
-      <p class="attr">This is a decorator function<br id="brr">Adds component to the engine</p>
+      <p class="attr">Adds component to the engine</p>
 
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">component</span> - The component to add (<a href="#uicontext">UI Context</a>, <a href="#stage">Stage</a>, <a href="#gameobject">GameObject</a>)</li>
+        <li class="attr"><span id="semibold">component</span> The component to add (<a class="blua" href="#uicontext">UI Context</a>, <a class="blua" href="#stage">Stage</a>, <a class="blua" href="#gameobject">GameObject</a>)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>change_stage</b>(stage)</code></pre>
       <p class="attr">Changes the current stage</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">stage</span> - <a href="#stage">Stage</a></li>
+        <li class="attr"><span id="semibold">stage</span> - <a class="blua" href="#stage">Stage</a></li>
+      </ul>
+      <p class="attr" id="sh">Raises</p>
+      <ul>
+        <li class="attr"><span id="semibold">NameError</span> - Stage is not added to Engine</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>take_screenshot</b>(filepath, area=None)</code></pre>
+      <p class="attr">Takes a screenshot and saves it</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">filepath</span> - where to save the screenshot (str)</li>
+        <li class="attr"><span id="semibold">area</span> - If given, the screenshot will be taken from that area instead of the whole scren (tuple x1, y1, x2, y2)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_pressed</b>(key)</code></pre>
       <p class="attr">Returns True at the moment the key gets pressed</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">key</span> - key to check (string)</li>
+        <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_released</b>(key)</code></pre>
       <p class="attr">Returns True at the moment the key gets released</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">key</span> - key to check (string)</li>
+        <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_held</b>(key)</code></pre>
       <p class="attr">Returns True if key is pressed</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">key</span> - key to check (string)</li>
+        <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_pressed</b>(button)</code></pre>
       <p class="attr">Returns True at the moment the mouse button gets pressed</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">key</span> - mouse button to check (string)</li>
+        <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_released</b>(button)</code></pre>
       <p class="attr">Returns True at the moment the mouse button gets released</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">key</span> - mouse button to check (string)</li>
+        <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_held</b>(button)</code></pre>
       <p class="attr">Returns True if mouse button is pressed</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">key</span> - mouse button to check (string)</li>
+        <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
       </ul>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_wheel_up</b>()</code></pre>
@@ -379,49 +460,73 @@ engine.run()</code></pre>
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Window</h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
-    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Window</b>(size, title="...", icon=None, clear_color=(0, 0, 0))</code></pre>
-    <p class="indocs">Main display window</p>
-    <p class="indocs" id="sh">Parameters</p>
-    <ul>
-      <li class="indocs"><span id="semibold">size</span> - display size (tuple of ints)</li>
-      <li class="indocs"><span id="semibold">title (opt)</span> - window title (string)</li>
-      <li class="indocs"><span id="semibold">icon (opt)</span> - window icon (string path to file)</li>
-      <li class="indocs"><span id="semibold">clear_color (opt)</span> - display clear color (tuple of ints)</li>
-    </ul>
+
+    <table style="margin-left:0%; margin-right:15%;">
+      <tr>
+        <td>
+          <p class="indocs" style="width:70%;">Window where your game gets displayed on.</p>
+        </td>
+        <td>
+          <img src=../../assets/heat2d_window_showcase.png>
+        </td>
+      </tr>
+    </table>
+
+    <p class="indocs">You can use properties to cusomize window quickly:</p>
+    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
+
+engine = Engine() #Engine instance
+
+
+engine.window.size = (1920, 1080) #Make window display 1920x1080 pixels
+
+engine.window.title = "My awesome game!" #Change window title
+
+engine.window.clear_color = Color("Deep Sky Blue") #Change window display's background color to a nice blue color.
+                                                   #See Color page for more information about using colors
+</code></pre>
+
+    <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Window</b>()</code></pre>
 
     <div style="margin-left:30px; margin-top:40px;">
       <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>size</b></code></pre>
-      <p class="attr">This is a property<br id="brr">Size of the window display in <i>(width, height)</i></p>
+      <p class="attr">Size of the window display</p>
+      <p class="type"><span id="semibold">Type</span>: tuple(width, height)</p>
 
       <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>width</b></code></pre>
-      <p class="attr">This is a property<br id="brr">Width of the window display (int)</p>
+      <p class="attr">Width of the window display</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
 
       <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>height</b></code></pre>
-      <p class="attr">This is a property<br id="brr">Height of the window display (int)</p>
+      <p class="attr">Height of the window display</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
 
       <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>title</b></code></pre>
-      <p class="attr">This is a property<br id="brr">Title of the window (string)</p>
+      <p class="attr">Title of the window</p>
+      <p class="type"><span id="semibold">Type</span>: str</p>
 
       <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>icon</b></code></pre>
-      <p class="attr">This is a property<br id="brr">Icon of the window (string path to file)</p>
+      <p class="attr">Filepath to the window icon</p>
+      <p class="type"><span id="semibold">Type</span>: str</p>
 
       <pre class="precode2"><code class="plaintext" id="coda"> <b>clear_color</b></code></pre>
       <p class="attr">Window's display clear color</p>
+      <p class="type"><span id="semibold">Type</span>: <a class="blua" href="#color">Color</a></p>
 
       <pre class="precode2"><code class="plaintext" id="coda"><b>center</b></code></pre>
       <p class="attr">Center point coordinates of window</p>
-
-      <pre class="precode2"><code class="plaintext" id="coda"><b>center_x</b></code></pre>
-      <p class="attr">X coordinate of window's center point</p>
-
-      <pre class="precode2"><code class="plaintext" id="coda"><b>center_y</b></code></pre>
-      <p class="attr">Y coordinate of window's center point</p>
+      <p class="type"><span id="semibold">Type</span>: <a class="blua" href="#vector2">Vector2</a></p>
 
       <pre class="precode2"><code class="plaintext" id="coda"><b>fps</b></code></pre>
       <p class="attr">Current FPS of your game</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
 
       <pre class="precode2"><code class="plaintext" id="coda"><b>max_fps</b></code></pre>
       <p class="attr">FPS limit</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
 
     </div>
   </div>
@@ -435,21 +540,47 @@ engine.run()</code></pre>
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Stage</h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
-    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Stage</b>()</code></pre>
-    <p class="indocs">Stages are one of the most important concepts in Heat2D. You can think them like individual parts of your game that does their individual jobs. Such as main menus, game levels etc..</p>
 
+    <p class="indocs" style="margin-bottom:40px; width:70%;">Stage system is one of the most important concepts in Heat2D. You can think them like individual parts of your game that does their individual jobs. Such as main menus, game levels etc..</p>
+
+    <p class="indocs">Basic stage:</p>
+    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
+
+engine = Engine() #Engine instance
+
+#Add MyStage to the engine
+@engine.add
+class MyStage(Stage):
+
+    #This method is called when stage is created
+    def created(self):
+        print("MyStage is created!")
+
+    #This method is called every tick by engine
+    def update(self):
+        if engine.key_pressed("space"):
+            engine.take_screenshot("screenshots/001.png")
+            print("Screenshot saved to screenshots folder.")
+</code></pre>
+
+    <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Stage</b>()</code></pre>
     <div style="margin-left:30px; margin-top:40px;">
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>add</b>(gameobject)</code></pre>
-      <p class="attr">This is not a decorator function, not to be confused with <span id="semibold">Engine.add</span>() which is a decorator
-      <br id="brr">When you add a game object using this function, you can call the game object as if it was one of Stage's attributes </p>
+      <p class="attr">Adds gameobject to the stage</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
-        <li class="attr"><span id="semibold">gameobject</span> - <a href="#gameobject">GameObject</a> to add</li>
+        <li class="attr"><span id="semibold">gameobject</span> - <a class="blua" href="#gameobject">GameObject</a></li>
       </ul>
 
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>created</b>()</code></pre>
+      <p class="attr">This method is meant to be overrode</p>
+
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>update</b>()</code></pre>
-      <p class="attr">This function is meant to be overrode<br id="brr">This function is called every tick by the engine so you can check for inputs such as <span id="semibold">Engine.key_pressed("space")</span>() in this function</p>
+      <p class="attr">This method is meant to be overrode</p>
 
     </div>
   </div>
@@ -474,6 +605,806 @@ engine.run()</code></pre>
   </div>
   </div>
 
+
+  <!-- ============================================================== -->
+
+  <!--                          GRAPHICS                              -->
+
+  <!-- ============================================================== -->
+
+
+  <div id="sprite" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+
+
+
+  <div id="rectangle" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+
+
+
+  <div id="color" style="display:none;">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Color</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <p class="indocs">Color object is used anywhere has a relation with color.</p>
+
+    <p class="indocs">Some examples:</p>
+    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
+
+Color(0, 255, 0) #Lime (alpha is 255 by default)
+
+Color("#ff0000") #Red
+
+Color([0, 0, 255, 128]) #Half-transparent blue
+
+Color("Lime")
+
+c = Color("deepskyblue")
+print(c.to_tuple()) #output -> (0, 191, 255, 255)
+</code></pre>
+
+    <p class="indocs"><span id="semibold">Note: </span> While creating a color object if you are using a color name as argument, typing and whitespaces doesn't matter. These are all the same; <i>"Medium Violet Red"</i>, <i>"medium violet red"</i>, <i>"mediumvioletred"</i>, <i>"mediumViolet red"</i></p>
+    <p class="indocs">Table of built-in colors in Heat2D:</p>
+
+    <div class="renkgrid">
+      <div class="renkkutu">
+        <p class="renkisim">Light Salmon</p>
+        <div style="background-color:rgb(255, 160, 122);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Salmon</p>
+        <div style="background-color:rgb(250, 128, 114);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Salmon</p>
+        <div style="background-color:rgb(233, 150, 122);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Coral</p>
+        <div style="background-color:rgb(240, 128, 128);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Indian Red</p>
+        <div style="background-color:rgb(205, 92, 92);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Crimson</p>
+        <div style="background-color:rgb(220, 20, 60);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Firebrick</p>
+        <div style="background-color:rgb(178, 34, 34);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Red</p>
+        <div style="background-color:rgb(255, 0, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Red</p>
+        <div style="background-color:rgb(139, 0, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Red</p>
+        <div style="background-color:rgb(255, 173, 158);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Coral</p>
+        <div style="background-color:rgb(255, 127, 80);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Tomato</p>
+        <div style="background-color:rgb(255, 99, 71);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Orange Red</p>
+        <div style="background-color:rgb(255, 69, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Gold</p>
+        <div style="background-color:rgb(255, 215, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Orange</p>
+        <div style="background-color:rgb(255, 165, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Orange</p>
+        <div style="background-color:rgb(230, 127, 2);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Orange</p>
+        <div style="background-color:rgb(255, 187, 77);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Lemon Chiffon</p>
+        <div style="background-color:rgb(255, 255, 224);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Rod Yellow</p>
+        <div style="background-color:rgb(250, 250, 210);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Papayawhip</p>
+        <div style="background-color:rgb(255, 239, 213);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Moccasin</p>
+        <div style="background-color:rgb(255, 228, 181);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Peach Puff</p>
+        <div style="background-color:rgb(255, 218, 185);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Pale Golden</p>
+        <div style="background-color:rgb(238, 232, 170);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Khaki</p>
+        <div style="background-color:rgb(240, 230, 140);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Khaki</p>
+        <div style="background-color:rgb(189, 183, 107);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Yellow</p>
+        <div style="background-color:rgb(255, 255, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Yellow</p>
+        <div style="background-color:rgb(227, 200, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Yellow</p>
+        <div style="background-color:rgb(255, 255, 224);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Lawn Green</p>
+        <div style="background-color:rgb(124, 252, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Lime</p>
+        <div style="background-color:rgb(0, 255, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Lime</p>
+        <div style="background-color:rgb(50, 205, 50);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Lime</p>
+        <div style="background-color:rgb(120, 255, 120);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Green Yellow</p>
+        <div style="background-color:rgb(173, 255, 47);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Yellow Green</p>
+        <div style="background-color:rgb(154, 205, 50);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Spring Green</p>
+        <div style="background-color:rgb(0, 255, 127);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Pale Green</p>
+        <div style="background-color:rgb(152, 251, 152);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Sea Green</p>
+        <div style="background-color:rgb(46, 139, 87);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Sea Green</p>
+        <div style="background-color:rgb(143, 188, 143);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Medium Sea Green</p>
+        <div style="background-color:rgb(60, 179 ,113);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Sea Green</p>
+        <div style="background-color:rgb(130, 255, 174);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Olive</p>
+        <div style="background-color:rgb(128, 128, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Olive</p>
+        <div style="background-color:rgb(85, 107, 47);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Olive</p>
+        <div style="background-color:rgb(181, 191, 67);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Olive Drab</p>
+        <div style="background-color:rgb(107, 142, 35);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Green</p>
+        <div style="background-color:rgb(0, 128, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Green</p>
+        <div style="background-color:rgb(0, 100, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Green</p>
+        <div style="background-color:rgb(144, 238, 144);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Aquamarine</p>
+        <div style="background-color:rgb(127, 255, 212);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Aquamarine</p>
+        <div style="background-color:rgb(102, 205, 170);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Pale Turqoise</p>
+        <div style="background-color:rgb(175, 238, 238);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Turqoise</p>
+        <div style="background-color:rgb(64, 224, 208);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Turqoise</p>
+        <div style="background-color:rgb(60, 181, 169);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Cadet Blue</p>
+        <div style="background-color:rgb(95, 158, 160);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Teal</p>
+        <div style="background-color:rgb(0, 128, 128);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Cyan <span style="color: #555";>/</span> Aqua</p>
+        <div style="background-color:rgb(0, 255, 255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Cyan <span style="color: #555";>/</span> Aqua</p>
+        <div style="background-color:rgb(224, 255, 255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Cyan <span style="color: #555";>/</span> Aqua</p>
+        <div style="background-color:rgb(0, 139, 139);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Powder Blue</p>
+        <div style="background-color:rgb(176,224,230);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Sky Blue</p>
+        <div style="background-color:rgb(135,206,235);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Sky Blue</p>
+        <div style="background-color:rgb(173, 226, 255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Deep Sky Blue</p>
+        <div style="background-color:rgb(0,191,255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Steel Blue</p>
+        <div style="background-color:rgb(70,130,180);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Steel Blue</p>
+        <div style="background-color:rgb(176,196,222);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dodger Blue</p>
+        <div style="background-color:rgb(30,144,255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Comflower Blue</p>
+        <div style="background-color:rgb(100,149,237);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Royal Blue</p>
+        <div style="background-color:rgb(65,105,225);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Medium Blue</p>
+        <div style="background-color:rgb(0,0,205);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Navy</p>
+        <div style="background-color:rgb(0,0,128);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Midnight Blue</p>
+        <div style="background-color:rgb(25,25,112);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Blue</p>
+        <div style="background-color:rgb(0, 0, 255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Blue</p>
+        <div style="background-color:rgb(0, 0, 139);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Blue</p>
+        <div style="background-color:rgb(66, 66, 255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Lavender</p>
+        <div style="background-color:rgb(230,230,250);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Thistle</p>
+        <div style="background-color:rgb(216,191,216);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Plum</p>
+        <div style="background-color:rgb(221,160,221);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Violet</p>
+        <div style="background-color:rgb(238,130,238);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Orchid</p>
+        <div style="background-color:rgb(218,112,214);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Magenta <span style="color: #555";>/</span> Fuchsia</p>
+        <div style="background-color:rgb(255,0,255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Blue Violet</p>
+        <div style="background-color:rgb(138,43,226);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Violet</p>
+        <div style="background-color:rgb(148,0,211);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Orchid</p>
+        <div style="background-color:rgb(153,50,204);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Magenta</p>
+        <div style="background-color:rgb(139,0,139);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Indigo</p>
+        <div style="background-color:rgb(75,0,130);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Purple Blue</p>
+        <div style="background-color:rgb(123,104,238);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Purple Blue</p>
+        <div style="background-color:rgb(78, 49, 173);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Purple Blue</p>
+        <div style="background-color:rgb(185, 166, 255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Purple</p>
+        <div style="background-color:rgb(128,0,128);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Purple</p>
+        <div style="background-color:rgb(82, 6, 99);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Purple</p>
+        <div style="background-color:rgb(204, 71, 204);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Hotpink</p>
+        <div style="background-color:rgb(255,105,180);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Deep Pink</p>
+        <div style="background-color:rgb(255,20,147);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Pale Violet Red</p>
+        <div style="background-color:rgb(219,112,147);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Medium Violet Red</p>
+        <div style="background-color:rgb(199,21,133);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Pink</p>
+        <div style="background-color:rgb(255,192,203);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Pink</p>
+        <div style="background-color:rgb(219, 151, 171);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Pink</p>
+        <div style="background-color:rgb(255, 227, 232);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Comsilk</p>
+        <div style="background-color:rgb(255,248,220);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Blanched Almond</p>
+        <div style="background-color:rgb(255,235,205);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Bisque</p>
+        <div style="background-color:rgb(255,228,196);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Navajowhite</p>
+        <div style="background-color:rgb(255,222,173);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Wheat</p>
+        <div style="background-color:rgb(245,222,179);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Burly Wood</p>
+        <div style="background-color:rgb(222,184,135);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Tan</p>
+        <div style="background-color:rgb(210,180,140);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Rosy Brown</p>
+        <div style="background-color:rgb(188,143,143);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Sandy Brown</p>
+        <div style="background-color:rgb(244,164,96);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Golden Rod</p>
+        <div style="background-color:rgb(218,165,32);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Peru</p>
+        <div style="background-color:rgb(205,133,63);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Chocolate</p>
+        <div style="background-color:rgb(210,105,30);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Saddle Brown</p>
+        <div style="background-color:rgb(139,69,1);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Sienna</p>
+        <div style="background-color:rgb(160,82,45);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Brown Red</p>
+        <div style="background-color:rgb(165,42,42);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Maroon</p>
+        <div style="background-color:rgb(128,0,0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Brown</p>
+        <div style="background-color:rgb(173, 88, 62);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Brown</p>
+        <div style="background-color:rgb(92, 36, 19);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Brown</p>
+        <div style="background-color:rgb(227, 126, 95);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Snow</p>
+        <div style="background-color:rgb(255,250,250);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Honeydew</p>
+        <div style="background-color:rgb(240,255,240);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Mint Cream</p>
+        <div style="background-color:rgb(245,255,250);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Azure</p>
+        <div style="background-color:rgb(240,255,255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Alice Blue</p>
+        <div style="background-color:rgb(240,248,255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Ghost White</p>
+        <div style="background-color:rgb(248,248,255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">White Smoke</p>
+        <div style="background-color:rgb(245,245,245);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Sea Shell</p>
+        <div style="background-color:rgb(255,245,238);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Beige</p>
+        <div style="background-color:rgb(245,245,220);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Oldlace</p>
+        <div style="background-color:rgb(253,245,230);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Floral White</p>
+        <div style="background-color:rgb(255,250,240);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Ivory</p>
+        <div style="background-color:rgb(255,255,240);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Antique White</p>
+        <div style="background-color:rgb(250,235,215);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Linen</p>
+        <div style="background-color:rgb(250,240,230);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Misty Rose</p>
+        <div style="background-color:rgb(255,228,225);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">White</p>
+        <div style="background-color:rgb(255, 255, 255);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Gainsboro</p>
+        <div style="background-color:rgb(220,220,220);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Silver</p>
+        <div style="background-color:rgb(192,192,192);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dim Gray</p>
+        <div style="background-color:rgb(105,105,105);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Slate Gray</p>
+        <div style="background-color:rgb(112,128,144);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Slate Gray</p>
+        <div style="background-color:rgb(119,136,153);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Slate Gray</p>
+        <div style="background-color:rgb(74, 87, 99);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Deep Gray</p>
+        <div style="background-color:rgb(38, 38, 38);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Black</p>
+        <div style="background-color:rgb(0, 0, 0);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Black</p>
+        <div style="background-color:rgb(26, 26, 26);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Gray</p>
+        <div style="background-color:rgb(128,128,128);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Light Gray</p>
+        <div style="background-color:rgb(211,211,211);" class="renkk">&nbsp;</div>
+      </div>
+      <div class="renkkutu">
+        <p class="renkisim">Dark Gray</p>
+        <div style="background-color:rgb(84, 84, 84);" class="renkk">&nbsp;</div>
+      </div>
+    </div>
+
+    <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Color</b>(color[, ...])</code></pre>
+      <div style="margin-left:30px; margin-top:40px;">
+    <p class="attr" id="sh">Parameters</p>
+    <ul>
+      <li class="attr"><pre><code class="python">Color(r, g, b[, a])</code></pre></li>
+      <li class="attr"><pre><code class="python">Color([r, g, b[,a]])</code></pre></li>
+      <li class="attr"><pre><code class="python">Color("#hexcode")</code></pre></li>
+      <li class="attr"><pre><code class="python">Color("Color name")</code></pre></li>
+    </ul>
+
+      <pre class="precode2"><code class="plaintext" id="coda"> <b>r</b></code></pre>
+      <p class="attr">Red channel of the color</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"> <b>g</b></code></pre>
+      <p class="attr">Green channel of the color</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"> <b>b</b></code></pre>
+      <p class="attr">Blue channel of the color</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"> <b>a</b></code></pre>
+      <p class="attr">Alpha channel of the color</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>h</b></code></pre>
+      <p class="attr">Hue property of the color</p>
+      <p class="type"><span id="semibold">Type</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>s</b></code></pre>
+      <p class="attr">Saturation property of the color</p>
+      <p class="type"><span id="semibold">Type</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>l</b></code></pre>
+      <p class="attr">Lightness property of the color</p>
+      <p class="type"><span id="semibold">Type</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>negative</b>()</code></pre>
+      <p class="attr">Returns negative version of the color</p>
+      <p class="type"><span id="semibold">Return</span>: Color</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>grayscale</b>()</code></pre>
+      <p class="attr">Returns grayscale version of the color</p>
+      <p class="type"><span id="semibold">Return</span>: Color</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>to_tuple</b>()</code></pre>
+      <p class="attr">Returns RGBA channels as tuple</p>
+      <p class="type"><span id="semibold">Return</span>: tuple</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>distance</b>(color)</code></pre>
+      <p class="attr">Returns the distance between self and other color in RGB space</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">color</span> - Color</li>
+      </ul>
+      <p class="type"><span id="semibold">Return</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>distance2</b>(color)</code></pre>
+      <p class="attr">Returns the distance squared between self and other color in RGB space</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">color</span> - Color</li>
+      </ul>
+      <p class="type"><span id="semibold">Return</span>: float</p>
+
+    </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  <div id="palette" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Palette</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <p class="indocs">Palettes are simply groups of colors. Colors in the palette are sorted by their lightness level by default. You can get a specific color by indexing the palette object, use <span class="codedocs">Palette.get_closest(color)</span> to get the most similar color or use <span class="codedocs">Palette.get_random()</span> method to get a random color.</p>
+
+    <table style="margin-left:0%; margin-right:15%;">
+      <tr>
+        <td>
+          <p class="indocs" style="width:50%;">Palettes also can be applied to sprites. Sprite's original colors will not get affected, they will just be rendered using that pallette.</p>
+        </td>
+        <td>
+          <img src=../../assets/heat2d_palette_showcase.png>
+        </td>
+      </tr>
+    </table>
+
+    <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Palette</b>(source)</code></pre>
+
+    <div style="margin-left:30px; margin-top:40px;">
+    <p class="attr" id="sh">Parameters</p>
+    <ul>
+      <li class="attr"><span id="semibold">source</span> - A list of <a class="blua" href="#color">Color</a> objects (list)</li>
+      <li class="attr"><span id="semibold">source</span> - Name of the built-in palette (str)</li>
+    </ul>
+
+    <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get_random</b>()</code></pre>
+    <p class="attr">Returns a random color</p>
+    <p class="type"><span id="semibold">Return</span>: <a class="blua" href="#color">Color</a></p>
+
+    <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get_closest</b>(color)</code></pre>
+    <p class="attr">Returns the most similar color to given color</p>
+    <p class="attr" id="sh">Parameters</p>
+    <ul>
+      <li class="attr"><span id="semibold">color</span> - <a class="blua" href="#color">Color</a></li>
+    </ul>
+    <p class="type"><span id="semibold">Return</span>: <a class="blua" href="#color">Color</a></p>
+
+    <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get_average</b>()</code></pre>
+    <p class="attr">Returns the average color of all colors in the palette</p>
+    <p class="type"><span id="semibold">Return</span>: <a class="blua" href="#color">Color</a></p>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  <div id="renderer" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+
+
+  <div id="postprocess" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+
+  <!--                          MECHANICS                             -->
+
+  <!-- ============================================================== -->
+
+
+  <div id="gameobject" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+
+
+
+  <div id="timer" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+
+
+
+  <div id="grid" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
 
 <body>
 
