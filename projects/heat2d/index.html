@@ -40,6 +40,10 @@
 
   <div id="sidebar" style="float:left; margin:0.5%; margin-left:0; position:fixed; height: 89%; width:350px; overflow: auto;">
     <p style="padding-left:14px; font-weight: 500; font-family: 'Segoe UI', 'Arial', 'sans-serif'; font-size:30px; color:black; margin:0; color:#2d2e30;">Manual</p>
+    <div id="searchbar">
+      <input id="searchbarinput" placeholder="Quick search">
+      <button onclick="search();">&nbsp;</button>
+    </div>
     <hr style="width:92%; height:1px; border-width:0; color:gray; background-color:#ccc">
 
     <div style="margin-left:10px;">
@@ -140,6 +144,19 @@
   </div>
 
 
+  <div id="search" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Searching for <span id="searchelement">nothing</span></h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <p class="indocs" id="searchstate">a</p>
+
+    <div>
+    <div>
+
+  </div>
+  </div>
+
+
   <!-- ============================================================== -->
 
   <!--                       GETTING STARTED                          -->
@@ -204,12 +221,10 @@
     </p>
       <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">pip install heat2d</code></pre>
     <p class="indocs" style="margin-top:25px;">
-      If you run into problems while installing version 0.0.2 try
-    </p>
-      <pre class="precode"><code class="plaintext" style="text-align: left; padding-left:13px;">pip install heat2d==0.0.2a2</code></pre>
+
     <h3 class="indocsh" style="color:#555; margin-top:35px;">Install from source</h3>
     <p class="indocs">
-      If you can't install Heat2D with PIP, you can download the source <a href="https://github.com/kadir014/heat2d">from here</a> and build it manually
+       If you can't install Heat2D with PIP, you can download the source <a class="blua" href="https://github.com/kadir014/heat2d">from here</a> and build it manually
     </p>
     <pre class="precode"><code class="plaintext" style="text-align: left; padding-left:13px;">python setup.py install</code></pre>
     <p class="indocs" style="margin-top:20px;">
@@ -246,7 +261,7 @@ class Main(Stage):
 engine.run()</code></pre>
     <h2 class="indocsh">Tutorials</h2>
     <p class="indocs">
-      You can continue reading tutorials from <a href="">tutorial index.</a>
+      You can continue reading tutorials from <a class="blua" href="">tutorial index.</a>
     </p>
   </div>
   </div>
@@ -268,8 +283,10 @@ engine.run()</code></pre>
     <h4 class="indocsh">New features</h4>
     <ul style="margin-top:-8px;">
       <li class="indocs">Engine now supports hardware accelerated sprite drawing operations such as scaling, rotating.. (Read more about this topic on <a href="#renderer" class="blua">Renderer</a>)</a>
+      <li class="indocs">Post-process effects and user defined shader support (experimental)</li>
       <li class="indocs"><a href="#version" class="blua">version</a> module</li>
-      <li class="indocs"><span class="codedocs">take_screenshot()</span> function for <a href="#engine" class="blua">Engine</a></li>
+      <li class="indocs"><span class="codedocs">take_screenshot()</span> function for <a href="#window" class="blua">Window</a></li>
+      <li class="indocs"><span class="codedocs">toggle_fullscreen()</span> function for <a href="#window" class="blua">Window</a></li>
       <li class="indocs">Easier & simpler to use <a href="#timer" class="blua">Timer</a> methods</li>
       <li class="indocs"><span class="codedocs">created()</span> method will be used to initialize objects. (Read more about this concept on <a href="#projectflow" class="blua">Project Flow</a>)</li>
       <li class="indocs"><span class="codedocs">color</span> library for handling color conversions, storing pallettes, etc.. (Read more on <a href="#color" class="blua">Color</a> and <a href="#palette" class="blua">Palette</a>)</li>

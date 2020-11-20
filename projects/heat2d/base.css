@@ -327,3 +327,56 @@ li.indocs {
   height:100px;
   transition: 0.3s;
 }
+
+#searchbar {
+  margin-left:14px;
+  display:inline-block;
+  width:60%;
+}
+
+#searchbar input {
+  font-family: 'Segoe UI', 'Arial', 'sans-serif';
+  font-size:14px;
+  border: 2px solid;
+  color: #777;
+  outline: none;
+  border-top-left-radius: 17px;
+  border-bottom-left-radius: 17px;
+  border-right: none;
+  width: 70%;
+  height:25px;
+  padding-left:5px;
+}
+
+#searchbar input:focus {
+  border-color: #f76c0f;
+}
+
+#searchbar input:hover {
+  border-color: #f76c0f;
+}
+
+#searchbar button {
+  font-family: 'Segoe UI', 'Arial', 'sans-serif';
+  font-size:14px;
+  border: 2px solid #777;
+  background: none;
+  background-image: url("../../assets/heat2d_mag.png");
+  background-size: cover;
+  height:31px;
+  width:34px;
+  margin-left:-4px;
+  outline: none;
+  border-top-right-radius: 17px;
+  border-bottom-right-radius: 17px;
+  border-left:none;
+  background-color: #e8e8e8;
+  background-position-x: 1px;
+  background-position-y: -3px;
+}
+
+#searchbar button:hover {
+  border-color: #ff8000;
+  background-image: url("../../assets/heat2d_mag2.png");
+  background-color: #f5f5f5;
+}
