@@ -3,14 +3,14 @@
 
 <head>
   <title>Heat2D Documentation</title>
-  
+
    <meta property="og:type" content="website">
    <meta property="og:title" content="Heat2D Documentation" />
    <meta property="og:description" content="Documentation and usage manual for Heat2D, an open-source, simple and concise 2D game engine project." />
    <meta property="og:url" content="https://kadir014.github.io/projects/heat2d/" />
    <meta property="og:url" content="https://kadir014.github.io/projects/heat2d/index.html/" />
    <meta content="#f6871f" data-react-helmet="true" name="theme-color">
-  
+
   <link rel="stylesheet" href="../../packages/highlightjs/styles/atelier-forest-light.css">
   <link rel="stylesheet" type="text/css" href="base.css">
   <script src="../../packages/highlightjs/highlight.pack.js"></script>
@@ -39,7 +39,18 @@
   </div>
 
   <div id="sidebar" style="float:left; margin:0.5%; margin-left:0; position:fixed; height: 89%; width:350px; overflow: auto;">
-    <p style="padding-left:14px; font-weight: 500; font-family: 'Segoe UI', 'Arial', 'sans-serif'; font-size:30px; color:black; margin:0; color:#2d2e30;">Manual</p>
+    <div>
+        <p style="display:inline; width:50%; float:left; padding-left:14px; font-weight: 500; font-family: 'Segoe UI', 'Arial', 'sans-serif'; font-size:30px; color:black; margin:0; color:var(--semibold);">Manual</p>
+
+        <div class="theme-switch-wrapper" style="display:inline; float:right; margin-right:15px;">
+            <p style="margin-top:11px;margin-bottom:5px;" class="indocs">Dark Theme</p>
+            <label class="theme-switch" for="checkbox" style="margin-left:16px;">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+          </label>
+        </div>
+    </div>
+
     <div id="searchbar">
       <input id="searchbarinput" placeholder="Quick search">
       <button onclick="search();">&nbsp;</button>
@@ -76,19 +87,30 @@
     <button class="dropdown-btn" style="display:inline-block;">Graphics</button>
     <div class="dropdown-container">
       <div><img src="../../assets/dot.png"><a href="#sprite">Sprite</a></div>
-
-      <div style="margin-left:-10px;">
-      <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
-      <button class="dropdown-btn" style="display:inline-block;">Visuals</button>
-      <div class="dropdown-container">
-        <div><img src="../../assets/dot.png"><a href="#rectangle">Rectangle</a></div>
-      </div>
-      </div>
-
       <div><img src="../../assets/dot.png"><a href="#color">Color</a></div>
       <div><img src="../../assets/dot.png"><a href="#palette">Palette</a></div>
+      <div><img src="../../assets/dot.png"><a href="#texture">Texture</a></div>
+      <div><img src="../../assets/dot.png"><a href="#shader">Shader</a></div>
       <div><img src="../../assets/dot.png"><a href="#renderer">Renderer</a></div>
-      <div><img src="../../assets/dot.png"><a href="#postprocess">Post-process</a></div>
+      <div><img src="../../assets/dot.png"><a href="#postprocess">Postprocess Effects</a></div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">Animation</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#animintroduction">Introduction</a></div>
+      <div><img src="../../assets/dot.png"><a href="#spritesheet">SpriteSheet</a></div>
+      <div><img src="../../assets/dot.png"><a href="#tweeninganimation">TweeningAnimation</a></div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">Audio</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#sound">Sound</a></div>
     </div>
     </div>
 
@@ -98,6 +120,7 @@
     <div class="dropdown-container">
       <div><img src="../../assets/dot.png"><a href="#gameobject">GameObject</a></div>
       <div><img src="../../assets/dot.png"><a href="#timer">Timer</a></div>
+      <div><img src="../../assets/dot.png"><a href="#trigger">Trigger</a></div>
 
       <div style="margin-left:-10px;">
       <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
@@ -112,9 +135,28 @@
 
     <div style="margin-left:10px;">
     <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
-    <button class="dropdown-btn" style="display:inline-block;">User interfaces</button>
+    <button class="dropdown-btn" style="display:inline-block;">Math</button>
     <div class="dropdown-container">
-      <div><img src="../../assets/dot.png"><a href="#context">Context</a></div>
+      <div><img src="../../assets/dot.png"><a href="#vector2">Vector2</a></div>
+
+      <div style="margin-left:-10px;">
+      <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+      <button class="dropdown-btn" style="display:inline-block;">Geometry</button>
+      <div class="dropdown-container">
+        <div><img src="../../assets/dot.png"><a href="#rectangle">Rectangle</a></div>
+        <div><img src="../../assets/dot.png"><a href="#circle">Circle</a></div>
+        <div><img src="../../assets/dot.png"><a href="#polygon">ConvexPolygon</a></div>
+        <div><img src="../../assets/dot.png"><a href="#polygon">ConcavePolygon</a></div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+    <div style="margin-left:10px;">
+    <button class="dropdown-btn-icon" style="display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
+    <button class="dropdown-btn" style="display:inline-block;">GUI</button>
+    <div class="dropdown-container">
+      <div><img src="../../assets/dot.png"><a href="#guiintro">Introduction</a></div>
     </div>
     </div>
 
@@ -242,20 +284,19 @@
     <p class="indocs">
       Here is a simple snippet showing the base syntax of Heat2D
     </p>
-    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
-from random import randint
+    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">import heat2d
 
-engine = Engine()
+engine = heat2d.Engine()
 
 @engine.add
-class Main(Stage):
+class Main(heat2d.Stage):
 
     def created(self):
         print("Main stage is initialized!")
 
     def update(self):
         if engine.key_pressed("space"):
-            random_color = Palette("rainbow").get_random()
+            random_color = heat2d.Palette("rainbow").get_random()
             engine.window.clear_color = random_color
 
 engine.run()</code></pre>
@@ -276,33 +317,70 @@ engine.run()</code></pre>
 
   <div id="latest" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-    <h2 class="indocsh">What's new in <b>0.0.4</b></h2>
+    <h2 class="indocsh">What's new in <b>0.0.5</b></h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
-    <p class="indocs">This alpha version is released on X/11/2020</p>
+    <p class="indocs">This alpha version is not released yet</p>
 
     <h4 class="indocsh">New features</h4>
     <ul style="margin-top:-8px;">
-      <li class="indocs">Engine now supports hardware accelerated sprite drawing operations such as scaling, rotating.. (Read more about this topic on <a href="#renderer" class="blua">Renderer</a>)</a>
-      <li class="indocs">Post-process effects and user defined shader support (experimental)</li>
-      <li class="indocs"><a href="#version" class="blua">version</a> module</li>
-      <li class="indocs"><span class="codedocs">take_screenshot()</span> function for <a href="#window" class="blua">Window</a></li>
-      <li class="indocs"><span class="codedocs">toggle_fullscreen()</span> function for <a href="#window" class="blua">Window</a></li>
-      <li class="indocs">Easier & simpler to use <a href="#timer" class="blua">Timer</a> methods</li>
-      <li class="indocs"><span class="codedocs">created()</span> method will be used to initialize objects. (Read more about this concept on <a href="#projectflow" class="blua">Project Flow</a>)</li>
-      <li class="indocs"><span class="codedocs">color</span> library for handling color conversions, storing pallettes, etc.. (Read more on <a href="#color" class="blua">Color</a> and <a href="#palette" class="blua">Palette</a>)</li>
+      <li class="indocs">Animation support is added. See <a class="blua" href="#animintroduction">animation introduction</a> page for further information.</li>
+      <li class="indocs"><a class="blua" href="#window">Window</a> now has <span class="codedocs">is_active()</span> method</li>
+      <li class="indocs"><a class="blua" href="#color">Color</a> object now has <span class="codedocs">mix()</span> method and operator overloadings</li>
+      <li class="indocs">Key combinations can be checked and key repeats can be set (See <a class="blua" href="#engine">Engine</a>)</li>
+      <li class="indocs">New mechanic, <a href="#trigger" class="blua">Triggers</a></li>
+      <li class="indocs"><span class="codedocs">on_collide</span> event for <a class="blua" href="#gameobject">game objects</a> which are invoked when a gameobject gets collided with another</li>
+      <li class="indocs">Some improvements on audio module and new attributes for controlling master volume on <a class="blua" href="#engine">Engine</a></li>
+      <li class="indocs">New postprocess effects, see <a href="#renderer" class="blua">Renderer</a></li>
+      <li class="indocs">New categories and pages added to the documentation</li>
     </ul>
 
     <h4 class="indocsh">Fixed bugs & issues</h4>
     <ul style="margin-top:-8px;">
-      <li class="indocs"><span class="codedocs">size</span> property of <a class="blua" href="#window">Window</a> now can be used</li>
-      <li class="indocs">Cloning system is deprecated and currently onhold.</li>
+      <li class="indocs">Some weird issues on <a class="blua" href="#timer">Timer</a> events are fixed</li>
+      <li class="indocs"><a href="#window" class="blua">Window</a> resizing bug fixed.</li>
+      <li class="indocs"><a href="#vector2" class="blua">Vector2</a> rotation bug fixed.</li>
       <li class="indocs">Minor polishment on modules</li>
-      <li class="indocs">Fixed typos on documentation</li>
+      <li class="indocs">Documentation typos fixed</li>
     </ul>
 
     <h3 class="indocsh" style="margin-top:70px;">Older versions</h3>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-bottom:15px;">
 
+
+
+    <div stlye="display:block;"><img style="margin-top:10px;width:6px;height:6px;margin-bottom:3px;" src="../../assets/dot.png"><button onclick="openVersionDiv('ver004alpha');" style="font-family: 'Segoe UI', 'Arial', 'sans-serif';font-size:17px;font-weight:400;color:#555;background:none;border:none;outline:none;cursor:pointer;margin-left:5px;">0.0.4 Alpha - 20/11/2020</button></div>
+    <div id="ver004alpha" class="verbox" style="display:none; margin-bottom:0px;overflow:visible;grid-template-columns: auto auto;">
+
+      <svg height="400" width="15" style="position:relative;left:-7px;top:-12px;">
+        <line x1="10" y1="0" x2="10" y2="392" style="stroke:rgb(255, 71, 15); stroke-width:5.7;">
+      </svg>
+
+      <div style="margin-top:10px;margin-left:20px;">
+        <h4 class="indocsh">New features</h4>
+        <ul style="margin-top:-8px;">
+          <li class="indocs">Engine now supports hardware accelerated sprite drawing operations such as scaling, rotating.. (Read more about this topic on <a href="#renderer" class="blua">Renderer</a>)</a>
+          <li class="indocs">Post-process effects and user defined shader support (experimental)</li>
+          <li class="indocs"><a href="#version" class="blua">version</a> module</li>
+          <li class="indocs"><span class="codedocs">take_screenshot()</span> function for <a href="#window" class="blua">Window</a></li>
+          <li class="indocs"><span class="codedocs">toggle_fullscreen()</span> function for <a href="#window" class="blua">Window</a></li>
+          <li class="indocs">Easier & simpler to use <a href="#timer" class="blua">Timer</a> methods</li>
+          <li class="indocs"><span class="codedocs">created()</span> method will be used to initialize objects. (Read more about this concept on <a href="#projectflow" class="blua">Project Flow</a>)</li>
+          <li class="indocs"><span class="codedocs">color</span> library for handling color conversions, storing pallettes, etc.. (Read more on <a href="#color" class="blua">Color</a> and <a href="#palette" class="blua">Palette</a>)</li>
+        </ul>
+
+        <h4 class="indocsh">Fixed bugs & issues</h4>
+        <ul style="margin-top:-8px;">
+          <li class="indocs"><span class="codedocs">size</span> property of <a class="blua" href="#window">Window</a> now can be used</li>
+          <li class="indocs">Cloning system is deprecated and currently onhold.</li>
+          <li class="indocs">Minor polishment on modules</li>
+          <li class="indocs">Fixed typos on documentation</li>
+        </ul>
+      </div>
+
+      <svg height="15" width="15" style="position:relative;left:-7px;top:-29px;">
+        <circle cx="10" cy="10" r="3" fill="rgb(255, 71, 15)">
+      </svg>
+    </div>
 
 
     <div stlye="display:block;"><img style="width:6px;height:6px;margin-bottom:3px;" src="../../assets/dot.png"><button onclick="openVersionDiv('ver003alpha');" style="font-family: 'Segoe UI', 'Arial', 'sans-serif';font-size:17px;font-weight:400;color:#555;background:none;border:none;outline:none;cursor:pointer;margin-left:5px;">0.0.3 Alpha - 15/06/2020</button></div>
@@ -346,7 +424,7 @@ engine.run()</code></pre>
 
   <div id="engine" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-    <h2 class="indocsh">Engine</h2>
+    <h2 class="indocsh">Engine <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Engine</span></h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
 
     <table style="margin-left:0%; margin-right:15%;">
@@ -417,14 +495,6 @@ engine.run() #Start the engine</code></pre>
         <li class="attr"><span id="semibold">NameError</span> - Stage is not added to Engine</li>
       </ul>
 
-      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>take_screenshot</b>(filepath, area=None)</code></pre>
-      <p class="attr">Takes a screenshot and saves it</p>
-      <p class="attr" id="sh">Parameters</p>
-      <ul>
-        <li class="attr"><span id="semibold">filepath</span> - where to save the screenshot (str)</li>
-        <li class="attr"><span id="semibold">area</span> - If given, the screenshot will be taken from that area instead of the whole scren (tuple x1, y1, x2, y2)</li>
-      </ul>
-
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_pressed</b>(key)</code></pre>
       <p class="attr">Returns True at the moment the key gets pressed</p>
       <p class="attr" id="sh">Parameters</p>
@@ -486,18 +556,12 @@ engine.run() #Start the engine</code></pre>
     <h2 class="indocsh">Window</h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
 
-    <table style="margin-left:0%; margin-right:15%;">
-      <tr>
-        <td>
-          <p class="indocs" style="width:70%;">Window where your game gets displayed on.</p>
-        </td>
-        <td>
-          <img src=../../assets/heat2d_window_showcase.png>
-        </td>
-      </tr>
-    </table>
+    <div>
+    <p style="float:left; display:inline; width:60%; margin-top:75px;" class="indocs">Window where your game gets displayed on.</p>
+    <img src="../../assets/heat2d_window_showcase.png" style="width:302px; height:162px; display:inline">
+    </div>
 
-    <p class="indocs">You can use properties to cusomize window quickly:</p>
+    <p class="indocs">You can use properties to customize window quickly:</p>
     <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
 
 engine = Engine() #Engine instance
@@ -553,6 +617,21 @@ engine.window.clear_color = Color("Deep Sky Blue") #Change window display's back
       <p class="attr">FPS limit</p>
       <p class="type"><span id="semibold">Type</span>: int</p>
 
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>take_screenshot</b>(filepath, area=None)</code></pre>
+      <p class="attr">Takes a screenshot and saves it</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">filepath</span> - where to save the screenshot (str)</li>
+        <li class="attr"><span id="semibold">area</span> - If given, the screenshot will be taken from that area instead of the whole scren (tuple x1, y1, x2, y2)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>toggle_fullscreen</b>()</code></pre>
+      <p class="attr">Toggles fullscreen mode</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>fullscreen</b></code></pre>
+      <p class="attr">The window is in fullscreen mode or not</p>
+      <p class="type"><span id="semibold">Type</span>: bool</p>
+
     </div>
   </div>
   </div>
@@ -563,7 +642,7 @@ engine.window.clear_color = Color("Deep Sky Blue") #Change window display's back
 
   <div id="stage" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-    <h2 class="indocsh">Stage</h2>
+    <h2 class="indocsh">Stage <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Stage</span></h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
 
     <p class="indocs" style="margin-bottom:40px; width:70%;">Stage system is one of the most important concepts in Heat2D. You can think them like individual parts of your game that does their individual jobs. Such as main menus, game levels etc..</p>
@@ -600,6 +679,14 @@ class MyStage(Stage):
       <ul>
         <li class="attr"><span id="semibold">gameobject</span> - <a class="blua" href="#gameobject">GameObject</a></li>
       </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get</b>(name)</code></pre>
+      <p class="attr">Returns the GameObject matched with name</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">name</span> - Name of the game object (str)</li>
+      </ul>
+      <p class="type"><span id="semibold">Return</span>: <a class="blua" href="#gameobject">GameObject</a></p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>created</b>()</code></pre>
       <p class="attr">This method is meant to be overrode</p>
@@ -640,15 +727,124 @@ class MyStage(Stage):
 
   <div id="sprite" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-  </div>
-  </div>
+    <h2 class="indocsh">Sprite <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Sprite</span></h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
 
+    <div>
+    <p style="float:left; display:inline; width:70%; margin-top:75px;" class="indocs">Sprites are basically images bound to <a class="blua" href="#gameobject">GameObjects</a>. Sprites can also be animated, see <a class="blua" href="#animationintro">animation introduction</a> page for further information about animations.</p>
+    <img src="../../assets/runningman.gif" style="width:150px; height:150px; display:inline">
+    </div>
 
+    <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
 
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Sprite</b>(source, loader=None)</code></pre>
+    <div style="margin-left:30px; margin-top:40px;">
 
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">source</span> - filepath to the source image (str)</li>
+        <li class="attr"><span id="semibold">source</span> - <a class="blua" href="#spriteshet">SpriteSheet</a></li>
+        <li style="margin-top:5px;" class="attr"><span id="semibold">loader</span> - <a class="blua" href="#assetloader">AssetLoader</a></li>
+      </ul>
 
-  <div id="rectangle" style="display:none">
-  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+      <pre class="precode2"><code class="plaintext" id="coda"><b>size</b></code></pre>
+      <p class="attr">Size of the sprite</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>width</b></code></pre>
+      <p class="attr">Width of the sprite</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>height</b></code></pre>
+      <p class="attr">Height of the sprite</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <p class="uyari">
+        <b class="uyarih">Warning: </b> <span class="codedocs">size</span>, <span class="codedocs">width</span> and <span class="codedocs">height</span>
+        properties of sprite is valid if sprite has only one source. (When you create it as <span class="codedocs">Sprite("sourceimage.png")</span>)
+        If you created your sprite using a <a class="blua" href="#spritesheet">SpriteSheet</a> you would want to get width, height or size from SpriteSheet's sources because
+        every frame of the sprite sheet animation can be in different sizes depending on how you created your animation source. You can get current size of the sprite while the sprite sheet animation playing by
+        <span class="codedocs">Sprite.get_current_frame()</span> which returns a <a class="blua" href="#spritesheetsource">Source</a> object.
+      </p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>angle</b></code></pre>
+      <p class="attr">Angle of the sprite</p>
+      <p class="type"><span id="semibold">Type</span>: int (degrees)</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>rotate</b>(angle)</code></pre>
+      <p class="attr">Rotates the sprite by given angle</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">angle</span> - int (degrees)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>rotate_to</b>(vector)</code></pre>
+      <p class="attr">Rotates sprite towards the given position</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">vector</span> - <a class="blua" href="#vector2">Vector2</a></li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>scale</b>(factor)</code></pre>
+      <p class="attr">Scales the sprites by given factor</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">factor</span> - float</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>palette</b></code></pre>
+      <p class="attr">Sprite's palette which is going to be used during rendering</p>
+      <p class="type"><span id="semibold">Type</span>: <a class="blua" href="#palette">Palette</a></p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>add_animation</b>(animation)</code></pre>
+      <p class="attr">Adds new animation group to the sprite</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">animation</span> - <a class="blua" href="#spritesheet">SpriteSheet</a></li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>play_animation</b>(name, duration=None, loop=False)</code></pre>
+      <p class="attr">Plays an animation group</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">name</span> - Name of the animation group (str)</li>
+        <li class="attr"><span id="semibold">duration</span> - How long will it take the play one loop (float)</li>
+        <li class="attr"><span id="semibold">loop</span> - Whether or not the animation will play in loop (bool)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>stop_animation</b>(wait=False)</code></pre>
+      <p class="attr">Stops the current playing animation</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">wait</span> - Wait until the animation ends (bool)</li>
+      </ul>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>has_animation</b></code></pre>
+      <p class="attr">Does sprite have any animation groups or only one static image</p>
+      <p class="type"><span id="semibold">Type</span>: bool</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>sheets</b></code></pre>
+      <p class="attr">This is a dictionary including all animation groups of the sprite by their names. You can access a specific group by their name <span class="codedocs">Sprite.sheets["group name"]</span> or the current group <span class="codedocs">Sprite.sheets[Sprite.current_animation]</span></p>
+      <p class="type"><span id="semibold">Type</span>: dict</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>current_animation</b></code></pre>
+      <p class="attr">Name of the current playing animation group's name</p>
+      <p class="type"><span id="semibold">Type</span>: str</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>current_frame</b></code></pre>
+      <p class="attr">Current frame number of the current playing animation</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>playing</b></code></pre>
+      <p class="attr">If any animation is playing currently</p>
+      <p class="type"><span id="semibold">Type</span>: bool</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get_current_frame</b>()</code></pre>
+      <p class="attr">This function returns a <a class="blua" href="#spritesheetsource">Source</a> object which includes image information about current frame of the current playing animation</p>
+      <p class="type"><span id="semibold">Return</span>: <a class="blua" href="#spritesheetsource">Source</a></p>
+
+    </div>
   </div>
   </div>
 
@@ -658,7 +854,7 @@ class MyStage(Stage):
 
   <div id="color" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-    <h2 class="indocsh">Color</h2>
+    <h2 class="indocsh">Color <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Color</span></h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
 
     <p class="indocs">Color object is used anywhere has a relation with color.</p>
@@ -1336,7 +1532,7 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
 
   <div id="palette" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-    <h2 class="indocsh">Palette</h2>
+    <h2 class="indocsh">Palette <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Palette</span></h2>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
 
     <p class="indocs">Palettes are simply groups of colors. Colors in the palette are sorted by their lightness level by default. You can get a specific color by indexing the palette object, use <span class="codedocs">Palette.get_closest(color)</span> to get the most similar color or use <span class="codedocs">Palette.get_random()</span> method to get a random color.</p>
@@ -1397,6 +1593,114 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
 
   <div id="postprocess" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Postprocess Effects</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+    <p class="indocs">Postprocess effects are built-in shaders that are rendered after all other game rendering stuff is done.</p>
+    <p class="indocs">You can use <span class="codedocs">load_postprocess()</span> method of <a class="blua" href="#renderer">Renderer</a> <span>to load postprocess effects into your game. The postprocess effect gets loaded to <span class="codedocs">Renderer.postprocess</span> attribute, which is a <a class="blua" href="#shader">Shader</a> object so you can customize postprocess effects in the runtime using uniforms</span></p>
+
+    <p style="margin-top:40px;" class="indocs">There is the list of current built-in postprocess effects:</p>
+
+    <p style="margin-top:0;" class="uyari"><b class="uyarih">Warning: </b>If showcase examples below bug out, just refresh the page</p>
+
+    <h2 style="margin-top:60px;" class="indocsh">Pixelate <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"pixelate"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">Mosaic pixelating effect</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• pixelSize</span> - How big the pixels will be (float)</p>
+
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img src="../../assets/post_pixel_sag.jpg" width="640" height="320">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img src="../../assets/post_pixel_sol.jpg" width="640" height="320">
+      </div>
+    </div>
+
+
+    <h2 style="margin-top:75px;" class="indocsh">Blur <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"blur7"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">Single-pass gaussian blur effect. There are four blur effects named <span class="codedocs">blur7</span>, <span class="codedocs">blur11</span>, <span class="codedocs">blur13</span> and <span class="codedocs">blur15</span>. Higher the kernel size, better quality but lower performance</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• resolution</span> - Resolution of blur (float)</p>
+
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img src="../../assets/post_blur_sag.jpg" width="640" height="320">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img src="../../assets/post_blur_sol.jpg" width="640" height="320">
+      </div>
+    </div>
+
+
+    <h2 style="margin-top:75px;" class="indocsh">Anaglyph <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"anaglyph"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">3D stereo illusion effect</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• offset</span> - Distance of the effect from origin (float)</p>
+
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img src="../../assets/post_anaglyph_sag.png" width="640" height="320">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img src="../../assets/post_anaglyph_sol.png" width="640" height="320">
+      </div>
+    </div>
+
+
+    <h2 style="margin-top:75px;" class="indocsh">Vignette <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"vignette"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">Vignette effect</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• strength</span> - Strength of the effect (float)</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• spread</span> - How much the effect spreads (float)</p>
+
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img src="../../assets/post_vignette_sag.jpg" width="640" height="320">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img src="../../assets/post_vignette_sol.jpg" width="640" height="320">
+      </div>
+    </div>
+
+
+    <h2 style="margin-top:75px;" class="indocsh">Trail <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"trail"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">Motion trail effect. (This effect doesn't work really good and the image below doesn't reflect how really this effect work)</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• alpha</span> - Trail gets longer when alpha gets higher (float)</p>
+
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img src="../../assets/post_trail_sag.png" width="640" height="320">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img src="../../assets/post_trail_sol.png" width="640" height="320">
+      </div>
+    </div>
+
+
+    <h2 style="margin-top:75px;" class="indocsh">Correction <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"correction"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">Color correction effect</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• brightness</span> - Image brightness (float)</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• contrast</span> - Image contrast (float)</p>
+
+
+    <h2 style="margin-top:75px;" class="indocsh">RGB <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"rgb"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">RGB channels effect</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• red</span> - Red channel of image (float)</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• green</span> - Green channel of image (float)</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• blue</span> - Blue channel of image (float)</p>
+
+
+    <h2 style="margin-top:75px;" class="indocsh">HSV <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;">Renderer.load_postprocess(<span style="color:#7b9726;">"hsv"</span>)</h2>
+    <p style="margin-top:-10px;" class="indocs">HSV channels effect</p>
+    <p class="indocs" id="semibold">Uniforms</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• hue</span> - Hue channel of image (float)</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• saturation</span> - Saturation channel of image (float)</p>
+    <p style="margin-top:-9px; margin-left:10px;" class="indocs"><span id="semibold">• value</span> - Value channel of image (float)</p>
+
   </div>
   </div>
 
@@ -1428,6 +1732,127 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
 
   <div id="grid" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+
+  <!--                             MATH                               -->
+
+  <!-- ============================================================== -->
+
+
+  <div id="vector2" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+    <h2 class="indocsh">Vector2 <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.math.Vector2</span></h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+
+
+    <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.math.<b>Vector2</b>(x[, y])</code></pre>
+
+    <div style="margin-left:30px; margin-top:40px;">
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><pre><code class="python">Vector2(x, y)</code></pre></li>
+        <li class="attr"><pre><code class="python">Vector2((x, y))</code></pre></li>
+        <li class="attr"><pre><code class="python">Vector2(length)</code></pre></li>
+      </ul>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>Operator overloadings</b></code></pre>
+      <ul>
+        <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> __add__()</code></pre>
+        <pre style="margin-left:30px;"><code class="python">Vector2 + Vector2
+Vector2 + int/float</code></pre>
+<pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> __sub__()</code></pre>
+<pre style="margin-left:30px;"><code class="python">Vector2 - Vector2
+Vector2 - int/float</code></pre>
+<pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> __mul__()</code></pre>
+<pre style="margin-left:30px;"><code class="python">Vector2 * Vector2
+Vector2 * int/float</code></pre>
+<pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> __truediv__()</code></pre>
+<pre style="margin-left:30px;"><code class="python">Vector2 / Vector2
+Vector2 / int/float</code></pre>
+<pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> __floordiv__()</code></pre>
+<pre style="margin-left:30px;"><code class="python">Vector2 // Vector2
+Vector2 // int/float</code></pre>
+      </ul>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>x</b></code></pre>
+      <p class="attr">X component of the vector</p>
+      <p class="type"><span id="semibold">Type</span>: int/float</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>y</b></code></pre>
+      <p class="attr">Y component of the vector</p>
+      <p class="type"><span id="semibold">Type</span>: int/float</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>length</b>()</code></pre>
+      <p class="attr">Returns magnitude of the vector</p>
+      <p class="type"><span id="semibold">Return</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>distance_to</b>(vector)</code></pre>
+      <p class="attr">Returns the distance to the given vector</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">vector</span> - Vector2</li>
+      </ul>
+      <p class="type"><span id="semibold">Return</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>angle_to</b>(vector)</code></pre>
+      <p class="attr">Returns the angle to the given vector</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">vector</span> - Vector2</li>
+      </ul>
+      <p class="type"><span id="semibold">Return</span>: float (degrees)</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get_angle</b>()</code></pre>
+      <p class="attr">Returns angle of the vector</p>
+      <p class="type"><span id="semibold">Return</span>: float (degrees)</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>set_angle</b>(angle)</code></pre>
+      <p class="attr">Sets angle of the vector</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">angle</span> - float (degrees)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>rotate</b>(vector)</code></pre>
+      <p class="attr">Rotates the vector around it's origin</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">angle</span> - float (degrees)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>rotate_around</b>(vector, angle)</code></pre>
+      <p class="attr">Rotates the vector around another vector</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">vector</span> - Vector2</li>
+        <li class="attr"><span id="semibold">angle</span> - float (degrees)</li>
+      </ul>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>dot</b>(vector)</code></pre>
+      <p class="attr">Returns dot-product with given vector</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">vector</span> - Vector2</li>
+      </ul>
+      <p class="type"><span id="semibold">Return</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>inverse</b>()</code></pre>
+      <p class="attr">Returns the inverted version of the vector</p>
+      <p class="type"><span id="semibold">Return</span>: Vector2</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>normalize</b>()</code></pre>
+      <p class="attr">Returns a vector in same direction but length of 1</p>
+      <p class="type"><span id="semibold">Return</span>: Vector2</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>to_tuple</b>()</code></pre>
+      <p class="attr">Returns (x, y)</p>
+      <p class="type"><span id="semibold">Return</span>: tuple</p>
+
+    </div>
   </div>
   </div>
 
