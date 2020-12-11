@@ -1,0 +1,534 @@
+keydata = '{
+  "backspace": {
+    "keycode": 8,
+    "special": false
+  },
+  "tab": {
+    "keycode": 9,
+    "special": false
+  },
+  "clear": {
+    "keycode": 1073741980,
+    "special": false
+  },
+  "return": {
+    "keycode": 13,
+    "special": false
+  },
+  "pause": {
+    "keycode": 1073741896,
+    "special": false
+  },
+  "escape": {
+    "keycode": 27,
+    "special": false
+  },
+  "space": {
+    "keycode": 32,
+    "special": false
+  },
+  "exclaim": {
+    "keycode": 33,
+    "special": false
+  },
+  "quotedbl": {
+    "keycode": 34,
+    "special": false
+  },
+  "hash": {
+    "keycode": 35,
+    "special": false
+  },
+  "dollar": {
+    "keycode": 36,
+    "special": false
+  },
+  "ampersand": {
+    "keycode": 38,
+    "special": false
+  },
+  "quote": {
+    "keycode": 39,
+    "special": false
+  },
+  "lparen": {
+    "keycode": 40,
+    "special": false
+  },
+  "rparen": {
+    "keycode": 41,
+    "special": false
+  },
+  "asterisk": {
+    "keycode": 42,
+    "special": false
+  },
+  "plus": {
+    "keycode": 43,
+    "special": false
+  },
+  "comma": {
+    "keycode": 44,
+    "special": false
+  },
+  "minus": {
+    "keycode": 45,
+    "special": false
+  },
+  "period": {
+    "keycode": 46,
+    "special": false
+  },
+  "slash": {
+    "keycode": 47,
+    "special": false
+  },
+  "0": {
+    "keycode": 48,
+    "special": false
+  },
+  "1": {
+    "keycode": 49,
+    "special": false
+  },
+  "2": {
+    "keycode": 50,
+    "special": false
+  },
+  "3": {
+    "keycode": 51,
+    "special": false
+  },
+  "4": {
+    "keycode": 52,
+    "special": false
+  },
+  "5": {
+    "keycode": 53,
+    "special": false
+  },
+  "6": {
+    "keycode": 54,
+    "special": false
+  },
+  "7": {
+    "keycode": 55,
+    "special": false
+  },
+  "8": {
+    "keycode": 56,
+    "special": false
+  },
+  "9": {
+    "keycode": 57,
+    "special": false
+  },
+  "colon": {
+    "keycode": 58,
+    "special": false
+  },
+  "semicolon": {
+    "keycode": 59,
+    "special": false
+  },
+  "less": {
+    "keycode": 60,
+    "special": false
+  },
+  "equals": {
+    "keycode": 61,
+    "special": false
+  },
+  "greater": {
+    "keycode": 62,
+    "special": false
+  },
+  "question": {
+    "keycode": 63,
+    "special": false
+  },
+  "at": {
+    "keycode": 64,
+    "special": false
+  },
+  "leftbracket": {
+    "keycode": 91,
+    "special": false
+  },
+  "backslash": {
+    "keycode": 92,
+    "special": false
+  },
+  "rightbracet": {
+    "keycode": 93,
+    "special": false
+  },
+  "caret": {
+    "keycode": 94,
+    "special": false
+  },
+  "underscore": {
+    "keycode": 95,
+    "special": false
+  },
+  "backquote": {
+    "keycode": 96,
+    "special": false
+  },
+  "a": {
+    "keycode": 97,
+    "special": false
+  },
+  "b": {
+    "keycode": 98,
+    "special": false
+  },
+  "c": {
+    "keycode": 99,
+    "special": false
+  },
+  "d": {
+    "keycode": 100,
+    "special": false
+  },
+  "e": {
+    "keycode": 101,
+    "special": false
+  },
+  "f": {
+    "keycode": 102,
+    "special": false
+  },
+  "g": {
+    "keycode": 103,
+    "special": false
+  },
+  "h": {
+    "keycode": 104,
+    "special": false
+  },
+  "i": {
+    "keycode": 105,
+    "special": false
+  },
+  "j": {
+    "keycode": 106,
+    "special": false
+  },
+  "k": {
+    "keycode": 107,
+    "special": false
+  },
+  "l": {
+    "keycode": 108,
+    "special": false
+  },
+  "m": {
+    "keycode": 109,
+    "special": false
+  },
+  "n": {
+    "keycode": 110,
+    "special": false
+  },
+  "o": {
+    "keycode": 111,
+    "special": false
+  },
+  "p": {
+    "keycode": 112,
+    "special": false
+  },
+  "q": {
+    "keycode": 113,
+    "special": false
+  },
+  "r": {
+    "keycode": 114,
+    "special": false
+  },
+  "s": {
+    "keycode": 115,
+    "special": false
+  },
+  "t": {
+    "keycode": 116,
+    "special": false
+  },
+  "u": {
+    "keycode": 117,
+    "special": false
+  },
+  "v": {
+    "keycode": 118,
+    "special": false
+  },
+  "w": {
+    "keycode": 119,
+    "special": false
+  },
+  "x": {
+    "keycode": 120,
+    "special": false
+  },
+  "y": {
+    "keycode": 121,
+    "special": false
+  },
+  "z": {
+    "keycode": 122,
+    "special": false
+  },
+  "delete": {
+    "keycode": 127,
+    "special": false
+  },
+  "n0": {
+    "keycode": 1073741922,
+    "special": false
+  },
+  "n1": {
+    "keycode": 1073741913,
+    "special": false
+  },
+  "n2": {
+    "keycode": 1073741914,
+    "special": false
+  },
+  "n3": {
+    "keycode": 1073741915,
+    "special": false
+  },
+  "n4": {
+    "keycode": 1073741916,
+    "special": false
+  },
+  "n5": {
+    "keycode": 1073741917,
+    "special": false
+  },
+  "n6": {
+    "keycode": 1073741918,
+    "special": false
+  },
+  "n7": {
+    "keycode": 1073741919,
+    "special": false
+  },
+  "n8": {
+    "keycode": 1073741920,
+    "special": false
+  },
+  "n9": {
+    "keycode": 1073741921,
+    "special": false
+  },
+  "nperiod": {
+    "keycode": 1073741923,
+    "special": false
+  },
+  "divide": {
+    "keycode": 1073741908,
+    "special": false
+  },
+  "multiply": {
+    "keycode": 1073741909,
+    "special": false
+  },
+  "nminus": {
+    "keycode": 1073741910,
+    "special": false
+  },
+  "nplus": {
+    "keycode": 1073741911,
+    "special": false
+  },
+  "enter": {
+    "keycode": 1073741912,
+    "special": false
+  },
+  "nequals": {
+    "keycode": 1073741927,
+    "special": false
+  },
+  "up": {
+    "keycode": 1073741906,
+    "special": false
+  },
+  "down": {
+    "keycode": 1073741905,
+    "special": false
+  },
+  "right": {
+    "keycode": 1073741903,
+    "special": false
+  },
+  "left": {
+    "keycode": 1073741904,
+    "special": false
+  },
+  "insert": {
+    "keycode": 1073741897,
+    "special": false
+  },
+  "home": {
+    "keycode": 1073741898,
+    "special": false
+  },
+  "end": {
+    "keycode": 1073741901,
+    "special": false
+  },
+  "pageup": {
+    "keycode": 1073741899,
+    "special": false
+  },
+  "pagedown": {
+    "keycode": 1073741902,
+    "special": false
+  },
+  "f1": {
+    "keycode": 1073741882,
+    "special": false
+  },
+  "f2": {
+    "keycode": 1073741883,
+    "special": false
+  },
+  "f3": {
+    "keycode": 1073741884,
+    "special": false
+  },
+  "f4": {
+    "keycode": 1073741885,
+    "special": false
+  },
+  "f5": {
+    "keycode": 1073741886,
+    "special": false
+  },
+  "f6": {
+    "keycode": 1073741887,
+    "special": false
+  },
+  "f7": {
+    "keycode": 1073741888,
+    "special": false
+  },
+  "f8": {
+    "keycode": 1073741889,
+    "special": false
+  },
+  "f9": {
+    "keycode": 1073741890,
+    "special": false
+  },
+  "f10": {
+    "keycode": 1073741891,
+    "special": false
+  },
+  "f11": {
+    "keycode": 1073741892,
+    "special": false
+  },
+  "f12": {
+    "keycode": 1073741893,
+    "special": false
+  },
+  "f13": {
+    "keycode": 1073741928,
+    "special": false
+  },
+  "f14": {
+    "keycode": 1073741929,
+    "special": false
+  },
+  "f15": {
+    "keycode": 1073741930,
+    "special": false
+  },
+  "numlock": {
+    "keycode": 1073741907,
+    "special": true
+  },
+  "capslock": {
+    "keycode": 1073741881,
+    "special": true
+  },
+  "scrollock": {
+    "keycode": 1073741895,
+    "special": true
+  },
+  "rshift": {
+    "keycode": 1073742053,
+    "special": true
+  },
+  "lshift": {
+    "keycode": 1073742049,
+    "special": true
+  },
+  "rctrl": {
+    "keycode": 1073742052,
+    "special": true
+  },
+  "lctrl": {
+    "keycode": 1073742048,
+    "special": true
+  },
+  "ralt": {
+    "keycode": 1073742054,
+    "special": true
+  },
+  "lalt": {
+    "keycode": 1073742050,
+    "special": true
+  },
+  "rmeta": {
+    "keycode": 1073742055,
+    "special": true
+  },
+  "lmeta": {
+    "keycode": 1073742051,
+    "special": true
+  },
+  "lsuper": {
+    "keycode": 1073742051,
+    "special": false
+  },
+  "rsuper": {
+    "keycode": 1073742055,
+    "special": false
+  },
+  "altgr": {
+    "keycode": 1073742081,
+    "special": true
+  },
+  "help": {
+    "keycode": 1073741941,
+    "special": false
+  },
+  "print": {
+    "keycode": 1073741894,
+    "special": false
+  },
+  "sysreq": {
+    "keycode": 1073741978,
+    "special": false
+  },
+  "break": {
+    "keycode": 1073741896,
+    "special": false
+  },
+  "menu": {
+    "keycode": 1073741942,
+    "special": false
+  },
+  "power": {
+    "keycode": 1073741926,
+    "special": false
+  },
+  "euro": {
+    "keycode": 1073742004,
+    "special": false
+  }
+}';

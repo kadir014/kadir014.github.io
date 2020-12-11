@@ -18,10 +18,12 @@
 </head>
 
 <body onhashchange="load_hash();">
+  <div style="display:none;" id="hashvar">true</div>
+
   <div id="headbar">
     <div id="github-redirect" class="unselectable">
       <a href="https://github.com/kadir014/heat2d" target="_blank">
-       <img src="../../assets/github-icon.jpg" alt="Github Icon">
+       <img id="githublogoimg" src="../../assets/github-icon.jpg" alt="Github Icon">
       </a>
       <p> See Source</p>
     </div>
@@ -55,7 +57,7 @@
       <input id="searchbarinput" placeholder="Quick search">
       <button onclick="search();">&nbsp;</button>
     </div>
-    <hr style="width:92%; height:1px; border-width:0; color:gray; background-color:#ccc">
+    <hr style="width:92%; height:1px; border-width:0; color:gray; background-color:var(--hra)">
 
     <div style="margin-left:10px;">
     <button class="dropdown-btn-icon" style="margin-top:6px; display:inline-block;"><img src="../../assets/icon-idle.png" style="width:15px; height:15px;"></button>
@@ -64,6 +66,9 @@
       <div><img src="../../assets/dot.png"><a href="#introduction">Introduction</a></div>
       <div><img src="../../assets/dot.png"><a href="#installing">Installing</a></div>
       <div><img src="../../assets/dot.png"><a href="#tutorials">Tutorials</a></div>
+      <div><img src="../../assets/dot.png"><a href="#howto">How to use the docs</a></div>
+      <div><img src="../../assets/dot.png"><a href="#projectflow">Project structure and flow</a></div>
+      <div><img src="../../assets/dot.png"><a href="#inputhandling">Input handling</a></div>
     </div>
     </div>
 
@@ -177,7 +182,7 @@
       .
     </div>
 
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:70px; margin-left:30px; margin-bottom:35px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:70px; margin-left:30px; margin-bottom:35px;">
 
     <div style="margin:30px; margin-top:0; margin-bottom:0; padding-bottom:0; width:100%; height:55px;">
       <p class="indocs" style="margin-top:0;text-align:center;font-size:14px;margin-right:70px;"><b>GPL 3.0</b> © Kadir Aksoy<span style="margin-left:40px;"></span><a style="margin-right:10px;" class="blua" href="#introduction">Introduction</a> • <a style="margin-left:10px;margin-right:10px;" class="blua" href="#tutorials">Tutorial Index</a> • <a style="margin-left:10px;" class="blua" href="https://github.com/kadir014/heat2d">Github Repository</a></p>
@@ -189,7 +194,7 @@
   <div id="search" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Searching for <span id="searchelement">nothing</span></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
     <p class="indocs" id="searchstate">a</p>
 
     <div>
@@ -208,7 +213,7 @@
 
   <div id="introduction" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-    <img src="../../assets/Heat2D Logo.png" width=679, height=300 class="center">
+    <img src="../../assets/Heat2D Logo Transparent.png" width=679, height=300 class="center">
     <p class="indocs">
       Heat2D is an open-source, simple and concise 2D game engine project. <a class="blua" href="https://github.com/kadir014/heat2d">You can contribute and see the source here.</a>
       <br><br>
@@ -264,7 +269,7 @@
       <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">pip install heat2d</code></pre>
     <p class="indocs" style="margin-top:25px;">
 
-    <h3 class="indocsh" style="color:#555; margin-top:35px;">Install from source</h3>
+    <h3 class="indocsh" style="color:var(--semibold); margin-top:35px;">Install from source</h3>
     <p class="indocs">
        If you can't install Heat2D with PIP, you can download the source <a class="blua" href="https://github.com/kadir014/heat2d">from here</a> and build it manually
     </p>
@@ -308,6 +313,217 @@ engine.run()</code></pre>
   </div>
 
 
+
+
+
+  <div id="howto" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+
+
+
+  <div id="projectflow" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+  </div>
+  </div>
+
+
+
+
+
+  <div id="inputhandling" style="display:none">
+  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
+
+    <h2 class="indocsh">Input handling</h2>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
+
+    <p class="indocs">Keyboard, mouse and controller inputs can be managed using <a class="blua" href="#engine">Engine's</a> related methods.</p>
+
+    <h3 class="indocsh" style="margin-top:50px;">Keyboard</h3>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
+    <p class="indocs">There are three main methods to interact with keyboard input: <span class="codedocs">heat2d.Engine.key_pressed(key)</span>, <span class="codedocs">heat2d.Engine.key_released(key)</span> and <span class="codedocs">heat2d.Engine.key_held(key)</span>. The <span class="codedocs">key</span> parameter is just a string indicating the keyboard key,
+      there is a list below (click spoiler to see the list) and a keyboard example demo. If none paramaters given, any key press will return True.</p>
+    <p class="indocs">You can also check key combinations. E.g <span class="codedocs">key_pressed("ctrl + z")</span>, <span class="codedocs">key_held("alt + b + 0")</span>...</p>
+
+    <p class="indocs">White-spaces and upper/lower cases doesn't matter while entering the key parameter, so <span class="codedocs">"space"</span> and <span class="codedocs">"SpaCE"</span> are the same just as like <span class="codedocs">"shift+ctrl+z+b"</span> and <span class="codedocs">"SHIFT  + ctrl + Z+b"</span> ...</p>
+
+    <p class="indocs">You can control numpad keys both ways: <span class="codedocs">key_pressed("0", numpad=True)</span> or <span class="codedocs">key_pressed("n0")</span></p>
+
+    <p class="indocs">While controlling special characters, you can use <span class="codedocs">left</span> and <span class="codedocs">right</span> keyword arguments or place prefixes.<br><span class="codedocs">key_held("ctrl")</span> checks both left and right ctrl keys, you can limit this by doing <span class="codedocs">Engine.key_held("ctrl", right=True)</span> or <span class="codedocs">key_held("rctrl")</span></p>
+
+    <div style="margin-top:40px;">
+      <div class="unselectable" style="white-space: nowrap;">
+        <div id="satir1">
+          <button onclick="getKey('escape')" id="escape" class="btn-small"><span class="btn-text3">ESC</span></button>
+          <button onclick="getKey('f1')" style="margin-left:44px;" class="btn-small"><span class="btn-text2">F1</span></button>
+          <button onclick="getKey('f2')" class="btn-small"><span class="btn-text2">F2</span></button>
+          <button onclick="getKey('f3')" class="btn-small"><span class="btn-text2">F3</span></button>
+          <button onclick="getKey('f4')" class="btn-small"><span class="btn-text2">F4</span></button>
+          <button onclick="getKey('f5')" class="btn-small" style="margin-left:19px;"><span class="btn-text2">F5</span></button>
+          <button onclick="getKey('f6')" class="btn-small"><span class="btn-text2">F6</span></button>
+          <button onclick="getKey('f7')" class="btn-small"><span class="btn-text2">F7</span></button>
+          <button onclick="getKey('f8')" class="btn-small"><span class="btn-text2">F8</span></button>
+          <button onclick="getKey('f9')" class="btn-small" style="margin-left:19px;"><span class="btn-text2">F9</span></button>
+          <button onclick="getKey('f10')" class="btn-small"><span class="btn-text3">F10</span></button>
+          <button onclick="getKey('f11')" class="btn-small"><span class="btn-text3">F11</span></button>
+          <button onclick="getKey('f12')" class="btn-small"><span class="btn-text3">F12</span></button>
+          <button onclick="getKey('print')" style="margin-left:194px;" class="btn-small btn-double"><span class="btn-text3">PRT<br>SCR</span></button>
+          <button onclick="getKey('scrollock')" class="btn-small btn-double"><span class="btn-text3">SCR<br>LCK</span></button>
+          <button onclick="getKey('break')" class="btn-small btn-double"><span class="btn-text3">PAUS<br>BRK</span></button>
+        </div>
+        <div id="satir2" style="margin-top:8px;">
+          <button onclick="getKey('quotedbl')" class="btn-small btn-double" style="line-height:9px;"><span class="btn-text2">"<br>é</span></button>
+          <button onclick="getKey('1')" class="btn-small"><span class="btn-text1">1</span></button>
+          <button onclick="getKey('2')" class="btn-small"><span class="btn-text1">2</span></button>
+          <button onclick="getKey('3')" class="btn-small"><span class="btn-text1">3</span></button>
+          <button onclick="getKey('4')" class="btn-small"><span class="btn-text1">4</span></button>
+          <button onclick="getKey('5')" class="btn-small"><span class="btn-text1">5</span></button>
+          <button onclick="getKey('6')" class="btn-small"><span class="btn-text1">6</span></button>
+          <button onclick="getKey('7')" class="btn-small"><span class="btn-text1">7</span></button>
+          <button onclick="getKey('8')" class="btn-small"><span class="btn-text1">8</span></button>
+          <button onclick="getKey('9')" class="btn-small"><span class="btn-text1">9</span></button>
+          <button onclick="getKey('0')" class="btn-small"><span class="btn-text1">0</span></button>
+          <button onclick="getKey('asterisk')" class="btn-small"><span class="btn-text1">-</span></button>
+          <button onclick="getKey('minus')" class="btn-small btn-double"><span class="btn-text1">+<br>=</span></button>
+          <button onclick="getKey('backspace')" class="btn-long"><span class="btn-text1">←</span></button>
+          <button onclick="getKey('insert')" style="margin-left:11px;" class="btn-small"><span class="btn-text3">Ins</span></button>
+          <button onclick="getKey('home')" class="btn-small"><span class="btn-text4">Home</span></button>
+          <button onclick="getKey('pageup')" class="btn-small btn-double"><span class="btn-text3">PG<br>UP</span></button>
+          <button onclick="getKey('numlock')" style="margin-left:11px;" class="btn-small btn-double"><span class="btn-text3">NUM<br>LCK</span></button>
+          <button onclick="getKey('divide')" class="btn-small"><span class="btn-text1">/</span></button>
+          <button onclick="getKey('multiply')" class="btn-small"><span class="btn-text1">*</span></button>
+          <button onclick="getKey('nminus')" class="btn-small"><span class="btn-text1">-</span></button>
+        </div>
+        <div id="satir3">
+          <button onclick="getKey('tab')" id="tab" class="btn-tab btn-double"><span class="btn-text1">Tab<br>↹</span></button>
+          <button onclick="getKey('q')" class="btn-small"><span class="btn-text1">Q</span></button>
+          <button onclick="getKey('w')" class="btn-small"><span class="btn-text1">W</span></button>
+          <button onclick="getKey('e')" class="btn-small"><span class="btn-text1">E</span></button>
+          <button onclick="getKey('r')" class="btn-small"><span class="btn-text1">R</span></button>
+          <button onclick="getKey('t')" class="btn-small"><span class="btn-text1">T</span></button>
+          <button onclick="getKey('y')" class="btn-small"><span class="btn-text1">Y</span></button>
+          <button onclick="getKey('u')" class="btn-small"><span class="btn-text1">U</span></button>
+          <button onclick="getKey('i')" class="btn-small"><span class="btn-text1">I</span></button>
+          <button onclick="getKey('o')" class="btn-small"><span class="btn-text1">O</span></button>
+          <button onclick="getKey('p')" class="btn-small"><span class="btn-text1">P</span></button>
+          <button onclick="getKey('7')" class="btn-small btn-double"><span class="btn-text4">{<br>[</span></button>
+          <button onclick="getKey('7')" class="btn-small btn-double"><span class="btn-text4">}<br>]</span></button>
+          <button onclick="getKey('return')" class="btn-enter"><span class="btn-text3">⏎<br>Enter</span></button>
+          <button onclick="getKey('7')" class="btn-enter2"></button>
+          <button onclick="getKey('delete')" style="margin-left:11px;" class="btn-small"><span class="btn-text3">Del</span></button>
+          <button onclick="getKey('end')" class="btn-small"><span class="btn-text4">End</span></button>
+          <button onclick="getKey('pagedown')" class="btn-small btn-double"><span class="btn-text3">PG<br>DWN</span></button>
+          <button onclick="getKey('n7')" style="margin-left:11px;" class="btn-small"><span class="btn-text1">7</span></button>
+          <button onclick="getKey('n8')" class="btn-small"><span class="btn-text1">8</span></button>
+          <button onclick="getKey('n9')" class="btn-small"><span class="btn-text1">9</span></button>
+          <button onclick="getKey('nplus')" class="btn-plus"><span class="btn-text1">+</span></button>
+        </div>
+        <div id="satir4">
+          <button class="btn-tab btn-double" style="width:59px"><span class="btn-text4">CAPS<br>LOCK</span></button>
+          <button class="btn-small"><span class="btn-text1">A</span></button>
+          <button class="btn-small"><span class="btn-text1">S</span></button>
+          <button class="btn-small"><span class="btn-text1">D</span></button>
+          <button class="btn-small"><span class="btn-text1">F</span></button>
+          <button class="btn-small"><span class="btn-text1">G</span></button>
+          <button class="btn-small"><span class="btn-text1">H</span></button>
+          <button class="btn-small"><span class="btn-text1">J</span></button>
+          <button class="btn-small"><span class="btn-text1">K</span></button>
+          <button class="btn-small"><span class="btn-text1">L</span></button>
+          <button class="btn-small"><span class="btn-text1">;</span></button>
+          <button class="btn-small"><span class="btn-text1">@</span></button>
+          <button class="btn-small btn-double"><span class="btn-text1">~<br>#</span></button>
+          <button style="margin-left:219px;" class="btn-small"><span class="btn-text1">4</span></button>
+          <button class="btn-small"><span class="btn-text1">5</span></button>
+          <button class="btn-small"><span class="btn-text1">9</span></button>
+        </div>
+        <div id="satir5">
+          <button class="btn-tab" style="width:100px;"><span class="btn-text4">⇧ Shift</span></button>
+          <button class="btn-small"><span class="btn-text1">Z</span></button>
+          <button class="btn-small"><span class="btn-text1">X</span></button>
+          <button class="btn-small"><span class="btn-text1">C</span></button>
+          <button class="btn-small"><span class="btn-text1">V</span></button>
+          <button class="btn-small"><span class="btn-text1">B</span></button>
+          <button class="btn-small"><span class="btn-text1">N</span></button>
+          <button class="btn-small"><span class="btn-text1">M</span></button>
+          <button class="btn-small btn-double" style="line-height:9px;"><span class="btn-text1"><<br>.</span></button>
+          <button class="btn-small btn-double" style="line-height:9px;"><span class="btn-text1"><<br>,</span></button>
+          <button class="btn-small"><span class="btn-text1">?</span></button>
+          <button class="btn-tab" style="width:110px;"><span class="btn-text4">⇧ Shift</span></button>
+          <button style="margin-left:54px;" class="btn-small"><span class="btn-text1">▲</span></button>
+          <button style="margin-left:54px;" class="btn-small"><span class="btn-text1">1</span></button>
+          <button class="btn-small"><span class="btn-text1">2</span></button>
+          <button class="btn-small"><span class="btn-text1">3</span></button>
+          <button class="btn-plus" style="height:86px;"><span class="btn-text4">Enter</span></button>
+        </div>
+        <div id="satir6">
+          <button class="btn-small" style="width:60px;"><span class="btn-text3">Ctrl</span></button>
+          <button class="btn-small"><span class="btn-text1">⊞</span></button>
+          <button class="btn-small" style="width:60px;"><span class="btn-text3">Alt</span></button>
+          <button class="btn-small" style="width:240px;"><span class="btn-text3">&nbsp;</span></button>
+          <button class="btn-small" style="width:60px;"><span class="btn-text3">AltGr</span></button>
+          <button class="btn-small"><span class="btn-text1">⊞</span></button>
+          <button class="btn-small"><span class="btn-text1">a</span></button>
+          <button class="btn-small" style="width:86px;"><span class="btn-text3">Ctrl</span></button>
+          <button style="margin-left:11px;" class="btn-small"><span class="btn-text1" style="font-size:14px;">◀</span></button>
+          <button class="btn-small"><span class="btn-text1">▼</span></button>
+          <button class="btn-small"><span class="btn-text1" style="font-size:14px;">▶</span></button>
+          <button class="btn-small" style="width:82px;margin-left:11px;"><span class="btn-text1">0</span></button>
+          <button class="btn-small"><span class="btn-text1">Del</span></button>
+        </div>
+      </div>
+
+      <div style="margin-top:50px;margin-bottom:260px;">
+        <div class="btn-show unselectable">
+          <span class="btn-show-text">Q</span>
+        </div>
+
+        <div style="display:inline;float:left;margin-left:10px;">
+          <p class="indocs" style="margin-top:0px;">Key <span class="codedocs" id="keyname">Q</span></p>
+          <p class="indocs" style="margin-top:-10px;">Keycode <span class="codedocs" id="keycode">113</span></p>
+          <p class="indocs" style="margin-top:-10px;">Special? <span class="codedocs" id="keyspecial">false</span></p>
+          <p class="indocs" style="margin-top:-10px;">Parameter <span class="codedocs" id="keypar">"q"</span></p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <h3 class="indocsh" style="margin-top:10px;">Mouse</h3>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
+
+    <p class="indocs">There are three main methods to interact with mouse input: <span class="codedocs">heat2d.Engine.mouse_pressed(button)</span>, <span class="codedocs">heat2d.Engine.mouse_released(button)</span> and <span class="codedocs">heat2d.Engine.mouse_held(button)</span>. The <span class="codedocs">button</span> parameter is just a string indicating the keyboard key,
+      there is a list below (click spoiler to see the list) and a mouse example demo. If none paramaters given, any button press will return True.</p>
+
+    <p class="indocs">You can check mouse wheel state with <span class="codedocs">heat2d.Engine.mouse_wheel_up()</span> and <span class="codedocs">heat2d.Engine.mouse_wheel_down()</span></p>
+
+    <div>
+      <div>
+        <button onclick="getBtn('left');" class="mouse-left unselectable"></button>
+        <button onclick="getBtn('right');" class="mouse-right unselectable"></button>
+        <button onclick="getBtn('middle');" class="mouse-middle unselectable"></button>
+        <img class="mouse-bottom unselectable">
+      </div>
+
+      <div style="margin-left:200px;position:relative;top:30px;">
+        <p class="indocs" style="margin-top:0px;">Key <span class="codedocs" id="mousename"></span></p>
+        <p class="indocs" style="margin-top:-10px;">Parameter <span class="codedocs" id="mousepar"></span></p>
+      </div>
+    </div>
+
+    <h3 class="indocsh" style="margin-top:365px;">Controller</h3>
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
+
+    <p class="indocs"><b>TODO</b></p>
+
+    <img class="controller" width=433 height=325></img>
+
+  </div>
+  </div>
+
+
   <!-- ============================================================== -->
 
   <!--                          WHAT'S NEW                            -->
@@ -318,7 +534,7 @@ engine.run()</code></pre>
   <div id="latest" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">What's new in <b>0.0.5</b></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
     <p class="indocs">This alpha version is not released yet</p>
 
     <h4 class="indocsh">New features</h4>
@@ -344,11 +560,11 @@ engine.run()</code></pre>
     </ul>
 
     <h3 class="indocsh" style="margin-top:70px;">Older versions</h3>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-bottom:15px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-bottom:15px;">
 
 
 
-    <div stlye="display:block;"><img style="margin-top:10px;width:6px;height:6px;margin-bottom:3px;" src="../../assets/dot.png"><button onclick="openVersionDiv('ver004alpha');" style="font-family: 'Segoe UI', 'Arial', 'sans-serif';font-size:17px;font-weight:400;color:#555;background:none;border:none;outline:none;cursor:pointer;margin-left:5px;">0.0.4 Alpha - 20/11/2020</button></div>
+    <div stlye="display:block;"><img style="margin-top:10px;width:6px;height:6px;margin-bottom:3px;" src="../../assets/dot.png"><button onclick="openVersionDiv('ver004alpha');" style="font-family: 'Segoe UI', 'Arial', 'sans-serif';font-size:17px;font-weight:400;color:var(--semibold);background:none;border:none;outline:none;cursor:pointer;margin-left:5px;">0.0.4 Alpha - 20/11/2020</button></div>
     <div id="ver004alpha" class="verbox" style="display:none; margin-bottom:0px;overflow:visible;grid-template-columns: auto auto;">
 
       <svg height="400" width="15" style="position:relative;left:-7px;top:-12px;">
@@ -383,7 +599,7 @@ engine.run()</code></pre>
     </div>
 
 
-    <div stlye="display:block;"><img style="width:6px;height:6px;margin-bottom:3px;" src="../../assets/dot.png"><button onclick="openVersionDiv('ver003alpha');" style="font-family: 'Segoe UI', 'Arial', 'sans-serif';font-size:17px;font-weight:400;color:#555;background:none;border:none;outline:none;cursor:pointer;margin-left:5px;">0.0.3 Alpha - 15/06/2020</button></div>
+    <div stlye="display:block;"><img style="width:6px;height:6px;margin-bottom:3px;" src="../../assets/dot.png"><button onclick="openVersionDiv('ver003alpha');" style="font-family: 'Segoe UI', 'Arial', 'sans-serif';font-size:17px;font-weight:400;color:var(--semibold);background:none;border:none;outline:none;cursor:pointer;margin-left:5px;">0.0.3 Alpha - 15/06/2020</button></div>
     <div id="ver003alpha" class="verbox" style="display:none; margin-bottom:0px;overflow:visible;grid-template-columns: auto auto;">
 
       <svg height="267" width="15" style="position:relative;left:-7px;top:-12px;">
@@ -425,7 +641,7 @@ engine.run()</code></pre>
   <div id="engine" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Engine <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Engine</span></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <table style="margin-left:0%; margin-right:15%;">
       <tr>
@@ -454,7 +670,7 @@ engine.run() #Start the engine</code></pre>
     <p class="indocs">You can find more information on <a class="blua" href="#projectflow">Project Flow</a> or Tutorial index.</p>
 
     <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Engine</b>()</code></pre>
     <div style="margin-left:30px; margin-top:30px;">
@@ -484,6 +700,22 @@ engine.run() #Start the engine</code></pre>
         <li class="attr"><span id="semibold">component</span> The component to add (<a class="blua" href="#uicontext">UI Context</a>, <a class="blua" href="#stage">Stage</a>, <a class="blua" href="#gameobject">GameObject</a>)</li>
       </ul>
 
+      <pre class="precode2"><code class="plaintext" id="coda"><b>current_stage</b></code></pre>
+      <p class="attr">Current stage's name</p>
+      <p class="type"><span id="semibold">Type</span>: str</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get_current_stage</b>()</code></pre>
+      <p class="attr">Returns current stage</p>
+      <p class="type"><span id="semibold">Return</span>: <a class="blua" href="#stage">Stage</a></p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>get_stage</b>(name)</code></pre>
+      <p class="attr">Returns desired stage</p>
+      <p class="attr" id="sh">Parameters</p>
+      <ul>
+        <li class="attr"><span id="semibold">name</span> - str</li>
+      </ul>
+      <p class="type"><span id="semibold">Return</span>: <a class="blua" href="#stage">Stage</a></p>
+
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>change_stage</b>(stage)</code></pre>
       <p class="attr">Changes the current stage</p>
       <p class="attr" id="sh">Parameters</p>
@@ -495,12 +727,29 @@ engine.run() #Start the engine</code></pre>
         <li class="attr"><span id="semibold">NameError</span> - Stage is not added to Engine</li>
       </ul>
 
+      <pre class="precode2"><code class="plaintext" id="coda"><b>deltatime</b></code></pre>
+      <p class="attr">Elapsed time between two frames</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>fps</b></code></pre>
+      <p class="attr">Current FPS of your game</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <pre class="precode2"><code class="plaintext" id="coda"><b>max_fps</b></code></pre>
+      <p class="attr">FPS limit</p>
+      <p class="type"><span id="semibold">Type</span>: int</p>
+
+      <p class="uyari">
+        <b class="uyarih">Warning: </b> There are input handling functions below. See <a class="blua" href="#inputhandling">Input handling</a> page to learn about usable parameters and further information.
+      </p>
+
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_pressed</b>(key)</code></pre>
       <p class="attr">Returns True at the moment the key gets pressed</p>
       <p class="attr" id="sh">Parameters</p>
       <ul>
         <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_released</b>(key)</code></pre>
       <p class="attr">Returns True at the moment the key gets released</p>
@@ -508,6 +757,7 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_held</b>(key)</code></pre>
       <p class="attr">Returns True if key is pressed</p>
@@ -515,6 +765,7 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_pressed</b>(button)</code></pre>
       <p class="attr">Returns True at the moment the mouse button gets pressed</p>
@@ -522,6 +773,7 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
       </ul>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_released</b>(button)</code></pre>
       <p class="attr">Returns True at the moment the mouse button gets released</p>
@@ -529,6 +781,7 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
       </ul>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_held</b>(button)</code></pre>
       <p class="attr">Returns True if mouse button is pressed</p>
@@ -536,12 +789,15 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
       </ul>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_wheel_up</b>()</code></pre>
       <p class="attr">Returns True if mouse wheel gets turned upwards</p>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_wheel_down</b>()</code></pre>
       <p class="attr">Returns True if mouse wheel gets turned downwards</p>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
 
     </div>
   </div>
@@ -554,7 +810,7 @@ engine.run() #Start the engine</code></pre>
   <div id="window" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Window</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <div>
     <p style="float:left; display:inline; width:60%; margin-top:75px;" class="indocs">Window where your game gets displayed on.</p>
@@ -576,7 +832,7 @@ engine.window.clear_color = Color("Deep Sky Blue") #Change window display's back
 </code></pre>
 
     <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Window</b>()</code></pre>
 
@@ -609,14 +865,6 @@ engine.window.clear_color = Color("Deep Sky Blue") #Change window display's back
       <p class="attr">Center point coordinates of window</p>
       <p class="type"><span id="semibold">Type</span>: <a class="blua" href="#vector2">Vector2</a></p>
 
-      <pre class="precode2"><code class="plaintext" id="coda"><b>fps</b></code></pre>
-      <p class="attr">Current FPS of your game</p>
-      <p class="type"><span id="semibold">Type</span>: int</p>
-
-      <pre class="precode2"><code class="plaintext" id="coda"><b>max_fps</b></code></pre>
-      <p class="attr">FPS limit</p>
-      <p class="type"><span id="semibold">Type</span>: int</p>
-
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>take_screenshot</b>(filepath, area=None)</code></pre>
       <p class="attr">Takes a screenshot and saves it</p>
       <p class="attr" id="sh">Parameters</p>
@@ -632,6 +880,10 @@ engine.window.clear_color = Color("Deep Sky Blue") #Change window display's back
       <p class="attr">The window is in fullscreen mode or not</p>
       <p class="type"><span id="semibold">Type</span>: bool</p>
 
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>is_active</b>()</code></pre>
+      <p class="attr">Is the window active or not</p>
+      <p class="type"><span id="semibold">Return</span>: bool</p>
+
     </div>
   </div>
   </div>
@@ -643,7 +895,7 @@ engine.window.clear_color = Color("Deep Sky Blue") #Change window display's back
   <div id="stage" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Stage <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Stage</span></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <p class="indocs" style="margin-bottom:40px; width:70%;">Stage system is one of the most important concepts in Heat2D. You can think them like individual parts of your game that does their individual jobs. Such as main menus, game levels etc..</p>
 
@@ -663,12 +915,12 @@ class MyStage(Stage):
     #This method is called every tick by engine
     def update(self):
         if engine.key_pressed("space"):
-            engine.take_screenshot("screenshots/001.png")
+            engine.window.take_screenshot("screenshots/001.png")
             print("Screenshot saved to screenshots folder.")
 </code></pre>
 
     <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Stage</b>()</code></pre>
     <div style="margin-left:30px; margin-top:40px;">
@@ -705,7 +957,7 @@ class MyStage(Stage):
   <div id="errors" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Errors</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
     <p class="indocs">The following errors are thrown by the engine</p>
 
     <pre class="precode" style="border-left-color: #f7442d;"><code class="plaintext" id="coda"><span id="prope"><i>exception</i></span> heat2d.errors.<b>NoStageDeclared</b></code></pre>
@@ -728,7 +980,7 @@ class MyStage(Stage):
   <div id="sprite" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Sprite <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Sprite</span></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <div>
     <p style="float:left; display:inline; width:70%; margin-top:75px;" class="indocs">Sprites are basically images bound to <a class="blua" href="#gameobject">GameObjects</a>. Sprites can also be animated, see <a class="blua" href="#animationintro">animation introduction</a> page for further information about animations.</p>
@@ -736,7 +988,7 @@ class MyStage(Stage):
     </div>
 
     <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Sprite</b>(source, loader=None)</code></pre>
     <div style="margin-left:30px; margin-top:40px;">
@@ -768,8 +1020,8 @@ class MyStage(Stage):
         <span class="codedocs">Sprite.get_current_frame()</span> which returns a <a class="blua" href="#spritesheetsource">Source</a> object.
       </p>
 
-      <pre class="precode2"><code class="plaintext" id="coda"><b>angle</b></code></pre>
-      <p class="attr">Angle of the sprite</p>
+      <pre class="precode" style="border-left-color: #ff75da;"><code class="plaintext" id="coda"> <b>angle</b></code></pre>
+      <p class="attr">Angle of the spritey</p>
       <p class="type"><span id="semibold">Type</span>: int (degrees)</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>rotate</b>(angle)</code></pre>
@@ -855,12 +1107,12 @@ class MyStage(Stage):
   <div id="color" style="display:none;">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Color <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Color</span></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <p class="indocs">Color object is used anywhere has a relation with color.</p>
 
     <p class="indocs">Some examples:</p>
-    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import *
+    <pre class="precode"><code class="python" style="text-align: left; padding-left:13px;">from heat2d import Color
 
 Color(0, 255, 0) #Lime (alpha is 255 by default)
 
@@ -1453,7 +1705,7 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
     </div>
 
     <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Color</b>(color[, ...])</code></pre>
       <div style="margin-left:30px; margin-top:40px;">
@@ -1533,7 +1785,7 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
   <div id="palette" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Palette <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.Palette</span></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <p class="indocs">Palettes are simply groups of colors. Colors in the palette are sorted by their lightness level by default. You can get a specific color by indexing the palette object, use <span class="codedocs">Palette.get_closest(color)</span> to get the most similar color or use <span class="codedocs">Palette.get_random()</span> method to get a random color.</p>
 
@@ -1549,7 +1801,7 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
     </table>
 
     <h2 class="indocsh" style="margin-top: 80px;">Reference</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.<b>Palette</b>(source)</code></pre>
 
@@ -1594,7 +1846,7 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
   <div id="postprocess" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Postprocess Effects</h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
     <p class="indocs">Postprocess effects are built-in shaders that are rendered after all other game rendering stuff is done.</p>
     <p class="indocs">You can use <span class="codedocs">load_postprocess()</span> method of <a class="blua" href="#renderer">Renderer</a> <span>to load postprocess effects into your game. The postprocess effect gets loaded to <span class="codedocs">Renderer.postprocess</span> attribute, which is a <a class="blua" href="#shader">Shader</a> object so you can customize postprocess effects in the runtime using uniforms</span></p>
@@ -1746,7 +1998,7 @@ print(c.to_tuple()) #output -> (0, 191, 255, 255)
   <div id="vector2" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
     <h2 class="indocsh">Vector2 <span class="codedocs" style="font-weight:200;font-size:19px;border-radius:9px;padding-left:6px;padding-right:6px;padding-top:2px;padding-bottom:1px;"><span style="color:#6666ea">import</span> heat2d.math.Vector2</span></h2>
-    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:#ddd; margin-top:-10px;">
+    <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
 
     <pre class="precode" style="border-left-color: #4287f5;"><code class="plaintext" id="cod" style="margin-top:20px;"><span id="prop"><i>class</i></span> heat2d.math.<b>Vector2</b>(x[, y])</code></pre>
@@ -1839,6 +2091,10 @@ Vector2 // int/float</code></pre>
         <li class="attr"><span id="semibold">vector</span> - Vector2</li>
       </ul>
       <p class="type"><span id="semibold">Return</span>: float</p>
+
+      <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>perp</b>()</code></pre>
+      <p class="attr">Returns a vector perpendicular to current one</p>
+      <p class="type"><span id="semibold">Return</span>: Vector2</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>inverse</b>()</code></pre>
       <p class="attr">Returns the inverted version of the vector</p>
