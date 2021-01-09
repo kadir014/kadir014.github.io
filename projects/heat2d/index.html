@@ -66,9 +66,8 @@
       <div><img src="../../assets/dot.png"><a href="#introduction">Introduction</a></div>
       <div><img src="../../assets/dot.png"><a href="#installing">Installing</a></div>
       <div><img src="../../assets/dot.png"><a href="#tutorials">Tutorials</a></div>
-      <div><img src="../../assets/dot.png"><a href="#howto">How to use the docs</a></div>
-      <div><img src="../../assets/dot.png"><a href="#projectflow">Project structure and flow</a></div>
-      <div><img src="../../assets/dot.png"><a href="#inputhandling">Input handling</a></div>
+      <div><img src="../../assets/dot.png"><a href="#howtodocs">How to use the docs</a></div>
+      <div><img src="../../assets/dot.png"><a href="#inputhandling">Interactive input handling</a></div>
     </div>
     </div>
 
@@ -316,16 +315,7 @@ engine.run()</code></pre>
 
 
 
-  <div id="howto" style="display:none">
-  <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
-  </div>
-  </div>
-
-
-
-
-
-  <div id="projectflow" style="display:none">
+  <div id="howtodocs" style="display:none">
   <div style="margin:30px; margin-bottom:0; padding-bottom:0;">
   </div>
   </div>
@@ -346,6 +336,7 @@ engine.run()</code></pre>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
     <p class="indocs">There are three main methods to interact with keyboard input: <span class="codedocs">heat2d.Engine.key_pressed(key)</span>, <span class="codedocs">heat2d.Engine.key_released(key)</span> and <span class="codedocs">heat2d.Engine.key_held(key)</span>. The <span class="codedocs">key</span> parameter is just a string indicating the keyboard key,
       there is a list below (click spoiler to see the list) and a keyboard example demo. If none paramaters given, any key press will return True.</p>
+    <p class="indocs" id="semibold" style="margin-bottom:-16px;">Key combinations</p>
     <p class="indocs">You can also check key combinations. E.g <span class="codedocs">key_pressed("ctrl + z")</span>, <span class="codedocs">key_held("alt + b + 0")</span>...</p>
 
     <p class="indocs">White-spaces and upper/lower cases doesn't matter while entering the key parameter, so <span class="codedocs">"space"</span> and <span class="codedocs">"SpaCE"</span> are the same just as like <span class="codedocs">"shift+ctrl+z+b"</span> and <span class="codedocs">"SHIFT  + ctrl + Z+b"</span> ...</p>
@@ -494,7 +485,7 @@ engine.run()</code></pre>
     <h3 class="indocsh" style="margin-top:10px;">Mouse</h3>
     <hr style="width:100%; height:1px; border-width:0; color:gray; background-color:var(--hra); margin-top:-10px;">
 
-    <p class="indocs">There are three main methods to interact with mouse input: <span class="codedocs">heat2d.Engine.mouse_pressed(button)</span>, <span class="codedocs">heat2d.Engine.mouse_released(button)</span> and <span class="codedocs">heat2d.Engine.mouse_held(button)</span>. The <span class="codedocs">button</span> parameter is just a string indicating the keyboard key,
+    <p class="indocs">There are three main methods to interact with mouse input: <span class="codedocs">heat2d.Engine.mouse_pressed(button)</span>, <span class="codedocs">heat2d.Engine.mouse_released(button)</span> and <span class="codedocs">heat2d.Engine.mouse_held(button)</span>. The <span class="codedocs">button</span> parameter is just a string indicating the mouse button,
       there is a list below (click spoiler to see the list) and a mouse example demo. If none paramaters given, any button press will return True.</p>
 
     <p class="indocs">You can check mouse wheel state with <span class="codedocs">heat2d.Engine.mouse_wheel_up()</span> and <span class="codedocs">heat2d.Engine.mouse_wheel_down()</span></p>
@@ -749,6 +740,10 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
+      <p class="attr" id="sh">Raises</p>
+      <ul>
+        <li class="attr"><span id="semibold"><a class="blua" href="#errors">heat2d.errors.UnknownKey</a></span> - Given key is unknown</li>
+      </ul>
       <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>key_released</b>(key)</code></pre>
@@ -756,6 +751,10 @@ engine.run() #Start the engine</code></pre>
       <p class="attr" id="sh">Parameters</p>
       <ul>
         <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
+      </ul>
+      <p class="attr" id="sh">Raises</p>
+      <ul>
+        <li class="attr"><span id="semibold"><a class="blua" href="#errors">heat2d.errors.UnknownKey</a></span> - Given key is unknown</li>
       </ul>
       <p class="type"><span id="semibold">Return</span>: bool</p>
 
@@ -765,6 +764,10 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">key</span> - key to check (str)</li>
       </ul>
+      <p class="attr" id="sh">Raises</p>
+      <ul>
+        <li class="attr"><span id="semibold"><a class="blua" href="#errors">heat2d.errors.UnknownKey</a></span> - Given key is unknown</li>
+      </ul>
       <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_pressed</b>(button)</code></pre>
@@ -772,6 +775,10 @@ engine.run() #Start the engine</code></pre>
       <p class="attr" id="sh">Parameters</p>
       <ul>
         <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
+      </ul>
+      <p class="attr" id="sh">Raises</p>
+      <ul>
+        <li class="attr"><span id="semibold"><a class="blua" href="#errors">heat2d.errors.UnknownMouseButton</a></span> - Given button is unknown</li>
       </ul>
       <p class="type"><span id="semibold">Return</span>: bool</p>
 
@@ -781,6 +788,10 @@ engine.run() #Start the engine</code></pre>
       <ul>
         <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
       </ul>
+      <p class="attr" id="sh">Raises</p>
+      <ul>
+        <li class="attr"><span id="semibold"><a class="blua" href="#errors">heat2d.errors.UnknownMouseButton</a></span> - Given button is unknown</li>
+      </ul>
       <p class="type"><span id="semibold">Return</span>: bool</p>
 
       <pre class="precode" style="border-left-color: #b155f2;"><code class="plaintext" id="coda"><span id="propa"><i>func</i></span> <b>mouse_held</b>(button)</code></pre>
@@ -788,6 +799,10 @@ engine.run() #Start the engine</code></pre>
       <p class="attr" id="sh">Parameters</p>
       <ul>
         <li class="attr"><span id="semibold">button</span> - mouse button to check (str)</li>
+      </ul>
+      <p class="attr" id="sh">Raises</p>
+      <ul>
+        <li class="attr"><span id="semibold"><a class="blua" href="#errors">heat2d.errors.UnknownMouseButton</a></span> - Given button is unknown</li>
       </ul>
       <p class="type"><span id="semibold">Return</span>: bool</p>
 
@@ -962,6 +977,12 @@ class MyStage(Stage):
 
     <pre class="precode" style="border-left-color: #f7442d;"><code class="plaintext" id="coda"><span id="prope"><i>exception</i></span> heat2d.errors.<b>NoStageDeclared</b></code></pre>
     <p class="attr">This is raised when user has not added any stage to engine</p>
+
+    <pre class="precode" style="border-left-color: #f7442d;"><code class="plaintext" id="coda"><span id="prope"><i>exception</i></span> heat2d.errors.<b>UnknownKey</b></code></pre>
+    <p class="attr">This is raised when the given key is not valid in <span class="codedocs">heat2d.Engine.key_pressed(key)</span>, <span class="codedocs">heat2d.Engine.key_held(key)</span> and <span class="codedocs">heat2d.Engine.key_released(key)</span></p>
+
+    <pre class="precode" style="border-left-color: #f7442d;"><code class="plaintext" id="coda"><span id="prope"><i>exception</i></span> heat2d.errors.<b>UnknownMouseButton</b></code></pre>
+    <p class="attr">This is raised when the given mouse button is not valid in <span class="codedocs">heat2d.Engine.mouse_pressed(button)</span>, <span class="codedocs">heat2d.Engine.mouse_held(button)</span> and <span class="codedocs">heat2d.Engine.mouse_released(button)</span></p>
 
     <pre class="precode" style="border-left-color: #f7442d;"><code class="plaintext" id="coda"><span id="prope"><i>exception</i></span> heat2d.errors.<b>NetworkingError</b></code></pre>
     <p class="attr">This is raised when a networking-wise issue happened</p>

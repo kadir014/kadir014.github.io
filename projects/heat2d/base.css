@@ -47,7 +47,7 @@ html, body {
   --keyboard-border: #efefef;
   --keyboard-char: #efefef;
   --keyboard-bg: #141414;
-  --keyboard-hover: #4a4a4a;
+  --keyboard-hover: #242424;
 
   --mouse-left: url("../../assets/mouse-left-dark.png");
   --mouse-right: url("../../assets/mouse-right-dark.png");
@@ -296,6 +296,7 @@ input:checked + .slider:before {
   font-family: 'Arial', 'sans-serif';
   font-size: 15px;
   color: var(--indocs);
+  line-height: 23px;
 }
 
 li.indocs {
@@ -381,6 +382,7 @@ li.indocs {
   color: var(--indocs);
   margin-top: -2px;
   margin-left: 20px;
+  line-height:23px;
 }
 
 .type {
