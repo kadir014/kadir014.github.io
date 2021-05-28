@@ -1,8 +1,22 @@
-html, body {margin: 0;}
+html, body {height:100%; overflow-x: hidden; margin: 0;}
 
-:root {
-  --theme: #e34a42;
-  --theme-light: #ff6e66
+body {
+  background-color: rgb(5, 7, 4)
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: Montserrat-Light;
+  src: url("assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: AltaSerif;
+  src: url("assets/AftaSerifThin-Regular.otf");
 }
 
 .unselectable {
@@ -14,174 +28,221 @@ html, body {margin: 0;}
   user-select: none;
 }
 
-#bar {
-  background-color: var(--theme);
-  height: 50px;
+.menu {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin-left: 4.5%;
+  width: 13%;
+  height: 100%;
+  padding-top: 30px;
 }
 
-#bar-logo-text {
-  color: #ffffff;
-  font-family: "Segoe UI", "Arial", "sans-serif";
-  font-size: 26px;
-  margin: 5px;
-  position: absolute;
-  left: 5px;
-}
-
-#github-redirect {
-  width: 60px;
-  height: 40px;
-  background-color: #ffffff;
-  border: 2px solid var(--theme);
-  border-top: 0;
-  border-radius: 0px 0px 6px 6px;
-  position: absolute;
-  float: right;
-  right: 30px;
-  transition: 0.3s;
-}
-
-#github-redirect:hover {
-  height: 90px;
-}
-
-#github-redirect p {
-  font-family: "Arial", "sans-serif";
-  font-weight: bold;
-  text-align: center;
-  font-size: 16px;
-  position: absolute;
-  bottom: 29px;
-}
-
-#github-redirect img {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: 5px;
-  left: 15px
-}
-
-#sidebar {
-  width: 170px;
-  height: 430px;
-  background-color: var(--theme);
-  padding: 4px;
-  position: absolute;
-  left:-177px;
-  top: 20%;
-  transition: 0.3s;
-}
-
-#opener, #closer {
-  outline: none;
-  background-color: var(--theme);
-  border: none;
-  border-radius: 0px 6px 6px 0px;
-  padding: 7px;
-  font-family: "Courier", "sans-serif";
-  font-size: 30px;
-  color: #ffffff;
-  position: absolute;
-  right:-32px;
-  top: 40%;
-  transition: 0.3s;
-}
-
-#closer {
-  display: none;
-}
-
-#sidebar #menu-item:link {
-  text-decoration: none;
-}
-
-#sidebar #menu-item:hover {
-  background-color: var(--theme-light);
-  border: 3px solid #ffffff;
-  border-top: 0; border-left: 0; border-right: 0;
-}
-
-#sidebar #menu-item {
-  background-color: var(--theme);
-  padding: 5px;
-  border: none;
-  border: 0px solid #ffffff;
-  font-size: 16px;
-  font-family: "Segoe UI", "Arial", "sans-serif";
-  display: block;
-  color: #ffffff;
-  transition: 0.3s;
-}
-
-#sidebar #menu-item-btn {
-  outline: none;
-  background-color: var(--theme);
-  padding: 5px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  border: 0px solid #ffffff;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: "Segoe UI", "Arial", "sans-serif";
-  display: block;
-  color: #ffffff;
-  transition: 0.3s;
-}
-
-#sidebar #menu-item-btn:hover {
-  background-color: var(--theme-light);
-  border: 3px solid #ffffff;
-  border-top: 0; border-left: 0; border-right: 0;
-}
-
-#sidebar #theme-dialog {
-  display: none;
-  padding: 4px;
-  background-color: #e8e8e8;
-  border: 2px solid #c2c2c2;
-  width: 52%;
-  position: absolute;
-  left: 184px;
-  top: 66px;
-}
-
-#sidebar #theme-dialog .theme-btn {
+.menu img {
   width: 20px;
   height: 20px;
-  outline: none;
-  border-width: 0px;
-  border-style: solid;
-  transition: 0.2s;
+  margin-right:18px;
 }
 
-#sidebar #theme-dialog .theme-btn:hover {
-  border-width: 2px;
+.menu-btn {
+  display: block;
+  text-decoration: none;
+  font-family: Montserrat-Light, sans-serif;
+  font-size: 23px;
+  color: rgb(247, 255, 255);
+  margin-bottom: 28px;
+  opacity: 0.5;
 }
 
-.column {
-  float: left;
-  width: 30%;
-  padding: 5px;
+.menu-btn:hover {
+  opacity: 0.66;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+.menu-active {
+  display: block;
+  text-decoration: none;
+  font-family: Montserrat-Light, sans-serif;
+  font-size: 23px;
+  color: rgb(247, 255, 255);
+  margin-bottom: 28px;
+  opacity: 0.81;
 }
 
-#project-link {
-  width:250px;
-  height:250px;
-  font-size:60px;
+.menu p {
+  font-family: Montserrat, sans-serif;
+  font-size: 43px;
+  font-weight: bold;
+  color: rgb(247, 255, 255);
+  margin-top: -10px;
+  margin-bottom: 0;
 }
 
-@media (orientation: portrait){
-  #project-link {
-    width:150px;
-    height:150px;
-    font-size:30px;
-  }
+.banner {
+  display: inline-block;
+  width: 40%;
+  min-height: 100%;
+  background-image: url("assets/leftsmoke.jpg");
+  background-size: cover;
+}
+
+.banner-header {
+  background-color: rgb(0, 0, 0, 0.8);
+  margin-top: 48%;
+  padding-top: 1px;
+  width:82vw;
+  height:180px;
+  backdrop-filter: blur(9px);
+}
+
+.banner-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 65px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0;
+  margin-top: 25px;
+  margin-left:auto;
+  margin-right:auto;
+  width:380px;
+}
+
+.banner-subtitle {
+  font-family: Montserrat-Light, sans-serif;
+  font-size: 26px;
+  color: rgb(189, 195, 195);
+  margin-top: -15px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:5px;
+  width:380px;
+}
+
+.content {
+  display: inline-block;
+  width: 81vw;
+  min-height: 100%;
+  background-image: url("assets/leftsmoke.jpg");
+  background-size: 48.8%;
+  background-repeat: repeat-y;
+}
+
+.contentup {
+  background-color: rgb(0, 0, 0, 0.86);
+  left: -350px;
+  position: relative;
+  margin-left: auto;
+  margin-right:auto;
+  margin-top: 20px;
+  width:388px;
+  height:40px;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+}
+
+.contentup span {
+  font-family: Montserrat, sans-serif;
+  font-size: 59px;
+  color: rgb(225, 235, 235);
+  position: relative;
+  top: 19px;
+  left: 38px;
+}
+
+.contentline {
+  position: relative;
+  width: 50px;
+  top: 47px;
+  left: 47px;
+  border-bottom: 5px dotted rgb(255, 255, 255, 0.62);
+}
+
+.contentin {
+  background-color: rgb(0, 0, 0, 0.86);
+  margin-left: auto;
+  margin-right:auto;
+  width:1000px;
+  height:1200px;
+  border-radius: 21px;
+  padding-top: 110px;
+  padding-left: 130px;
+  padding-right: 130px;
+  margin-bottom: 30px;
+}
+
+.conbody {
+  font-family: Montserrat-Light, sans-serif;
+  font-size: 18px;
+  color: rgb(189, 195, 195);
+}
+
+.quote {
+  font-family: AltaSerif, serif;
+  font-size: 26px;
+  color: rgb(189, 195, 195);
+}
+
+.quote span {
+  display: block;
+  float: right;
+  font-family: Montserrat-Light, sans-serif;
+  font-size: 23px;
+  font-style: italic;
+  color: rgb(189, 195, 195);
+  margin-top: 15px;
+}
+
+.ayrac {
+  display: block;
+  background-image: url("assets/ayrac.png");
+  width: 325px;
+  height: 26px;
+  opacity: 0.61;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 65px;
+  margin-bottom:65px;
+}
+
+.langshowcase {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.langshowcase img {
+  width: 55px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.langshowcase p {
+  font-family: Montserrat-Light, sans-serif;
+  font-size: 15px;
+  color: rgb(189, 195, 195);
+  text-align: center;
+  margin: 0;
+}
+
+.largelangshowcase img {
+  width: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.largelangshowcase {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.largelangshowcase p {
+  font-family: Montserrat-Light, sans-serif;
+  font-size: 22px;
+  color: rgb(189, 195, 195);
+  text-align: center;
+  margin: 0;
+}
+
+.langrow {
+  margin-left: auto;
+  margin-right: auto;
 }
