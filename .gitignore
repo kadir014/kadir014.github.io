@@ -1,1 +1,10 @@
 *.log
+articles/
+dev/
+exercise/
+python-turkiye/
+tutorials/
+covid19sim/
+denemesinav/
+gametracker/
+oyuncukabilesi/
