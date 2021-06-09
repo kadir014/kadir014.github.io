@@ -28,6 +28,11 @@ body {
   user-select: none;
 }
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .menu {
   display: inline-block;
   position: relative;
