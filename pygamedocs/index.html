@@ -5,6 +5,7 @@
   <title>Pygame Documentation</title>
   <link rel="stylesheet" type="text/css" href="base.css">
   <script src="base.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -35,6 +36,7 @@
         <li><a class="menu-btn" href="about.html">midi</a></li>
         <li><a class="menu-btn" href="about.html">mouse</a></li>
         <li><a class="menu-btn" href="about.html">music</a></li>
+        <li><a class="menu-btn" href="about.html">pixelcopy</a></li>
         <li><a class="menu-btn" href="about.html">time</a></li>
         <li><a class="menu-btn" href="about.html">transform</a></li>
         <li><a class="menu-btn" href="about.html">sprite</a></li>
@@ -68,11 +70,15 @@
 
     <div class="content">
       <div class="header">
+        <a>Pygame Documentation</a> / <a>Main index</a>
       </div>
 
       <div class="banner">
         <div class="centered-content" style="padding-top: 110px;">
           <h2>Welcome to Pygame Documentation!</h2>
+          <h3>pygame v2.0.1.dev1</h3>
+          <h3 id="desktopviewlabel">Desktop view</h3>
+          <h3 id="mobileviewlabel">Mobile view</h3>
         </div>
       </div>
 
@@ -97,15 +103,15 @@
             </a>
           </div>
 
-          <div class="cardg" style="margin-top: 28px;">
+          <div class="cardg" style="margin-top: 38px;">
             <a class="cardl" href="#" style="top: -68px; position:relative;">
               <div class="card-banner" style="background-color: rgb(240, 218, 79)">display</div>
               <span class="card-text">This module offers control over the pygame display. Pygame has a single display Surface that is either contained in a window or runs full screen. Once you create the display you treat it as a regular Surface.</span>
             </a>
 
             <a class="card" href="#">
-              <div class="card-banner" style="background-color: rgb(177, 141, 224)">Color</div>
-              <span class="card-text">The Color class represents RGBA color values using a value range of 0 to 255 inclusive.</span>
+              <div class="card-banner" style="background-color: rgb(177, 141, 224)">mixer</div>
+              <span class="card-text">This module helps loading and playing sound. The mixer module is optional and depends on SDL_mixer.</span>
             </a>
 
             <a class="cardl" href="#" style="top: -68px; position:relative;">
@@ -118,12 +124,77 @@
 
           <h2>Reference</h2>
 
+          <div class="row-container">
+            <div class="reflist">
+              <h3>Useful</h3>
+              <div style="display: inline-block;">
+                <a href="about.html">pygame</a>
+                <a href="about.html">Color</a>
+                <a href="about.html">display</a>
+                <a href="about.html">draw</a>
+                <a href="about.html">event</a>
+                <a href="about.html">font</a>
+                <a href="about.html">image</a>
+                <a href="about.html">key</a>
+              </div>
+              <div style="display: inline-block; vertical-align: top;">
+                <a href="about.html">locals</a>
+                <a href="about.html">mixer</a>
+                <a href="about.html">mouse</a>
+                <a href="about.html">Rect</a>
+                <a href="about.html">Surface</a>
+                <a href="about.html">time</a>
+                <a href="about.html">music</a>
+              </div>
+            </div>
+
+            <div class="reflist" style="text-align: center;">
+              <h3>Advanced</h3>
+              <div style="display: inline-block;">
+                <a href="about.html">cursors</a>
+                <a href="about.html">joystick</a>
+                <a href="about.html">mask</a>
+                <a href="about.html">sprite</a>
+                <a href="about.html">transform</a>
+                <a href="about.html">BufferProxy</a>
+                <a href="about.html">freetype</a>
+                <a href="about.html">gfxdraw</a>
+              </div>
+              <div style="display: inline-block; vertical-align: top;">
+                <a href="about.html">midi</a>
+                <a href="about.html">Overlay</a>
+                <a href="about.html">PixelArray</a>
+                <a href="about.html">pixelcopy</a>
+                <a href="about.html">sndarray</a>
+                <a href="about.html">surfarray</a>
+                <a href="about.html">math</a>
+              </div>
+            </div>
+
+            <div class="reflist" style="text-align: right;">
+              <h3>Other</h3>
+              <a href="about.html">camera</a>
+              <a href="about.html">cdrom</a>
+              <a href="about.html">examples</a>
+              <a href="about.html">fastevent</a>
+              <a href="about.html">scrap</a>
+              <a href="about.html">tests</a>
+              <a href="about.html">touch</a>
+              <a href="about.html">version</a>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <div class="footer">
         <div class="centered-content">
-          footer
+          <div style="display: inline-block;">
+            This is a personal project and is not officially related to Pygame
+          </div>
+          <div style="display: inline-block; float: right;">
+            Designed by Kadir Aksoy
+          </div>
         </div>
       </div>
     </div>

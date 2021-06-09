@@ -125,17 +125,23 @@ html, body {margin: 0;}
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 1100px;
+  width: 900px;
   height: 100%;
 }
 
 .header {
   width: 100%;
-  height: 45px;
+  height: 35px;
   background-color: rgb(255, 255, 255, 0.67);
   position: fixed;
+  z-index: 99999999;
   backdrop-filter: blur(5px);
   box-shadow: 0px 4px 5px rgb(0, 0, 0, 0.16);
+
+  font-family: Montserrat-Light, sans-serif;
+  color: black;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .banner {
@@ -157,6 +163,13 @@ html, body {margin: 0;}
   color: white;
 }
 
+.banner h3 {
+  margin-top: -15px;
+  font-family: Montserrat, sans-serif;
+  font-size: 23px;
+  color: white;
+}
+
 .subcontent {
   padding-top: 45px;
 }
@@ -172,13 +185,15 @@ html, body {margin: 0;}
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .card {
   display: inline-block;
+  width: 27.83%;
   margin-left: 13px;
-  margin-right: 13px;
-  width: 28%;
   height: 180px;
   box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.12);
   text-decoration: none;
@@ -190,8 +205,7 @@ html, body {margin: 0;}
 .cardl {
   display: inline-block;
   margin-left: 13px;
-  margin-right: 13px;
-  width: 28%;
+  width: 27.83%;
   height: 250px;
   box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.12);
   text-decoration: none;
@@ -205,25 +219,6 @@ html, body {margin: 0;}
 
 .cardl:hover {
   box-shadow: 0px 0px 11px rgb(0, 0, 0, 0.25);
-}
-
-.card-url {
-  display: inline-block;
-  position: absolute;
-  bottom: -370px;
-  margin-left: -270px;
-  z-index: -1;
-  width: 900px;
-  height: 500px;
-  font-family: Montserrat, sans-serif;
-  color: black;
-  font-size: 23px;
-  opacity: 0;
-  transition-duration: 0.2s;
-}
-
-.card:hover + .card-url {
-  opacity: 1;
 }
 
 .card-banner {
@@ -246,8 +241,74 @@ html, body {margin: 0;}
   margin-right: 13px;
 }
 
+.row-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.reflist {
+  display: inline-block;
+  width: 20%;
+  font-family: Montserrat-Light, sans-serif;
+  color: rgb(37, 35, 46);
+}
+
+.reflist a {
+  text-decoration: none;
+  display: block;
+  color: rgb(37, 35, 46);
+}
+
+.reflist a:hover {
+  text-decoration: underline;
+  display: block;
+  color: rgb(37, 35, 46);
+}
+
+.reflist h3 {
+  font-size: 23px;
+}
+
 .footer {
-  background-color: rgb(187, 186, 194);
-  height: 150px;
+  background-color: rgb(71, 67, 77);
+  height: 55px;
   margin-top: 110px;
+  padding-top: 40px;
+  font-family: Montserrat-Light, sans-serif;
+  color: white;
+}
+
+#mobileviewlabel {
+  display: none;
+}
+
+#desktopviewlabel {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    margin-left: 0px;
+  }
+
+  .centered-content {
+    width: 95%;
+  }
+
+  .banner {
+    background-color:  red;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  #mobileviewlabel {
+    display: block;
+  }
+
+  #desktopviewlabel {
+    display: block;
+  }
 }
