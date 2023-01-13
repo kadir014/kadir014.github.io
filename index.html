@@ -2,36 +2,93 @@
 <html>
 
 <head>
-  <title>Kadir Aksoy</title>
-  <link rel="stylesheet" type="text/css" href="homepage.css">
-  <script src="homepage.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kadir Aksoy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="base.css">
+
+    <script src="base.js"></script>
 </head>
 
-<body style="overflow-y: hidden;">
+<body>
+    <div class="navbar">
+        <span class="navbar-logo unselectable">Kadir Aksoy</span>
 
-    <div class="menu unselectable">
-      <div style="border-right: 4px solid white; width:140px;">
-        <p>Kadir</p>
-        <p>Aksoy</p>
-      </div>
-
-      <p style="opacity:0; margin-bottom:80px;"></p>
-
-      <a class="menu-active" href="index.html"><img src="assets/homeicon.png">Anasayfa</a>
-      <a class="menu-btn" href="about.html"><img src="assets/abouticon.png">Hakkımda</a>
-      <a class="menu-btn" href="portfolio.html"><img src="assets/portfolioicon.png">Portfolyo</a>
-      <a class="menu-btn" href="blog.html"><img src="assets/texticon.png">Blog</a>
-      <a class="menu-btn" href="contact.html"><img src="assets/contacticon.png">İletişim</a>
+        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="#" style="margin-right: 70px;">Contact</a></div>
+        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="#" style="margin-right: 70px;">About</a></div>
+        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="#" style="margin-right: 70px;">Portfolio</a></div>
     </div>
 
-    <div class="banner unselectable">
-      <div class="banner-header">
-        <p class="banner-title">Kadir Aksoy<p>
-        <p class="banner-subtitle">Geliştirici, Tasarımcı</p>
-      </div>
+    <div class="banner">
+        <div class="banner-content">
+            <p class="banner-title unselectable">Kadir Aksoy</p>
+            <p class="banner-alttitle unselectable">Designer, Illustrator, Developer.</p>
+        </div>
+
+        <i class="banner-scroller" onclick="scrollDown()">
+            <svg 
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.6"
+            stroke-linecap="square"
+            stroke-linejoin="miter">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </i>
     </div>
 
+    <div class="content">
+        <div class="content-inner">
+            <div style="padding-top: 130px;">
+                <span class="content-title">Portfolio</span>
+                <span class="content-desc" style="float: right; padding-top: 37px;">
+                    Illustration and graphic design are my passion, here is some of my work
+                </span>
+            </div>
 
+            <div style="margin-top: 37px;">
+                <img src="assets/portfolio/mockup4.png" class="reveal" style="width: 49%; display: inline;">
+                <img src="assets/portfolio/mockup3.png" class="reveal" style="width: 49%; display: inline; float: right;">
+            </div>
+
+            <div style="margin-top: 1.5%;">
+                <img src="assets/portfolio/mockuptip.png" class="reveal" style="width: 100%;">
+            </div>
+
+            <div style="margin-top: 1%;">
+                <img src="assets/portfolio/mockuptip2.png" class="reveal" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div style="display: inline-block;">
+                <a class="footer-text unselectable">Kadir Aksoy</a>
+                <div class="unselectable" style="margin-top: 10px;">
+                    <a class="footer-link" style="display: inline;" href="https://github.com/kadir014" target="_blank"><i class="footer-icon fa fa-brands fa-github fa-lg"></i></a>
+                    <a class="footer-link" style="display: inline; margin-left: 15px;" href="https://www.reddit.com/user/selphakturem/" target="_blank"><i class="footer-icon fa fa-brands fa-reddit fa-lg"></i></a>
+                    <a class="footer-link" style="display: inline; margin-left: 15px;" href="https://discordapp.com/users/311542309252497409" target="_blank"><i class="footer-icon fa fa-brands fa-discord"></i></a>
+                    <a class="footer-link" style="display: inline; margin-left: 15px;" href="mailto:"><i class="footer-icon fa fa-solid fa-envelope fa-lg"></i></a>
+                </div>
+            </div>
+
+            <div style="float: right;">
+                <div class="linkanim-light unselectable" style="text-align: right;"><a href="#">Portfolio</a></div>
+                <div class="linkanim-light unselectable" style="margin-top: 9px; text-align: right;"><a href="#">About</a></div>
+                <div class="linkanim-light unselectable" style="margin-top: 9px; text-align: right;"><a href="#">Contact</a></div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
