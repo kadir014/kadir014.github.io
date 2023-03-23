@@ -17,15 +17,28 @@ function scrollEvent(event) {
         }
     }
 
-    var navbar = document.querySelector(".navbar")
-    var banner = document.querySelector(".banner")
-    var bannerBottom = banner.getBoundingClientRect().bottom + window.innerHeight/2 + 460;
+    var filename = location.href.split("/").slice(-1);
+    var navbar = document.querySelector(".navbar");
 
-    if (window.scrollY > bannerBottom) {
-        navbar.classList.add("active")
-    } else {
-        navbar.classList.remove("active")
+    if (filename == "index.html") {
+        var navbar = document.querySelector(".navbar");
+        var banner = document.querySelector(".banner");
+        var bannerBottom = banner.getBoundingClientRect().bottom + window.innerHeight/2 + 460;
+
+        if (window.scrollY > bannerBottom) {
+            navbar.classList.add("active");
+        } else {
+            navbar.classList.remove("active");
+        }
     }
 }
 
 addEventListener("scroll", scrollEvent);
+
+var filename = location.href.split("/").slice(-1);
+var navbar = document.querySelector(".navbar");
+
+if (filename != "index.html") {
+    var navbar = document.querySelector(".navbar");
+    navbar.classList.add("active");
+}
