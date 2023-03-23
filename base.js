@@ -20,7 +20,7 @@ function scrollEvent(event) {
     var filename = location.href.split("/").slice(-1);
     var navbar = document.querySelector(".navbar");
 
-    if (filename[0] == "index.html") {
+    if (filename[0] == "index.html" || filename[0] == "") {
         var navbar = document.querySelector(".navbar");
         var banner = document.querySelector(".banner");
         var bannerBottom = banner.getBoundingClientRect().bottom + window.innerHeight/2 + 460;
@@ -38,7 +38,7 @@ addEventListener("scroll", scrollEvent);
 var filename = location.href.split("/").slice(-1);
 var navbar = document.querySelector(".navbar");
 
-if (filename[0] != "index.html") {
+if (filename[0] != "index.html" || filename[0] == "") {
     var navbar = document.querySelector(".navbar");
     navbar.classList.add("active");
 }
