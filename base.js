@@ -38,7 +38,7 @@ addEventListener("scroll", scrollEvent);
 var filename = location.href.split("/").slice(-1);
 var navbar = document.querySelector(".navbar");
 
-if (filename[0] != "index.html" || filename[0] != "") {
+if (filename[0] != "index.html" && filename[0] != "") {
     var navbar = document.querySelector(".navbar");
     navbar.classList.add("active");
 }
