@@ -242,9 +242,6 @@ border: 3px solid #ffffff;
     margin-top: 160px;
     background-image: url("assets/homepage_bg.png");
     background-size: cover;
-
-    position: fixed;
-    bottom: 0;
 }
 
 .footer-text {
