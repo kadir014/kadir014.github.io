@@ -12,16 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="navbar">
         <span class="navbar-logo unselectable">Kadir Aksoy</span>
 
-        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="about.html" style="margin-right: 70px;">About</a></div>
-        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="programming.html" style="margin-right: 70px;">Programming</a></div>
-        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="photography.html" style="margin-right: 70px;">Photography</a></div>
-        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="index.html" style="margin-right: 70px;">Portfolio</a></div>
+        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="about.html">About</a></div>
+        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="programming.html">Programming</a></div>
+        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="photography.html">Photography</a></div>
+        <div class="linkanim-dark unselectable" style="float: right; margin-top: 5px;"><a href="index.html">Portfolio</a></div>
     </div>
 
     <div class="banner">
@@ -45,34 +46,34 @@
         </i>
     </div>
 
-    <div class="content">
+    <div class="content" style="margin-top: 8%;">
         <div class="content-inner">
             <div style="padding-top: 130px;">
                 <span class="content-title">Portfolio</span>
-                <span class="content-desc" style="float: right; padding-top: 37px;">
+                <span class="content-desc" style="float: right;">
                     Explore my passion for design and illustration in my creative playground.
                 </span>
             </div>
 
             <div style="margin-top: 37px;">
-                <img src="https://i.imgur.com/bEtCYUo.png" class="reveal" style="width: 49%; display: inline;">
-                <img src="https://i.imgur.com/l6FIzS3.png" class="reveal" style="width: 49%; display: inline; float: right;">
+                <a class="overlay-trigger"><img src="https://i.imgur.com/bEtCYUo.png" class="preview" style="width: 49%; display: inline;"></a>
+                <a class="overlay-trigger"><img src="https://i.imgur.com/l6FIzS3.png" class="preview" style="width: 49%; display: inline; float: right;"></a>
             </div>
 
-            <div style="margin-top: 1.5%;">
-                <img src="https://i.imgur.com/8XLfNEh.png" class="reveal" style="width: 100%;">
-            </div>
-
-            <div style="margin-top: 1.5%; margin-bottom: 990px;">
-                <div class="reveal" style="width: 40.25%; display: inline; float: left">
-                    <img src="https://i.imgur.com/S7EvPJC.png" style="width: 100%; display: block; margin-bottom: 5%;">
-                    <img src="https://i.imgur.com/g6rWFVa.jpg" class="reveal" style="width: 100%; display: block;">
+            <div style="margin-top: 1.5%; margin-bottom: 86%;">
+                <div style="width: 40.25%; display: inline; float: left">
+                    <a class="overlay-trigger"><img src="https://i.imgur.com/S7EvPJC.png" class="preview" style="width: 100%; display: block; margin-bottom: 5%;"></a>
+                    <a class="overlay-trigger"><img src="https://i.imgur.com/g6rWFVa.jpg" class="preview" style="width: 100%; display: block;"></a>
                 </div>
-                <img src="https://i.imgur.com/wtZGon4.png" class="reveal" style="width: 57.75%; display: inline; float: right;">
+                <a class="overlay-trigger"><img src="https://i.imgur.com/wtZGon4.png" class="preview" style="width: 57.75%; display: inline; float: right;"></a>
             </div>
 
             <div style="margin-top: 1.5%;">
-                <img src="https://i.imgur.com/2AusRR8.png" class="reveal" style="width: 100%;">
+                <a class="overlay-trigger"><img src="https://i.imgur.com/8XLfNEh.png" class="preview" style="width: 100%;"></a>
+            </div>
+
+            <div style="margin-top: 1.5%;">
+                <a class="overlay-trigger"><img src="https://i.imgur.com/2AusRR8.png" class="preview" style="width: 100%;"></a>
             </div>
         </div>
     </div>
@@ -83,7 +84,6 @@
                 <a class="footer-text unselectable">Kadir Aksoy</a>
                 <div class="unselectable" style="margin-top: 10px;">
                     <a class="footer-link" style="display: inline;" href="https://github.com/kadir014" target="_blank"><i class="footer-icon fa fa-brands fa-github fa-lg"></i></a>
-                    <a class="footer-link" style="display: inline; margin-left: 15px;" href="" target="_blank"><i class="footer-icon fa fa-brands fa-reddit fa-lg"></i></a>
                     <a class="footer-link" style="display: inline; margin-left: 15px;" href="https://discordapp.com/users/311542309252497409" target="_blank"><i class="footer-icon fa fa-brands fa-discord"></i></a>
                     <a class="footer-link" style="display: inline; margin-left: 15px;" href="mailto:"><i class="footer-icon fa fa-solid fa-envelope fa-lg"></i></a>
                 </div>
@@ -95,6 +95,19 @@
                 <div class="linkanim-light unselectable" style="margin-top: 9px;text-align: right;"><a href="#">Programming</a></div>
                 <div class="linkanim-light unselectable" style="margin-top: 9px; text-align: right;"><a href="#">About</a></div>
             </div>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <a class="overlay-close"><i class="fa-solid fa-xmark"></i></a>
+
+        <div class="overlay-desc-div">
+            <p class="overlay-title"></p>
+            <p class="overlay-desc"></p>
+        </div>
+
+        <div id="overlay-image-div">
+            <img id="overlay-image" src="https://i.imgur.com/bEtCYUo.png" style="width: 100%; cursor: zoom-in;">
         </div>
     </div>
 
