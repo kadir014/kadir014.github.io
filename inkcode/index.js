@@ -55,6 +55,8 @@ function set_pos(elem, x, y) {
 
 document.onpointermove = e => {
     if (!active) return;
+    e.preventDefault();
+    active.setPointerCapture(e.pointerId);
     set_pos(active, e.clientX - offsetX, e.clientY - offsetY);
 
     blocks.forEach(b => {
