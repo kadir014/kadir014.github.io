@@ -55,9 +55,9 @@ function set_pos(elem, x, y) {
 
 document.ontouchmove = e => {
     if (!active) return;
-    e.preventDefault();
-    active.setPointerCapture(e.pointerId);
-    set_pos(active, e.touches[0].clientX - offsetX, e.touches[0].clientY - offsetY);
+    //e.preventDefault();
+    //active.setPointerCapture(e.pointerId);
+    set_pos(active, e.touches[0].pageX - offsetX, e.touches[0].pageY - offsetY);
 
     blocks.forEach(b => {
         //active_pos = get_pos(active);
