@@ -39,8 +39,8 @@ function handleMouseDown(e) {
     }
 
     active = b;
-    offsetX = e.offsetX;
-    offsetY = e.offsetY;
+    offsetX = e.touches[0].offsetX;
+    offsetY = e.touches[0].offsetY;
 }
 
 blocks.forEach(b => b.ontouchstart = handleMouseDown);
@@ -59,7 +59,7 @@ document.ontouchmove = e => {
     e.preventDefault();
     //e.preventDefault();
     //active.setPointerCapture(e.pointerId);
-    set_pos(active, e.touches[0].pageX - offsetX, e.touches[0].pageY - offsetY);
+    set_pos(active, e.touches[0].clientX  - offsetX, e.touches[0].clientY - offsetY);
 
     blocks.forEach(b => {
         //active_pos = get_pos(active);
@@ -87,7 +87,7 @@ document.ontouchmove = e => {
             b_rect.left,
             b_rect.top - b_rect.height
         );
-        
+
         dist = active_pos.dist(right_snap);
         if (dist < 15.0) {
             set_pos(active, right_snap[0], right_snap[1]);
