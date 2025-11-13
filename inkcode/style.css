@@ -2,6 +2,8 @@ html, body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    overscroll-behavior-y: contain;
+    overscroll-behavior: none;
     touch-action: none;
 }
 
@@ -24,7 +26,6 @@ html, body {
     width: 100px;
     height: 100px;
     position: absolute;
-    touch-action: none;
 }
 
 .blockimg {

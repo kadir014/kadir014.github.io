@@ -25,22 +25,32 @@ class Vector extends Array {
 blocks = Array.from(document.querySelectorAll(".block"));
 let active = null, offsetX, offsetY;
 
-function handleMouseDown(e) {
-    e.preventDefault();
-    b = e.currentTarget;
+function getTouchOffset(el, touch) {
+  const rect = el.getBoundingClientRect();
+  return {
+    x: touch.clientX - rect.left,
+    y: touch.clientY - rect.top
+  };
+}
 
-    if (b.classList.contains('root')) {
-        const clone = b.cloneNode(true);
+function handleMouseDown(e) {
+    let target = e.currentTarget;
+    //e.preventDefault();
+
+    if (target.classList.contains('root')) {
+        const clone = target.cloneNode(true);
         clone.classList.remove('root');
-        b.parentNode.appendChild(clone);
+        target.parentNode.appendChild(clone);
         blocks.push(clone);
         clone.ontouchstart = handleMouseDown; // reattach event handler
-        b = clone;
+        target = clone;
     }
+    active = target;
 
-    active = b;
-    offsetX = e.touches[0].offsetX;
-    offsetY = e.touches[0].offsetY;
+    offset = getTouchOffset(active, e.touches[0]);
+
+    offsetX = offset.x;
+    offsetY = offset.y;
 }
 
 blocks.forEach(b => b.ontouchstart = handleMouseDown);
@@ -56,7 +66,7 @@ function set_pos(elem, x, y) {
 
 document.ontouchmove = e => {
     if (!active) return;
-    e.preventDefault();
+    //e.preventDefault();
     //e.preventDefault();
     //active.setPointerCapture(e.pointerId);
     set_pos(active, e.touches[0].clientX  - offsetX, e.touches[0].clientY - offsetY);
@@ -111,6 +121,6 @@ document.ontouchmove = e => {
 };
 
 document.ontouchend = () => {
-    e.preventDefault();
+    //e.preventDefault();
     active = null;
 }
