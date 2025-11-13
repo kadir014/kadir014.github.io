@@ -26,6 +26,7 @@ blocks = Array.from(document.querySelectorAll(".block"));
 let active = null, offsetX, offsetY;
 
 function handleMouseDown(e) {
+    e.preventDefault();
     b = e.currentTarget;
 
     if (b.classList.contains('root')) {
@@ -55,6 +56,7 @@ function set_pos(elem, x, y) {
 
 document.ontouchmove = e => {
     if (!active) return;
+    e.preventDefault();
     //e.preventDefault();
     //active.setPointerCapture(e.pointerId);
     set_pos(active, e.touches[0].pageX - offsetX, e.touches[0].pageY - offsetY);
@@ -108,4 +110,7 @@ document.ontouchmove = e => {
     })
 };
 
-document.ontouchend = () => active = null;
+document.ontouchend = () => {
+    e.preventDefault();
+    active = null;
+}
