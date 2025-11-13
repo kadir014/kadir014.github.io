@@ -33,7 +33,7 @@ function handleMouseDown(e) {
         clone.classList.remove('root');
         b.parentNode.appendChild(clone);
         blocks.push(clone);
-        clone.onpointerdown = handleMouseDown; // reattach event handler
+        clone.ontouchstart = handleMouseDown; // reattach event handler
         b = clone;
     }
 
@@ -42,7 +42,7 @@ function handleMouseDown(e) {
     offsetY = e.offsetY;
 }
 
-blocks.forEach(b => b.onpointerdown = handleMouseDown);
+blocks.forEach(b => b.ontouchstart = handleMouseDown);
 
 function get_pos(elem) {
     return new Vector(parseInt(elem.style.left), parseInt(elem.style.top))
@@ -53,11 +53,11 @@ function set_pos(elem, x, y) {
     elem.style.top = y + 'px';
 }
 
-document.onpointermove = e => {
+document.ontouchmove = e => {
     if (!active) return;
     e.preventDefault();
     active.setPointerCapture(e.pointerId);
-    set_pos(active, e.clientX - offsetX, e.clientY - offsetY);
+    set_pos(active, e.touches[0].clientX - offsetX, e.touches[0].clientY - offsetY);
 
     blocks.forEach(b => {
         //active_pos = get_pos(active);
@@ -108,4 +108,4 @@ document.onpointermove = e => {
     })
 };
 
-document.onpointerup = () => active = null;
+document.ontouchend = () => active = null;
