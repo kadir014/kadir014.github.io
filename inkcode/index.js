@@ -22,16 +22,27 @@ class Vector extends Array {
 }
 
 
-const blocks = document.querySelectorAll(".block");
+blocks = Array.from(document.querySelectorAll(".block"));
 let active = null, offsetX, offsetY;
 
-blocks.forEach(b => {
-    b.onmousedown = e => {
-        active = b;
-        offsetX = e.offsetX;
-        offsetY = e.offsetY;
-    };
-});
+function handleMouseDown(e) {
+    b = e.currentTarget;
+
+    if (b.classList.contains('root')) {
+        const clone = b.cloneNode(true);
+        clone.classList.remove('root');
+        b.parentNode.appendChild(clone);
+        blocks.push(clone);
+        clone.onmousedown = handleMouseDown; // reattach event handler
+        b = clone;
+    }
+
+    active = b;
+    offsetX = e.offsetX;
+    offsetY = e.offsetY;
+}
+
+blocks.forEach(b => b.onmousedown = handleMouseDown);
 
 function get_pos(elem) {
     return new Vector(parseInt(elem.style.left), parseInt(elem.style.top))
@@ -56,13 +67,21 @@ document.onmousemove = e => {
         right_snap = new Vector(
             b_rect.right,
             b_rect.top
-            //b_rect.y + b_rect.height * 0.5,
         );
 
         left_snap = new Vector(
             b_rect.left - b_rect.width,
             b_rect.top
-            //b_rect.y + b_rect.height * 0.5,
+        );
+
+        down_snap = new Vector(
+            b_rect.left,
+            b_rect.top + b_rect.height
+        );
+
+        up_snap = new Vector(
+            b_rect.left,
+            b_rect.top - b_rect.height
         );
         
         dist = active_pos.dist(right_snap);
@@ -73,6 +92,16 @@ document.onmousemove = e => {
         dist = active_pos.dist(left_snap);
         if (dist < 15.0) {
             set_pos(active, left_snap[0], left_snap[1]);
+        }
+
+        dist = active_pos.dist(down_snap);
+        if (dist < 15.0) {
+            set_pos(active, down_snap[0], down_snap[1]);
+        }
+
+        dist = active_pos.dist(up_snap);
+        if (dist < 15.0) {
+            set_pos(active, up_snap[0], up_snap[1]);
         }
     })
 };

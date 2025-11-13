@@ -19,11 +19,16 @@ html, body {
     padding: 0;
     color: white;
     text-align: center;
-    background-color: coral;
-    border-width: 2px;
-    border-color: black;
-    border-radius: 15px 15px 15px 15px;
-    width: 50px;
-    height: 50px;
+    background: none;
+    width: 100px;
+    height: 100px;
     position: absolute;
+}
+
+.blockimg {
+    height: 100px;
+}
+
+.blockimgv {
+    width: 100px;
 }
