@@ -33,7 +33,7 @@ function handleMouseDown(e) {
         clone.classList.remove('root');
         b.parentNode.appendChild(clone);
         blocks.push(clone);
-        clone.onmousedown = handleMouseDown; // reattach event handler
+        clone.onpointerdown = handleMouseDown; // reattach event handler
         b = clone;
     }
 
@@ -42,7 +42,7 @@ function handleMouseDown(e) {
     offsetY = e.offsetY;
 }
 
-blocks.forEach(b => b.onmousedown = handleMouseDown);
+blocks.forEach(b => b.onpointerdown = handleMouseDown);
 
 function get_pos(elem) {
     return new Vector(parseInt(elem.style.left), parseInt(elem.style.top))
@@ -53,7 +53,7 @@ function set_pos(elem, x, y) {
     elem.style.top = y + 'px';
 }
 
-document.onmousemove = e => {
+document.onpointermove = e => {
     if (!active) return;
     set_pos(active, e.pageX - offsetX, e.pageY - offsetY);
 
@@ -106,4 +106,4 @@ document.onmousemove = e => {
     })
 };
 
-document.onmouseup = () => active = null;
+document.onpointerup = () => active = null;
