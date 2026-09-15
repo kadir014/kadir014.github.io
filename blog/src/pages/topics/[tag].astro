@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostList from '../../components/PostList.astro';
+import { publishedPosts, tagId, tagUrl } from '../../lib/posts';
+export async function getStaticPaths() {
+  const posts = await publishedPosts();
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
+  return tags.map((tag) => ({ params: { tag: tagId(tag) }, props: { tag, tags, posts: posts.filter((post) => post.data.tags.includes(tag)) } }));
+}
+const { tag, tags, posts } = Astro.props;
+---
+<Layout title={tag} >
+  <div class="wrap index-content">
+    <header class="intro topic-intro"><a class="back-link" href="/blog/">← Blog</a><h1>{tag}</h1></header>
+    <nav class="topic-nav" aria-label="Filter by topic"><a href="/blog/">All</a>{tags.map((item: string) => <a href={tagUrl(item)} aria-current={item === tag ? 'page' : undefined}>{item}</a>)}</nav>
+    <PostList posts={posts} />
+  </div>
+</Layout>

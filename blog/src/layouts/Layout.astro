@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+import { site } from '../config';
+interface Props { title?: string; description?: string; article?: boolean; }
+const { title = 'Blog', description = site.description, article = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — {site.title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={`${title} — ${site.title}`} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:url" content={canonical} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="/blog/favicon.svg" />
+    <script is:inline>
+      try {
+        const saved = localStorage.getItem('blog-theme');
+        document.documentElement.dataset.theme = saved === 'light' || saved === 'dark'
+          ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch { document.documentElement.dataset.theme = 'light'; }
+    </script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="wordmark" href="/">Kadir Aksoy</a>
+      <nav aria-label="Main navigation">
+        <a href="/">Portfolio</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a class="github-nav" href={site.github}>GitHub <span aria-hidden="true">↗</span></a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">
+          <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+          <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.7 13A9 9 0 0 1 11 3.3 9 9 0 1 0 20.7 13Z"/></svg>
+        </button>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('#theme-toggle');
+      const syncLabel = () => toggle?.setAttribute('aria-label', `Switch to ${document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'} theme`);
+      syncLabel();
+      toggle?.addEventListener('click', () => {
+        const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = theme;
+        try { localStorage.setItem('blog-theme', theme); } catch {}
+        syncLabel();
+        document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')?.contentWindow?.postMessage(
+          { giscus: { setConfig: { theme } } }, 'https://giscus.app');
+      });
+    </script>
+    {site.goatcounter && <script is:inline define:vars={{ endpoint: site.goatcounter }}>
+      if (!['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+        window.goatcounter = { path: location.pathname.replace(/index\.html$/, '').replace(/\/?$/, '/') };
+        const script = document.createElement('script');
+        script.src = 'https://gc.zgo.at/count.js';
+        script.async = true;
+        script.dataset.goatcounter = endpoint + '/count';
+        document.body.append(script);
+      }
+    </script>}
+  </body>
+</html>

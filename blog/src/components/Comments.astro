@@ -1,0 +1,30 @@
+---
+import { site } from '../config';
+interface Props { slug: string; }
+const { slug } = Astro.props;
+const enabled = !!site.giscus.repoId && !!site.giscus.categoryId;
+---
+{enabled && <section class="comments" aria-labelledby="comments-heading">
+  <h2 id="comments-heading">Comments</h2>
+  <div class="giscus" data-comments data-repo={site.giscus.repo} data-repo-id={site.giscus.repoId} data-category={site.giscus.category} data-category-id={site.giscus.categoryId} data-term={`blog/${slug}`}>
+  </div>
+  <a href={`https://github.com/${site.giscus.repo}/discussions`}>GitHub Discussions ↗</a>
+</section>}
+<script>
+  const container = document.querySelector<HTMLElement>('[data-comments]');
+  if (container) {
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    const settings = {
+      repo: container.dataset.repo!, 'repo-id': container.dataset.repoId!,
+      category: container.dataset.category!, 'category-id': container.dataset.categoryId!,
+      mapping: 'specific', term: container.dataset.term!, strict: '1',
+      'reactions-enabled': '1', 'emit-metadata': '0', 'input-position': 'top',
+      theme: document.documentElement.dataset.theme || 'light', lang: 'en', loading: 'eager',
+    };
+    Object.entries(settings).forEach(([key, value]) => script.setAttribute(`data-${key}`, value));
+    container.insertAdjacentElement('afterend', script);
+  }
+</script>

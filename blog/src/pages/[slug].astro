@@ -1,0 +1,58 @@
+---
+import { render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Comments from '../components/Comments.astro';
+import { formatDate, publishedPosts, postUrl, tagUrl } from '../lib/posts';
+import { site } from '../config';
+import 'katex/dist/katex.min.css';
+export async function getStaticPaths() {
+  const posts = await publishedPosts();
+  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content, headings, remarkPluginFrontmatter } = await render(post);
+const wordCount = remarkPluginFrontmatter.wordCount;
+const toc = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+---
+<Layout title={post.data.title} description={post.data.description} article>
+  <div class="article-shell">
+    <header class="article-header">
+      <a href="/blog/" class="back-link">← Blog</a>
+      <div class="post-tags">{post.data.tags.map((tag) => <a href={tagUrl(tag)}>{tag}</a>)}</div>
+      <h1>{post.data.title}</h1>
+      {post.data.description && <p class="article-deck">{post.data.description}</p>}
+      <div class="article-meta"><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time><span aria-hidden="true">/</span><span>{wordCount} {wordCount === 1 ? 'word' : 'words'}</span>
+        {site.goatcounter && <span hidden data-views data-endpoint={site.goatcounter} data-path={postUrl(post)}></span>}
+      </div>
+      {post.data.updated && <p class="updated">Updated {formatDate(post.data.updated)}</p>}
+    </header>
+    <div class="article-body-grid">
+      {toc.length > 1 && <aside class="toc"><details open><summary>On this page</summary><nav aria-label="Table of contents">{toc.map((heading) => <a class:list={{ nested: heading.depth === 3 }} href={`#${heading.slug}`}>{heading.text}</a>)}</nav></details></aside>}
+      <article class="prose"><Content /></article>
+    </div>
+    <div class="article-bottom">
+      <Comments slug={post.data.slug} />
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll<HTMLPreElement>('.prose pre').forEach((pre) => {
+      const button = document.createElement('button');
+      button.className = 'copy-code';
+      button.textContent = 'Copy';
+      button.setAttribute('aria-label', 'Copy code');
+      button.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(pre.querySelector('code')?.textContent ?? ''); button.textContent = 'Copied'; }
+        catch { button.textContent = 'Select code to copy'; }
+        setTimeout(() => { button.textContent = 'Copy'; }, 2000);
+      });
+      pre.append(button);
+    });
+    const counter = document.querySelector<HTMLElement>('[data-views]');
+    if (counter && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+      fetch(`${counter.dataset.endpoint}/counter/${encodeURIComponent(counter.dataset.path!)}.json`, { signal: AbortSignal.timeout(5000) })
+        .then((response) => { if (!response.ok) throw new Error('Counter unavailable'); return response.json(); })
+        .then((data) => { if (typeof data.count === 'string') { counter.textContent = `${data.count} views`; counter.hidden = false; } })
+        .catch(() => { /* An unavailable counter must never appear as zero views. */ });
+    }
+  </script>
+</Layout>

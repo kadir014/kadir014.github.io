@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PostList from '../components/PostList.astro';
+import { publishedPosts, tagUrl } from '../lib/posts';
+const posts = await publishedPosts();
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
+---
+<Layout>
+  <div class="wrap index-content">
+    <header class="intro"><h1>Blog</h1></header>
+    {tags.length > 0 && <nav class="topic-nav" aria-label="Topics"><a href="/blog/" aria-current="page">All</a>{tags.map((tag) => <a href={tagUrl(tag)}>{tag}</a>)}</nav>}
+    <PostList posts={posts} />
+  </div>
+</Layout>
