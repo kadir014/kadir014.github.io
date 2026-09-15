@@ -465,13 +465,11 @@ svg {
   max-width: 100%;
   height: auto;
   display: block;
+  margin-inline: auto;
   border-radius: 4px;
 }
 .prose figure {
   margin: 2em 0;
-}
-.prose figure img {
-  width: 100%;
 }
 .prose figcaption {
   font-family: Arial, sans-serif;
