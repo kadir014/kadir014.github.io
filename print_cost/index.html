@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ed">
+  <title>3D Baskı Maliyet Hesaplayıcı</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="page-header">
+      <div>
+        <h1>3D Baskı Maliyet Hesaplayıcı</h1>
+        <p class="intro">Filament ve süre değerlerinden basit bir maliyet ve satış ücreti tahmini hesaplayıcısı.</p>
+      </div>
+    </header>
+
+    <div class="columns">
+      <section class="panel library" aria-labelledby="filament-heading">
+        <div class="panel-heading"><div><p class="eyebrow">MALZEMELER</p><h2 id="filament-heading">Filament kütüphanesi</h2></div></div>
+        <form id="filament-form" class="form-stack">
+          <label>Filament türü<select name="type" required></select></label>
+          <label><span class="form-label">Marka <small class="optional-label">(isteğe bağlı)</small></span><input name="brand" maxlength="40" placeholder="Örn. Bambu Lab"></label>
+          <label>Renk <span class="color-entry"><input name="colorPicker" type="color" value="#808080" aria-label="Renk seçici"><input name="color" type="text" value="Gri" maxlength="32" required aria-label="Renk adı" placeholder="Mor, Lacivert, ..."></span></label>
+          <label>Kilogram fiyatı <span class="input-wrap"><input name="price" required type="number" min="0" step="0.01" placeholder="450"><span>₺</span></span></label>
+          <button class="button button-dark" type="submit">Filament ekle</button>
+        </form>
+        <div id="filament-list" class="filament-list"></div>
+      </section>
+
+      <section class="panel prints" aria-labelledby="prints-heading">
+        <div class="panel-heading"><div><p class="eyebrow">SLICER DEĞERLERİ</p><h2 id="prints-heading">Baskı yapılandırması</h2></div><button id="add-plate" class="button button-light" type="button">+ Tabla ekle</button></div>
+        <p class="helper">Her tablaya ait toplam filament miktarını girin. Her renk veya malzeme için bir satır ekleyin.</p>
+        <div id="plate-list" class="plate-list"></div>
+      </section>
+
+      <section class="panel pricing" aria-labelledby="price-heading">
+        <div class="panel-heading"><div><p class="eyebrow">TAHMİN</p><h2 id="price-heading">Fiyatlandırma</h2></div></div>
+        <div class="cost-inputs">
+          <label><span class="form-label">İşçilik ücreti <small class="optional-label">(isteğe bağlı)</small></span><span class="input-wrap"><input id="labor-rate" type="number" min="0" step="0.01"><span>₺ / saat</span></span></label>
+          <label>Elektrik birim fiyatı <span class="input-wrap"><input id="electric-rate" type="number" min="0" step="0.01"><span>₺ / kWh</span></span></label>
+          <label>Yazıcı güç tüketimi <span class="input-wrap"><input id="power-use" type="number" min="0" step="1"><span>W</span></span><small>Baskı sırasındaki ortalama</small></label>
+          <label><span class="form-label">Ambalaj/Kargo <small class="optional-label">(isteğe bağlı)</small></span><span class="input-wrap"><input id="packaging" type="number" min="0" step="0.01"><span>₺</span></span></label>
+          <label>Kâr marjı <span class="input-wrap"><input id="margin" type="number" min="0" step="1"><span>%</span></span><small>Maliyetlerin üzerine eklenir</small></label>
+        </div>
+        <div class="total-block"><span>Önerilen fiyat</span><strong id="total-price">₺0,00</strong></div>
+        <div id="breakdown" class="breakdown" aria-live="polite"></div>
+      </section>
+    </div>
+    <footer>Maliyetler tahminidir. Verileriniz bu cihazda (localStorage üzerinde) saklanır, asla dışarı çıkmaz.</footer>
+  </main>
+</body>
+</html>
